@@ -3,3 +3,4 @@
 
 ![Screenshot 2023-12-29 222306](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/70ec8bcc-22b9-4195-8d16-77341ac61240)
 
+![Screenshot 2023-12-31 121236](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/5f805e99-e8af-46b4-a0b0-ac7c0c98121c)
