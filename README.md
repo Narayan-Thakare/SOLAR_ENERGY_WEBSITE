@@ -8,6 +8,7 @@
 ![Screenshot 2023-12-31 121236](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/5f805e99-e8af-46b4-a0b0-ac7c0c98121c)
 
 
+
 ![Screenshot 2023-12-31 121252](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/dc33968d-f3e7-4ba0-9dda-d36f32c54ceb)
 
 
