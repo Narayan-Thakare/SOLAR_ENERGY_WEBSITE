@@ -18,6 +18,7 @@
 ![Screenshot 2024-01-02 232050](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/5425940b-1a0f-4b08-a77c-3764b8c5d999)
 
 
+
 ![Screenshot 2024-01-02 232119](https://github.com/Narayan-Thakare/SOLAR_ENERGY_WEBSITE/assets/113063658/f9b2136f-74c2-452b-864d-64095d7f69ab)
 
 
