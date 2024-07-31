@@ -65,12 +65,60 @@
         li:hover {
             background: #e8f5e9;
         }
+
+        .menu {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
     </style>
+
+
+<script>
+
+
+function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+</script>
 </head>
 <body>
 
+     <div class="menu">
+        <a href="#basic-concepts">Basic Concepts</a>
+        <a href="#increment-operators">Increment and Decrement Operator</a>
+        <a href="#control-flow-statements">Control Flow Statements</a>
+    </div> 
 
-    <h1>👉🏻👉🏻 Basic Concepts 👈🏻👈🏻</h1>
+
+    <div class="menu">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-content" id="dropdownMenu">
+            <a href="#basic-concepts">Basic Concepts</a>
+            <a href="#increment-operators">Increment and Decrement Operator</a>
+            <a href="#control-flow-statements">Control Flow Statements</a>
+        </div>
+    </div>
+
+    <h1 id="basic-concepts">👉🏻👉🏻 Basic Concepts 👈🏻👈🏻</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span></li>
         <li><span class="section-title">2. What is Hardware?</span></li>
@@ -91,10 +139,7 @@
         <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
 
-
-
-<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <h1>👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
+    <h1 id="increment-operators">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -114,9 +159,7 @@
         <li><span class="section-title">10. Can increment and decrement operators be used along with numbers (used along with symbols)?</span></li>
     </ul>
 
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    
-    <h1>👉🏻👉🏻👉🏻 ***Control Flow Statements*** 👈🏻👈🏻</h1>
+    <h1 id="control-flow-statements">👉🏻👉🏻👉🏻 ***Control Flow Statements*** 👈🏻👈🏻</h1>
     <ul>
         <li>
             <span class="section-title">1. What is a control flow statement?</span>
