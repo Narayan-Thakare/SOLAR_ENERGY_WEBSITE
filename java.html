@@ -3,30 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operators and Control Flow Statements</title>
+    <title>Document</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 20px;
         }
-        h1, h2 {
-            color: #333;
+        
+        h1 {
+            text-align: center;
+            color: #4CAF50;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
-        ul li {
+
+        li {
+            background: #fff;
             margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 15px;
         }
-        .section-title {
-            font-size: 1.2em;
-            margin-top: 20px;
+
+        details {
+            cursor: pointer;
+        }
+
+        details summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        details[open] summary::before {
+            content: "▼";
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        summary::before {
+            content: "►";
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        details p {
+            margin: 10px 0 0 25px;
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        li:hover {
+            background: #e8f5e9;
         }
     </style>
 </head>
 <body>
+
 
     <h1>👉🏻👉🏻 Basic Concepts 👈🏻👈🏻</h1>
     <ul>
@@ -48,10 +90,19 @@
         <li><span class="section-title">16. JDK Architecture</span></li>
         <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
-    
+
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <h1>👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
     <ul>
-        <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span></li>
+        <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>It is a statement used to control the flow of execution in a program. It is known as a control flow statement.</p>
+            </details>
+        </li>
+
         <li><span class="section-title">2. What is an increment operator?</span></li>
         <li><span class="section-title">3. Types of increment operators?</span></li>
         <li><span class="section-title">4. What is a pre-increment operator and how does it work?</span></li>
@@ -62,14 +113,39 @@
         <li><span class="section-title">9. What is a post-decrement operator and how does it work?</span></li>
         <li><span class="section-title">10. Can increment and decrement operators be used along with numbers (used along with symbols)?</span></li>
     </ul>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     
     <h1>👉🏻👉🏻👉🏻 ***Control Flow Statements*** 👈🏻👈🏻</h1>
     <ul>
-        <li><span class="section-title">1. What is a control flow statement?</span></li>
-        ans is :- it is statement used to control the flow of exucution in program it is known as control flow statement 
-        <li><span class="section-title">2. Types of control flow statements?</span></li>
-        <li><span class="section-title">3. What is a decision statement?</span></li>
-        <li><span class="section-title">4. Types of decision statements?</span></li>
+        <li>
+            <span class="section-title">1. What is a control flow statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>It is a statement used to control the flow of execution in a program. It is known as a control flow statement.</p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">2. Types of control flow statements?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Control flow statements include decision statements, loop statements, and branching statements.</p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">3. What is a decision statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>A decision statement allows a program to make decisions based on certain conditions. Examples include `if`, `else if`, and `switch` statements.</p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">4. Types of decision statements?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Types of decision statements include `if` statements, `else if` statements, `else` statements, and `switch` statements.</p>
+            </details>
+        </li>
     </ul>
 
 </body>
