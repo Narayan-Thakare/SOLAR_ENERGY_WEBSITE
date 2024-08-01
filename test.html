@@ -148,12 +148,19 @@
         }
 
         .search-input {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            width: 200px;
-        }
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(204, 204, 204, 0.3); /* More transparent border */
+    font-size: 16px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.3); /* More transparent background */
+    position: fixed; /* Make it fixed */
+    top: 20px;
+    right: 250px;
+    z-index: 1000; /* Ensure it floats above other content */
+}
+
+
     </style>
 </head>
 <body>
@@ -180,7 +187,7 @@
         </div>
     </div>
 
-    <h1 id="section1">👉🏻👉🏻 Basic Concepts 👈🏻👈🏻</h1>
+    <h1 id="section1">* Basic Concepts *</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span></li>
         <li><span class="section-title">2. What is Hardware?</span></li>
@@ -198,12 +205,11 @@
         <li><span class="section-title">14. Why is Java Platform Independent?</span></li>
         <li><span class="section-title">15. Difference Between IDE and Editor</span></li>
         <li><span class="section-title">16. JDK Architecture</span></li>
-        <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
 
-    <h1 id="Operator">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
+    <h1 id="Operator"> * Operator *</h1>
 
-    <h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
+    <h1 id="increment-operator">* Increment and Decrement Operator *</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -222,7 +228,7 @@
         <li><span class="section-title">10. Can increment and decrement operators be used along with numbers (used along with symbols)?</span></li>
     </ul>
 
-    <h1 id="section3">👉🏻👉🏻👉🏻 ***Control Flow Statements*** 👈🏻👈🏻</h1>
+    <h1 id="section3">Control Flow Statements</h1>
     <ul>
         <li>
             <span class="section-title">1. What is a control flow statement?</span>

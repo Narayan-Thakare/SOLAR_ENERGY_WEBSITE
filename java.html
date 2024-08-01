@@ -4,58 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floating Dropdown Menu with Search</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 20px;
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --button-bg: #1e1e1e;
+            --button-hover-bg: #333333;
+            --dropdown-bg: #2c2c2c;
+            --dropdown-hover-bg: rgba(255, 255, 255, 0.1);
+            --input-bg: #1e1e1e;
+            --input-border: #555555;
         }
 
+        body.light-theme {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --button-bg: #f0f0f0;
+            --button-hover-bg: #dddddd;
+            --dropdown-bg: #ffffff;
+            --dropdown-hover-bg: #f0f0f0;
+            --input-bg: #ffffff;
+            --input-border: #cccccc;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .theme-toggle-button {
+    background-color: transparent; /* Makes the background transparent */
+    color: var(--text-color);      /* Keeps the text color as it is */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s; /* Add color transitions */
+}
+
+.theme-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Slight background color on hover */
+    color: var(--text-color); /* Adjust hover text color if needed */
+}
+
+
         .dropdown {
-            position: fixed; /* Make it fixed */
+            position: fixed;
             top: 20px;
-            right: 20px;
-            z-index: 1000; /* Ensure it floats above other content */
+            right: 100px;
+            z-index: 1000;
         }
 
         .dropdown-button {
-            background-color: #4CAF50;
-            color: white;
+            background-color: var(--button-bg);
+            color: var(--text-color);
             padding: 10px 20px;
             font-size: 16px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            opacity: 0.5; /* Set transparency */
-            transition: opacity 0.3s;
+            opacity: 0.7;
+            transition: opacity 0.3s, background-color 0.3s;
         }
 
         .dropdown-button:hover {
-            opacity: 1; /* Fully opaque on hover */
+            opacity: 1;
+            background-color: var(--button-hover-bg);
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
+            background-color: var(--dropdown-bg);
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
             z-index: 1;
             border-radius: 5px;
-            top: 100%; /* Position it directly below the button */
+            top: 100%;
             right: 0;
         }
 
         .dropdown-content a {
-            color: black;
+            color: var(--text-color);
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: rgba(241, 241, 241, 0.8);
+            background-color: var(--dropdown-hover-bg);
         }
 
         .nested-dropdown {
@@ -65,10 +113,10 @@
         .nested-dropdown-content {
             display: none;
             position: absolute;
-            right: 100%; /* Position it to the right of the parent dropdown */
+            right: 100%;
             top: 0;
-            background-color: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            background-color: var(--dropdown-bg);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
             border-radius: 5px;
             min-width: 160px;
             z-index: 2;
@@ -97,10 +145,10 @@
         }
 
         li {
-            background: #fff;
+            background: var(--button-bg);
             margin: 10px 0;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             padding: 15px;
         }
 
@@ -132,14 +180,12 @@
             margin: 10px 0 0 25px;
             font-size: 0.95em;
             line-height: 1.4;
-            color: #555;
         }
 
         li:hover {
-            background: #e8f5e9;
+            background: var(--button-hover-bg);
         }
 
-        /* Style for the search bar */
         .search-container {
             position: fixed;
             top: 80px;
@@ -150,29 +196,42 @@
         .search-input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgba(204, 204, 204, 0.3); /* More transparent border */
+    border: 1px solid var(--input-border);
     font-size: 16px;
     width: 200px;
-    background-color: rgba(255, 255, 255, 0.3); /* More transparent background */
-    position: fixed; /* Make it fixed */
+    background-color: var(--button-bg); /* Match dropdown button background */
+    color: var(--text-color);
+    position: fixed;
     top: 20px;
-    right: 250px;
-    z-index: 1000; /* Ensure it floats above other content */
+    right: 160px;
+    z-index: 1000;
+    opacity: 0.7; /* Match dropdown button opacity */
+    transition: opacity 0.3s, background-color 0.3s; /* Add transition for smooth effect */
 }
 
+.search-input:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
 
     </style>
 </head>
 <body>
 
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-button" onclick="toggleTheme()">
+        <i class="fas fa-sun"></i> 
+    </button>
+    
     <!-- Search bar -->
     <div class="search-container">
         <input type="text" id="searchInput" class="search-input" onkeyup="searchContent()" placeholder="Search...">
     </div>
 
     <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">Menu</button>
-        <div class="dropdown-content" id="dropdownContent">
+        <button class="dropdown-button" onclick="toggleDropdown()">
+            <i class="fas fa-ellipsis-h"></i> 
+        </button>
+                <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
                 <a href="#Operator">Operators</a>
@@ -186,6 +245,13 @@
             <a href="#section3">Control Flow Statements</a>
         </div>
     </div>
+    
+    <br>
+    <br>
+    <br>
+   
+
+    
 
     <h1 id="section1">* Basic Concepts *</h1>
     <ul>
@@ -205,7 +271,6 @@
         <li><span class="section-title">14. Why is Java Platform Independent?</span></li>
         <li><span class="section-title">15. Difference Between IDE and Editor</span></li>
         <li><span class="section-title">16. JDK Architecture</span></li>
-        <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
 
     <h1 id="Operator"> * Operator *</h1>
@@ -222,11 +287,24 @@
         <li><span class="section-title">3. Types of increment operators?</span></li>
         <li><span class="section-title">4. What is a pre-increment operator and how does it work?</span></li>
         <li><span class="section-title">5. What is a post-increment operator and how does it work?</span></li>
-        <li><span class="section-title">6. What is a decrement operator?</span></li>
-        <li><span class="section-title">7. Types of decrement operators?</span></li>
-        <li><span class="section-title">8. What is a pre-decrement operator and how does it work?</span></li>
-        <li><span class="section-title">9. What is a post-decrement operator and how does it work?</span></li>
-        <li><span class="section-title">10. Can increment and decrement operators be used along with numbers (used along with symbols)?</span></li>
+        <li><span class="section-title">6. Write a program using increment and decrement operators?</span></li>
+        <li><span class="section-title">7. What is a decrement operator?</span></li>
+        <li><span class="section-title">8. Types of decrement operators?</span></li>
+        <li><span class="section-title">9. What is a pre-decrement operator and how does it work?</span></li>
+        <li><span class="section-title">10. What is a post-decrement operator and how does it work?</span></li>
+        <li><span class="section-title">11. Write a program using increment and decrement operators.</span></li>
+    </ul>
+
+    <h1 id="Logical_Operator">* Logical Operator *</h1>
+    <ul>
+        <li><span class="section-title">1. What is an operator?</span></li>
+        <li><span class="section-title">2. What are logical operators?</span></li>
+        <li><span class="section-title">3. How many logical operators are present in Java?</span></li>
+        <li><span class="section-title">4. Explain all logical operators with examples?</span></li>
+        <li><span class="section-title">5. Write a program using logical operators?</span></li>
+        <li><span class="section-title">6. How many logical operators are present in Java?</span></li>
+        <li><span class="section-title">7. Explain all logical operators with examples?</span></li>
+        <li><span class="section-title">8. Write a program using logical operators?</span></li>
     </ul>
 
     <h1 id="section3">Control Flow Statements</h1>
@@ -376,51 +454,36 @@
 
 
 
-    </ul>
-
     <script>
         function toggleDropdown() {
-            var dropdown = document.getElementById("dropdownContent");
-            if (dropdown.style.display === "block") {
-                dropdown.style.display = "none";
+            var dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
             } else {
-                dropdown.style.display = "block";
+                dropdownContent.style.display = "block";
             }
         }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-button')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.style.display === "block") {
-                        openDropdown.style.display = "none";
-                    }
-                }
-            }
-        }
-
-        // Search function
         function searchContent() {
-            var input, filter, ul, li, span, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toLowerCase();
-            ul = document.getElementsByTagName("ul");
-            for (var j = 0; j < ul.length; j++) {
-                li = ul[j].getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
-                    span = li[i].getElementsByClassName("section-title")[0];
-                    if (span) {
-                        txtValue = span.textContent || span.innerText;
-                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                            li[i].style.display = "";
-                        } else {
-                            li[i].style.display = "none";
-                        }
-                    }
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementsByTagName('ul')[0];
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("span")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
                 }
             }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
         }
     </script>
 
