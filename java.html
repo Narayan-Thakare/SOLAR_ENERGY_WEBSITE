@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Dropdown Menu with Search</title>
+    <title>Java Data</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -298,8 +298,8 @@
     <h1 id="Logical_Operator">* Logical Operator *</h1>
     <ul>
         <li><span class="section-title">1. What is an operator?</span></li>
-        <li><span class="section-title">2. What are logical operators?</span></li>
-        <li><span class="section-title">3. How many logical operators are present in Java?</span></li>
+        <li><span class="section-title">2. What are Logical operators?</span></li>
+        <li><span class="section-title">3. How many Logical operators are present in Java?</span></li>
         <li><span class="section-title">4. Explain all logical operators with examples?</span></li>
         <li><span class="section-title">5. Write a program using logical operators?</span></li>
         <li><span class="section-title">6. How many logical operators are present in Java?</span></li>
@@ -465,19 +465,22 @@
         }
 
         function searchContent() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('searchInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementsByTagName('ul')[0];
-            li = ul.getElementsByTagName('li');
-
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("span")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
+            var input, filter, ul, li, span, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            ul = document.getElementsByTagName("ul");
+            for (var j = 0; j < ul.length; j++) {
+                li = ul[j].getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    span = li[i].getElementsByClassName("section-title")[0];
+                    if (span) {
+                        txtValue = span.textContent || span.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
                 }
             }
         }

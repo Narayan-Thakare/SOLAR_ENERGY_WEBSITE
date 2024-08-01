@@ -465,19 +465,22 @@
         }
 
         function searchContent() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('searchInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementsByTagName('ul')[0];
-            li = ul.getElementsByTagName('li');
-
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("span")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
+            var input, filter, ul, li, span, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            ul = document.getElementsByTagName("ul");
+            for (var j = 0; j < ul.length; j++) {
+                li = ul[j].getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    span = li[i].getElementsByClassName("section-title")[0];
+                    if (span) {
+                        txtValue = span.textContent || span.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
                 }
             }
         }
