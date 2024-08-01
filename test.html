@@ -139,7 +139,50 @@
             background: #e8f5e9;
         }
     </style>
+
+<style>
+
+/* thats for animation  */
+
+/* Initial state */
+.question-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.question-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Animation state */
+.question-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+</style>
+
+
+
+
 </head>
+
+<!-- //////////////////////////////////////////////////////////// 
+              Rules
+              add the data on dropdown button   
+
+
+
+-->
+
+
+
+<!-- ///////////////////////////////////////////////////////////////// -->
 <body>
 
     <div class="dropdown">
@@ -147,8 +190,10 @@
         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
-                <a href="#section2">Operators</a>
+                <a href="#Operator">Operators</a>
                 <div class="nested-dropdown-content">
+                    <a href="#Logical_Operator">Logical Operator</a>
+
                     <a href="#increment-operator">Increment Operator</a>
                     <a href="#decrement-operator">Decrement Operator</a>
                     <a href="#conditional-operator">Conditional Operator</a>
@@ -178,8 +223,10 @@
         <li><span class="section-title">16. JDK Architecture</span></li>
         <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <h1 id="Operator">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
 
-    <h1 id="section2">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
+    <h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -230,6 +277,47 @@
         </li>
     </ul>
 
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
+<ul class="question-list">
+    <li class="question-item">
+        <span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a statement used to control the flow of execution in a program. It is known as a control flow statement.</p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">2. Types of control flow statements?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Control flow statements include decision statements, loop statements, and branching statements.</p>
+        </details>
+    </li>
+    <li>
+        <span class="section-title">3. What is a decision statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A decision statement allows a program to make decisions based on certain conditions. Examples include `if`, `else if`, and `switch` statements.</p>
+        </details>
+    </li>
+    <li>
+        <span class="section-title">4. Types of decision statements?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Types of decision statements include `if` statements, `else if` statements, `else` statements, and `switch` statements.</p>
+        </details>
+    </li>
+    <!-- Additional list items here -->
+</ul>
+
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <script>
         function toggleDropdown() {
             var dropdown = document.getElementById("dropdownContent");
@@ -253,6 +341,24 @@
             }
         }
     </script>
+
+
+<script>
+    
+
+document.addEventListener('scroll', function () {
+    const questionItems = document.querySelectorAll('.question-item');
+    questionItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            item.classList.add('visible');
+        }
+    });
+});
+
+
+</script>
+
 
 </body>
 </html>

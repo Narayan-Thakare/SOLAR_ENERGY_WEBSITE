@@ -140,6 +140,18 @@
         }
     </style>
 </head>
+
+<!-- //////////////////////////////////////////////////////////// 
+              Rules
+              add the data on dropdown button   
+
+
+
+-->
+
+
+
+<!-- ///////////////////////////////////////////////////////////////// -->
 <body>
 
     <div class="dropdown">
@@ -147,8 +159,10 @@
         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
-                <a href="#section2">Operators</a>
+                <a href="#Operator">Operators</a>
                 <div class="nested-dropdown-content">
+                    <a href="#Logical_Operator">Logical Operator</a>
+
                     <a href="#increment-operator">Increment Operator</a>
                     <a href="#decrement-operator">Decrement Operator</a>
                     <a href="#conditional-operator">Conditional Operator</a>
@@ -178,8 +192,10 @@
         <li><span class="section-title">16. JDK Architecture</span></li>
         <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <h1 id="Operator">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
 
-    <h1 id="section2">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
+    <h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -204,30 +220,147 @@
             <span class="section-title">1. What is a control flow statement?</span>
             <details>
                 <summary>Answer</summary>
-                <p>It is a statement used to control the flow of execution in a program. It is known as a control flow statement.</p>
+                <p>It is a statement used to  <b> control the flow of execution in a program </b>. It is known as a control flow statement.</p>
             </details>
         </li>
         <li>
             <span class="section-title">2. Types of control flow statements?</span>
             <details>
                 <summary>Answer</summary>
-                <p>Control flow statements include decision statements, loop statements, and branching statements.</p>
+                <p> 1. Decision Statements  </p>
+                 <p>   2. Loop Statements  </p>
             </details>
         </li>
         <li>
             <span class="section-title">3. What is a decision statement?</span>
             <details>
                 <summary>Answer</summary>
-                <p>A decision statement allows a program to make decisions based on certain conditions. Examples include `if`, `else if`, and `switch` statements.</p>
+                <p>The statement which help a programer <b> decide whether to exucute the set of instruction do or skip them </b>its known as decision statement.  </p>
             </details>
         </li>
         <li>
             <span class="section-title">4. Types of decision statements?</span>
             <details>
                 <summary>Answer</summary>
-                <p>Types of decision statements include `if` statements, `else if` statements, `else` statements, and `switch` statements.</p>
+                <p> 1. if statement </p>
+                <p>2. if else statement </p>
+                <p>3. if else if ladder</p>
+                <p>4. switch statement</p>
             </details>
         </li>
+
+        <li>
+            <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
+            <details>
+                <summary>Answer</summary>
+        
+                <!-- Even or Odd -->
+                <p>1. Even or Odd</p>
+                <pre><code>
+        int a = 20;
+        
+        if (a % 2 == 0) {
+            System.out.println("This is an even number.");
+        } else {
+            System.out.println("This is an odd number.");
+        }
+                </code></pre>
+        
+                <!-- Positive or Negative -->
+                <p>2. Positive or Negative</p>
+                <pre><code>
+        int num = -20;
+        
+        if (num > 0) {
+            System.out.println("This is a positive number.");
+        } else {
+            System.out.println("This is a negative number.");
+        }
+                </code></pre>
+        
+                <!-- Pass or Fail -->
+                <p>3. Pass or Fail</p>
+                <pre><code>
+        int percentage = 35;
+        
+        if (percentage >= 35) {
+            System.out.println("You passed.");
+        } else {
+            System.out.println("You failed.");
+        }
+                </code></pre>
+        
+                <!-- Interview Eligibility -->
+                <p>4. Interview Eligibility</p>
+                <pre><code>
+        int percentage = 75;
+        
+        if (percentage >= 65) {
+            System.out.println("You can attend the interview.");
+        } else {
+            System.out.println("You cannot attend the interview.");
+        }
+                </code></pre>
+        
+                <!-- Largest of Two -->
+                <p>5. Largest of Two</p>
+                <pre><code>
+        int num1 = 90;
+        int num2 = 99;
+        
+        if (num1 > num2) {
+            System.out.println("The 1st number is greater: " + num1);
+        } else {
+            System.out.println("The 2nd number is greater: " + num2);
+        }
+                </code></pre>
+        
+                <!-- Pin Verification -->
+                <p>6. Pin Verification</p>
+                <pre><code>
+        int pin = 7865;
+        
+        if (pin == 7878) {
+            System.out.println("You entered the correct pin.");
+        } else {
+            System.out.println("You entered the wrong pin.");
+        }
+                </code></pre>
+        
+                <!-- Rating -->
+                <p>7. Rating</p>
+                <pre><code>
+        char rating = '*';
+        
+        if (rating == '*') {
+            System.out.println("You can give the interview.");
+        } else {
+            System.out.println("Please go to the mock interview.");
+        }
+                </code></pre>
+        
+                <!-- Check Alphabet or Not -->
+                <p>8. Check if Alphabet or Not</p>
+                <pre><code>
+        char alphabet = 'g';
+        
+        if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
+            System.out.println("This is an alphabet.");
+        } else {
+            System.out.println("This is not an alphabet, it is a special character or number.");
+        }
+                </code></pre>
+            </details>
+        </li>
+        
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
     </ul>
 
     <script>
