@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Dropdown Menu</title>
+    <title>Floating Dropdown Menu with Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -138,21 +138,30 @@
         li:hover {
             background: #e8f5e9;
         }
+
+        /* Style for the search bar */
+        .search-container {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .search-input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 200px;
+        }
     </style>
 </head>
-
-<!-- //////////////////////////////////////////////////////////// 
-              Rules
-              add the data on dropdown button   
-
-
-
--->
-
-
-
-<!-- ///////////////////////////////////////////////////////////////// -->
 <body>
+
+    <!-- Search bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" onkeyup="searchContent()" placeholder="Search...">
+    </div>
 
     <div class="dropdown">
         <button class="dropdown-button" onclick="toggleDropdown()">Menu</button>
@@ -162,7 +171,6 @@
                 <a href="#Operator">Operators</a>
                 <div class="nested-dropdown-content">
                     <a href="#Logical_Operator">Logical Operator</a>
-
                     <a href="#increment-operator">Increment Operator</a>
                     <a href="#decrement-operator">Decrement Operator</a>
                     <a href="#conditional-operator">Conditional Operator</a>
@@ -192,7 +200,7 @@
         <li><span class="section-title">16. JDK Architecture</span></li>
         <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <h1 id="Operator">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
 
     <h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
@@ -381,6 +389,28 @@
                     var openDropdown = dropdowns[i];
                     if (openDropdown.style.display === "block") {
                         openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Search function
+        function searchContent() {
+            var input, filter, ul, li, span, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            ul = document.getElementsByTagName("ul");
+            for (var j = 0; j < ul.length; j++) {
+                li = ul[j].getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    span = li[i].getElementsByClassName("section-title")[0];
+                    if (span) {
+                        txtValue = span.textContent || span.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
                     }
                 }
             }

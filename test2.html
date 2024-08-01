@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nested Dropdown Menu</title>
+    <title>Floating Dropdown Menu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,8 +13,10 @@
         }
 
         .dropdown {
-            position: relative;
-            display: inline-block;
+            position: fixed; /* Make it fixed */
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Ensure it floats above other content */
         }
 
         .dropdown-button {
@@ -25,7 +27,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            opacity: 0.7; /* Set transparency */
+            opacity: 0.5; /* Set transparency */
             transition: opacity 0.3s;
         }
 
@@ -41,6 +43,8 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 5px;
+            top: 100%; /* Position it directly below the button */
+            right: 0;
         }
 
         .dropdown-content a {
@@ -61,11 +65,13 @@
         .nested-dropdown-content {
             display: none;
             position: absolute;
-            left: 100%; /* Position it to the right of the parent dropdown */
+            right: 100%; /* Position it to the right of the parent dropdown */
             top: 0;
             background-color: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             border-radius: 5px;
+            min-width: 160px;
+            z-index: 2;
         }
 
         .nested-dropdown-content a {
@@ -79,17 +85,84 @@
         .dropdown-content .nested-dropdown:hover .nested-dropdown-content {
             display: block;
         }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+        }
+
+        details {
+            cursor: pointer;
+        }
+
+        details summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        details[open] summary::before {
+            content: "▼";
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        summary::before {
+            content: "►";
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        details p {
+            margin: 10px 0 0 25px;
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        li:hover {
+            background: #e8f5e9;
+        }
     </style>
 </head>
+
+<!-- //////////////////////////////////////////////////////////// 
+              Rules
+              add the data on dropdown button   
+
+
+
+-->
+
+
+
+<!-- ///////////////////////////////////////////////////////////////// -->
 <body>
 
     <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">Dropdown Menu</button>
+        <button class="dropdown-button" onclick="toggleDropdown()">Menu</button>
         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
-                <a href="#section2">Operator</a>
+                <a href="#Operator">Operators</a>
                 <div class="nested-dropdown-content">
+                    <a href="#Logical_Operator">Logical Operator</a>
+
                     <a href="#increment-operator">Increment Operator</a>
                     <a href="#decrement-operator">Decrement Operator</a>
                     <a href="#conditional-operator">Conditional Operator</a>
@@ -102,20 +175,192 @@
     <h1 id="section1">👉🏻👉🏻 Basic Concepts 👈🏻👈🏻</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span></li>
-        <!-- Additional list items here -->
+        <li><span class="section-title">2. What is Hardware?</span></li>
+        <li><span class="section-title">3. What is Software?</span></li>
+        <li><span class="section-title">4. What is a Low-Level Language?</span></li>
+        <li><span class="section-title">5. What is Assembly Language?</span></li>
+        <li><span class="section-title">6. What is an Assembler?</span></li>
+        <li><span class="section-title">7. What is a High-Level Language?</span></li>
+        <li><span class="section-title">8. Types of Intermediate Software</span></li>
+        <li><span class="section-title">9. Who Invented Java and What is His Wife's Name?</span></li>
+        <li><span class="section-title">10. When was Java Invented?</span></li>
+        <li><span class="section-title">11. What is a Platform?</span></li>
+        <li><span class="section-title">12. Why are C and C++ Platform Dependent?</span></li>
+        <li><span class="section-title">13. What is the Difference Between C++ and Java?</span></li>
+        <li><span class="section-title">14. Why is Java Platform Independent?</span></li>
+        <li><span class="section-title">15. Difference Between IDE and Editor</span></li>
+        <li><span class="section-title">16. JDK Architecture</span></li>
+        <li><span class="section-title">17. Can Increment and Decrement Operators be Used Along with Numbers (Used with Symbols)?</span></li>
     </ul>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <h1 id="Operator">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
 
-    <h1 id="section2">👉🏻👉🏻 Operator 👈🏻👈🏻</h1>
+    <h1 id="increment-operator">👉🏻👉🏻 Increment and Decrement Operator 👈🏻👈🏻</h1>
     <ul>
-        <li><span class="section-title">1. Increment Operator</span></li>
-        <li><span class="section-title">2. Decrement Operator</span></li>
-        <li><span class="section-title">3. Conditional Operator</span></li>
+        <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>It is a statement used to control the flow of execution in a program. It is known as a control flow statement.</p>
+            </details>
+        </li>
+        <li><span class="section-title">2. What is an increment operator?</span></li>
+        <li><span class="section-title">3. Types of increment operators?</span></li>
+        <li><span class="section-title">4. What is a pre-increment operator and how does it work?</span></li>
+        <li><span class="section-title">5. What is a post-increment operator and how does it work?</span></li>
+        <li><span class="section-title">6. What is a decrement operator?</span></li>
+        <li><span class="section-title">7. Types of decrement operators?</span></li>
+        <li><span class="section-title">8. What is a pre-decrement operator and how does it work?</span></li>
+        <li><span class="section-title">9. What is a post-decrement operator and how does it work?</span></li>
+        <li><span class="section-title">10. Can increment and decrement operators be used along with numbers (used along with symbols)?</span></li>
     </ul>
 
     <h1 id="section3">👉🏻👉🏻👉🏻 ***Control Flow Statements*** 👈🏻👈🏻</h1>
     <ul>
-        <li><span class="section-title">1. What is a control flow statement?</span></li>
-        <!-- Additional list items here -->
+        <li>
+            <span class="section-title">1. What is a control flow statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>It is a statement used to  <b> control the flow of execution in a program </b>. It is known as a control flow statement.</p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">2. Types of control flow statements?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> 1. Decision Statements  </p>
+                 <p>   2. Loop Statements  </p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">3. What is a decision statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>The statement which help a programer <b> decide whether to exucute the set of instruction do or skip them </b>its known as decision statement.  </p>
+            </details>
+        </li>
+        <li>
+            <span class="section-title">4. Types of decision statements?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> 1. if statement </p>
+                <p>2. if else statement </p>
+                <p>3. if else if ladder</p>
+                <p>4. switch statement</p>
+            </details>
+        </li>
+
+        <li>
+            <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
+            <details>
+                <summary>Answer</summary>
+        
+                <!-- Even or Odd -->
+                <p>1. Even or Odd</p>
+                <pre><code>
+        int a = 20;
+        
+        if (a % 2 == 0) {
+            System.out.println("This is an even number.");
+        } else {
+            System.out.println("This is an odd number.");
+        }
+                </code></pre>
+        
+                <!-- Positive or Negative -->
+                <p>2. Positive or Negative</p>
+                <pre><code>
+        int num = -20;
+        
+        if (num > 0) {
+            System.out.println("This is a positive number.");
+        } else {
+            System.out.println("This is a negative number.");
+        }
+                </code></pre>
+        
+                <!-- Pass or Fail -->
+                <p>3. Pass or Fail</p>
+                <pre><code>
+        int percentage = 35;
+        
+        if (percentage >= 35) {
+            System.out.println("You passed.");
+        } else {
+            System.out.println("You failed.");
+        }
+                </code></pre>
+        
+                <!-- Interview Eligibility -->
+                <p>4. Interview Eligibility</p>
+                <pre><code>
+        int percentage = 75;
+        
+        if (percentage >= 65) {
+            System.out.println("You can attend the interview.");
+        } else {
+            System.out.println("You cannot attend the interview.");
+        }
+                </code></pre>
+        
+                <!-- Largest of Two -->
+                <p>5. Largest of Two</p>
+                <pre><code>
+        int num1 = 90;
+        int num2 = 99;
+        
+        if (num1 > num2) {
+            System.out.println("The 1st number is greater: " + num1);
+        } else {
+            System.out.println("The 2nd number is greater: " + num2);
+        }
+                </code></pre>
+        
+                <!-- Pin Verification -->
+                <p>6. Pin Verification</p>
+                <pre><code>
+        int pin = 7865;
+        
+        if (pin == 7878) {
+            System.out.println("You entered the correct pin.");
+        } else {
+            System.out.println("You entered the wrong pin.");
+        }
+                </code></pre>
+        
+                <!-- Rating -->
+                <p>7. Rating</p>
+                <pre><code>
+        char rating = '*';
+        
+        if (rating == '*') {
+            System.out.println("You can give the interview.");
+        } else {
+            System.out.println("Please go to the mock interview.");
+        }
+                </code></pre>
+        
+                <!-- Check Alphabet or Not -->
+                <p>8. Check if Alphabet or Not</p>
+                <pre><code>
+        char alphabet = 'g';
+        
+        if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
+            System.out.println("This is an alphabet.");
+        } else {
+            System.out.println("This is not an alphabet, it is a special character or number.");
+        }
+                </code></pre>
+            </details>
+        </li>
+        
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
     </ul>
 
     <script>
