@@ -186,23 +186,23 @@
             background: var(--button-hover-bg);
         }
 
-     .search-container {
+        .search-container {
     position: fixed;
     top: 20px;
-    right: 160px;
+    right: 180px; /* Adjusted to fit within viewport, from 220px to 20px */
     z-index: 1000;
 }
 
 .search-input {
     padding: 10px;
-    padding-right: 30px; /* Add padding to the right to accommodate the clear button */
+    padding-right: 40px; /* Space for clear button */
     border-radius: 5px;
     border: 1px solid var(--input-border);
     font-size: 16px;
     width: 140px;
     background-color: var(--button-bg);
     color: var(--text-color);
-    position: relative;
+    position: relative; /* Ensure clear button is positioned relative to this */
     z-index: 1000;
     opacity: 0.7;
     transition: opacity 0.3s, background-color 0.3s;
@@ -210,31 +210,86 @@
 
 .search-input:hover,
 .search-input:focus {
-    opacity: 1; /* Make input fully opaque on hover and focus */
+    opacity: 1; /* Full opacity on hover and focus */
 }
 
 .clear-btn {
     position: absolute;
-    right: 10px; /* Position the clear button inside the search box */
-    top: 50%; /* Vertically center the clear button */
+    right: 10px; /* Adjusted to ensure proper spacing */
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 18px;
     color: #888;
     display: none; /* Initially hidden */
-    z-index: 1001; /* Ensure it's above other elements */
+    z-index: 1001; /* Above input */
 }
 
-/* Show the clear button when the input is not empty or hovered */
-.search-input:not(:placeholder-shown) + .clear-btn,
-.search-input:focus + .clear-btn,
-.search-input:hover + .clear-btn {
+/* Show clear button when input is not empty or focused/hovered */
+.search-input:not(:placeholder-shown) ~ .clear-btn,
+.search-input:focus ~ .clear-btn,
+.search-input:hover ~ .clear-btn {
     display: inline;
 }
 
 .clear-btn:hover {
-    color: #555; /* Change color on hover for the clear button */
+    color: #555; /* Change color on hover */
 }
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .search-input {
+        width: calc(100% - 60px); /* Fit on smaller screens */
+        font-size: 19px;
+        padding-right: 60px; /* Adjust padding for clear button */
+    }
+    
+    .clear-btn {
+        font-size: 19px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        font-size: 15px; /* Smaller font size on very small screens */
+        padding-right: 50px; /* Adjust padding */
+    }
+    
+    .clear-btn {
+        font-size: 18px; /* Smaller font size for clear button */
+    }
+}
+
+
+
+pre code {
+    font-size: 16px;
+    padding: 10px;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    display: block;
+    border: 1px solid var(--code-border);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    pre code {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    pre code {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
 
 
     </style>
