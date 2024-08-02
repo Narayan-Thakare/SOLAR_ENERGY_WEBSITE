@@ -6,6 +6,7 @@
     <title>Java Data</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         :root {
@@ -39,23 +40,24 @@
         }
 
         .theme-toggle-button {
-            background-color: transparent;
-            color: var(--text-color);
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            position: fixed;
-            top: 20px;
-            right: 90px;
-            z-index: 1000;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    background-color: transparent; /* Makes the background transparent */
+    color: var(--text-color);      /* Keeps the text color as it is */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 90px;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s; /* Add color transitions */
+}
 
-        .theme-toggle-button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-        }
+.theme-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Slight background color on hover */
+    color: var(--text-color); /* Adjust hover text color if needed */
+}
+
 
         .dropdown {
             position: fixed;
@@ -186,41 +188,31 @@
 
         .search-container {
             position: fixed;
-            top: 20px;
-            right: 160px;
+            top: 80px;
+            right: 20px;
             z-index: 1000;
         }
 
         .search-input {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--input-border);
-            font-size: 16px;
-            width: 140px;
-            background-color: var(--input-bg);
-            color: var(--text-color);
-            transition: opacity 0.3s, background-color 0.3s;
-            padding-right: 30px;
-        }
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    font-size: 16px;
+    width: 140px;
+    background-color: var(--button-bg); /* Match dropdown button background */
+    color: var(--text-color);
+    position: fixed;
+    top: 20px;
+    right: 160px;
+    z-index: 1000;
+    opacity: 0.7; /* Match dropdown button opacity */
+    transition: opacity 0.3s, background-color 0.3s; /* Add transition for smooth effect */
+}
 
-        .search-input:hover {
-            opacity: 1;
-        }
+.search-input:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
 
-        .clear-btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            font-size: 18px;
-            display: none;
-            color: #888;
-        }
-
-        .search-input:not(:placeholder-shown) + .clear-btn {
-            display: inline;
-        }
     </style>
 </head>
 <body>
@@ -233,7 +225,6 @@
     <!-- Search bar -->
     <div class="search-container">
         <input type="text" id="searchInput" class="search-input" onkeyup="searchContent()" placeholder="Search...">
-        <span id="clearBtn" class="clear-btn" onclick="clearSearch()">&#10006;</span>
     </div>
 
     <div class="dropdown">
@@ -463,64 +454,46 @@
 
 
 
-<script>
-    // Search Functionality
-    function searchContent() {
-        var input, filter, sections, li, i, txtValue, clearBtn;
-        input = document.getElementById('searchInput');
-        filter = input.value.toUpperCase();
-        sections = document.getElementsByTagName('h1');
-        li = document.querySelectorAll('li');
-        clearBtn = document.getElementById('clearBtn');
-
-        if (filter) {
-            clearBtn.style.display = 'block';
-        } else {
-            clearBtn.style.display = 'none';
-        }
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            txtValue = li[i].textContent || li[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = '';
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
             } else {
-                li[i].style.display = 'none';
+                dropdownContent.style.display = "block";
             }
         }
-    }
 
-    // Clear Search Input
-    function clearSearch() {
-        document.getElementById('searchInput').value = '';
-        document.getElementById('clearBtn').style.display = 'none';
-        searchContent(); // Re-run the search to reset the list
-    }
 
-    // Theme Toggle
-    function toggleTheme() {
-        document.body.classList.toggle('light-theme');
-    }
+        function searchContent() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var ulElements = document.getElementsByTagName("ul");
 
-    // Dropdown Toggle
-    function toggleDropdown() {
-        var dropdownContent = document.getElementById('dropdownContent');
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    }
+    for (var j = 0; j < ulElements.length; j++) {
+        var liElements = ulElements[j].getElementsByTagName("li");
 
-    // Close dropdown if clicked outside
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropdown-button')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.style.display === 'block') {
-                    openDropdown.style.display = 'none';
+        for (var i = 0; i < liElements.length; i++) {
+            var span = liElements[i].getElementsByClassName("section-title")[0];
+
+            if (span) {
+                var txtValue = span.textContent || span.innerText;
+
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    liElements[i].style.display = "";
+                } else {
+                    liElements[i].style.display = "none";
                 }
             }
         }
     }
-</script>
+}
+
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
+    </script>
 
 </body>
 </html>

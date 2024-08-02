@@ -186,32 +186,56 @@
             background: var(--button-hover-bg);
         }
 
-        .search-container {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .search-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--input-border);
-    font-size: 16px;
-    width: 140px;
-    background-color: var(--button-bg); /* Match dropdown button background */
-    color: var(--text-color);
+     .search-container {
     position: fixed;
     top: 20px;
     right: 160px;
     z-index: 1000;
-    opacity: 0.7; /* Match dropdown button opacity */
-    transition: opacity 0.3s, background-color 0.3s; /* Add transition for smooth effect */
 }
 
-.search-input:hover {
-    opacity: 1; /* Fully opaque on hover */
+.search-input {
+    padding: 10px;
+    padding-right: 30px; /* Add padding to the right to accommodate the clear button */
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    font-size: 16px;
+    width: 140px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    position: relative;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, background-color 0.3s;
 }
+
+.search-input:hover,
+.search-input:focus {
+    opacity: 1; /* Make input fully opaque on hover and focus */
+}
+
+.clear-btn {
+    position: absolute;
+    right: 10px; /* Position the clear button inside the search box */
+    top: 50%; /* Vertically center the clear button */
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    display: none; /* Initially hidden */
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+/* Show the clear button when the input is not empty or hovered */
+.search-input:not(:placeholder-shown) + .clear-btn,
+.search-input:focus + .clear-btn,
+.search-input:hover + .clear-btn {
+    display: inline;
+}
+
+.clear-btn:hover {
+    color: #555; /* Change color on hover for the clear button */
+}
+
 
     </style>
 </head>
@@ -225,7 +249,9 @@
     <!-- Search bar -->
     <div class="search-container">
         <input type="text" id="searchInput" class="search-input" onkeyup="searchContent()" placeholder="Search...">
+        <span id="clearBtn" class="clear-btn" onclick="clearSearch()">&#10006;</span>
     </div>
+
 
     <div class="dropdown">
         <button class="dropdown-button" onclick="toggleDropdown()">
@@ -454,46 +480,64 @@
 
 
 
-    <script>
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("dropdownContent");
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
+   
+<script>
+    // Search Functionality
+    function searchContent() {
+        var input, filter, sections, li, i, txtValue, clearBtn;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        sections = document.getElementsByTagName('h1');
+        li = document.querySelectorAll('li');
+        clearBtn = document.getElementById('clearBtn');
+
+        if (filter) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
         }
 
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            txtValue = li[i].textContent || li[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = '';
+            } else {
+                li[i].style.display = 'none';
+            }
+        }
+    }
 
-        function searchContent() {
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
-    var ulElements = document.getElementsByTagName("ul");
+    // Clear Search Input
+    function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('clearBtn').style.display = 'none';
+        searchContent(); // Re-run the search to reset the list
+    }
 
-    for (var j = 0; j < ulElements.length; j++) {
-        var liElements = ulElements[j].getElementsByTagName("li");
+    // Theme Toggle
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+    }
 
-        for (var i = 0; i < liElements.length; i++) {
-            var span = liElements[i].getElementsByClassName("section-title")[0];
+    // Dropdown Toggle
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById('dropdownContent');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    }
 
-            if (span) {
-                var txtValue = span.textContent || span.innerText;
-
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    liElements[i].style.display = "";
-                } else {
-                    liElements[i].style.display = "none";
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-button')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
                 }
             }
         }
     }
-}
-
-
-        function toggleTheme() {
-            document.body.classList.toggle('light-theme');
-        }
-    </script>
-
+</script>
 </body>
 </html>
