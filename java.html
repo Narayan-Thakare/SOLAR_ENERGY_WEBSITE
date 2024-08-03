@@ -189,8 +189,12 @@
         .search-container {
     position: fixed;
     top: 20px;
-    right: 163px; /* Adjusted to fit within viewport, from 220px to 20px */
+    right: 150px; /* Adjust as needed for desired right edge spacing */
     z-index: 1000;
+    padding-right: 10px; /* Space inside the container on the right side */
+    width: 200px; /* Adjust this to control the container width */
+    display: flex; /* Use flexbox to center the input */
+    justify-content: center; /* Center the input horizontally */
 }
 
 .search-input {
@@ -199,7 +203,7 @@
     border-radius: 5px;
     border: 1px solid var(--input-border);
     font-size: 16px;
-    width: 140px;
+    width: 100px; /* Keep the input size the same */
     background-color: var(--button-bg);
     color: var(--text-color);
     position: relative; /* Ensure clear button is positioned relative to this */
@@ -212,6 +216,7 @@
 .search-input:focus {
     opacity: 1; /* Full opacity on hover and focus */
 }
+
 
 .clear-btn {
     position: absolute;
@@ -302,11 +307,9 @@ pre code {
     border-radius: 5px;
     opacity: 0.85;
     transition: opacity 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    margin-top: 20px;
-    display: block;
+    margin: 20px auto; /* Center horizontally and add top margin */
+    display: block; /* Ensure the button is treated as a block element */
     text-align: center;
-    float: left; 
-    margin-left: 20px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -317,9 +320,11 @@ pre code {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 /* Mock Questions Container */
 #mockQuestions {
-    margin-top: 20px;
+    margin-top: -50px;
+    
     position: relative;
     padding: 20px;
     background-color: var(--button-bg);
@@ -331,23 +336,37 @@ pre code {
 /* Close Button Styling */
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     background-color: var(--button-bg);
     color: var(--text-color);
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0); /* Transparent border */
     cursor: pointer;
     border-radius: 50%;
-    padding: 7px;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-btn:hover {
     background-color: var(--button-hover-bg);
-    transform: rotate(90deg);
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.1); /* Subtle border color change on hover */
 }
+
+.close-btn:active {
+    transform: scale(0.95); /* Slight "press" effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
+}
+
+
 
 /* Answer Button Styling */
 .answer-button {
@@ -693,7 +712,7 @@ pre code {
 
 
 <script>
-    // Array to store the questions and answers
+    
    // Array to store the questions and answers
 const questions = [
     {
@@ -736,7 +755,48 @@ const questions = [
         question: "What is a Platform?",
         answer: "A platform is the environment in which software is executed, which includes both hardware and software."
     },
+
+    {
+
+ question: "What is a Platform in java?",
+        answer: "A platform is the environment in which software is executed, which includes both hardware and software."
+
+
+    },
     // Continue adding your questions and answers here
+    // control flow statement
+{
+    question: "What is a control flow statement?",
+
+    answer: "It is a statement used to control the flow of execution in a program . It is known as a control flow statement."
+
+},
+{
+    question: "Types of control flow statements?",
+
+    answer: "1. Decison Statements , 2. Loop Statements  "
+
+},
+{
+    question: " What is a decision statement?",
+
+    answer: "The statement which help a programer decide whether to exucute the set of instruction do or skip them its known as decision statement. "
+
+},
+{
+    question: "Types of decision statements?",
+
+    answer: "1. if statement 2. if else statement 3. if else if ladder 4. switch statement "
+
+},
+{
+    question: " Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.",
+
+    answer: " try it  "
+
+},
+///////////////////////////////////////
+
 ];
 
 function generateMockQuestions() {
@@ -759,6 +819,9 @@ function generateMockQuestions() {
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `<strong>Q${index + 1}: ${qa.question}</strong>`;
 
+        const answerWrapper = document.createElement('div'); // Wrapper for answer button and answer
+        answerWrapper.className = 'answer-wrapper'; // Optional: Add a class for styling
+
         const answerButton = document.createElement('button');
         answerButton.className = 'answer-button';
         answerButton.innerText = 'Answer';
@@ -772,8 +835,10 @@ function generateMockQuestions() {
         answerElement.style.display = 'none'; // Hide answers by default
         answerElement.innerText = qa.answer;
 
-        questionElement.appendChild(answerButton);
-        questionElement.appendChild(answerElement);
+        answerWrapper.appendChild(answerButton); // Append button to wrapper
+        answerWrapper.appendChild(answerElement); // Append answer to wrapper
+
+        questionElement.appendChild(answerWrapper); // Append wrapper to the question element
 
         mockQuestionsContainer.appendChild(questionElement);
     });
