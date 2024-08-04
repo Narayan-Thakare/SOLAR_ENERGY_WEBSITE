@@ -647,6 +647,84 @@ pre code {
             </details>
         </li>
 
+        <li>
+            <span class="section-title">6. What is a syntax of if statement?</span>
+            <details>
+                <summary>Answer</summary>
+
+                <pre><code>
+                    
+                               if ( condition )
+                               {
+                                 (statement);
+
+                               } 
+
+                            </code></pre>
+
+            </details>
+        </li>
+
+        <li>
+            <span class="section-title">7. What is a syntax of if else statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <pre><code>
+                    
+                    if ( condition )
+                    {
+                      (statement 1);
+
+                    } 
+                    else{ 
+
+                        (statement 1);
+                       
+                    }
+
+                 </code></pre>
+           
+            </details>
+        </li>
+
+        <li>
+            <span class="section-title">8. What is a syntax of if else if ladder statement?</span>
+            <details>
+                <summary>Answer</summary>
+                <pre><code>
+                    
+                    if ( condition )
+                    {
+                      (statement 1);
+
+                    } 
+                    else if { 
+
+                        (statement 2);
+                       
+                    }
+                    else if { 
+
+                        (statement 3);
+                       
+                    }
+                    else if { 
+
+                        (statement 4);
+                       
+                    } 
+                    else {
+
+                        (statement 5);
+
+                    }
+                 </code></pre>
+                            </details>
+        </li>
+
+
+
+
 <!-- ///////////////////////////////////////////////////////////// -->
 <h1 id="section4">Dynamic Reading</h1>
 <ul>
@@ -796,16 +874,15 @@ pre code {
 
     // Close dropdown if clicked outside
     window.onclick = function(event) {
-        if (!event.target.matches('.dropdown-button')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.style.display === 'block') {
-                    openDropdown.style.display = 'none';
-                }
+    if (!event.target.matches('.dropdown-button')) {
+        document.querySelectorAll('.dropdown-content').forEach(function(dropdown) {
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
             }
-        }
+        });
     }
+};
+
 </script>
 
 
@@ -893,6 +970,35 @@ const questions = [
     answer: " try it  "
 
 },
+{
+    question: "What is the syntax of an if statement?",
+    answer: `if (condition) {
+    (statement);
+}`
+},
+{
+    question: "What is the syntax of an if-else statement?",
+    answer: `if (condition) {
+    (statement 1);
+} else {
+    (statement 2);
+}`
+},
+{
+    question: "What is the syntax of an if-else-if ladder statement?",
+    answer: `if (condition) {
+    (statement 1);
+} else if (condition) {
+    (statement 2);
+} else if (condition) {
+    (statement 3);
+} else if (condition) {
+    (statement 4);
+} else {
+    (statement 5);
+}`
+},
+
 ///////////////////////////////////////
 ///////////////////////// Dynamic reading
 
@@ -963,8 +1069,17 @@ function generateMockQuestions() {
     };
     mockQuestionsContainer.appendChild(closeButton);
 
-    const shuffledQuestions = questions.sort(() => 0.5 - Math.random()); // Shuffle the questions
-    const selectedQuestions = shuffledQuestions.slice(0, 10); // Get 10 random questions
+    // Fisher-Yates shuffle algorithm for better shuffling
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    const shuffledQuestions = shuffle([...questions]).reverse(); // Shuffle and reverse the array
+    const selectedQuestions = shuffledQuestions.slice(0, 10); // Get 10 random questions starting from the last
 
     selectedQuestions.forEach((qa, index) => {
         const questionElement = document.createElement('div');
