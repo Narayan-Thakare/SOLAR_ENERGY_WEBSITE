@@ -606,221 +606,278 @@ pre code {
         <li><span class="section-title">7. Explain all logical operators with examples?</span></li>
         <li><span class="section-title">8. Write a program using logical operators?</span></li>
     </ul>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    <h1 id="section3">Control Flow Statements</h1>
-    <ul>
-        <li>
-            <span class="section-title">1. What is a control flow statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <p>It is a statement used to  <b> control the flow of execution in a program </b>. It is known as a control flow statement.</p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">2. Types of control flow statements?</span>
-            <details>
-                <summary>Answer</summary>
-                <p> 1. Decision Statements  </p>
-                 <p>   2. Loop Statements  </p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">3. What is a decision statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <p>The statement which help a programer <b> decide whether to exucute the set of instruction do or skip them </b>its known as decision statement.  </p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">4. Types of decision statements?</span>
-            <details>
-                <summary>Answer</summary>
-                <p> 1. if statement </p>
-                <p>2. if else statement </p>
-                <p>3. if else if ladder</p>
-                <p>4. switch statement</p>
-            </details>
-        </li>
+  <h1 id="section3">Control Flow Statements</h1>
+  <ul>
+      <li>
+          <span class="section-title">1. What is a control flow statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>It is a statement used to <b>control the flow of execution in a program</b>. It is known as a control flow statement.</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">2. Types of control flow statements?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>1. Decision Statements</p>
+              <p>2. Loop Statements</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">3. What is a decision statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>The statement which helps a programmer <b>decide whether to execute a set of instructions or skip them</b> is known as a decision statement.</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">4. Types of decision statements?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>1. if statement</p>
+              <p>2. if else statement</p>
+              <p>3. if else if ladder</p>
+              <p>4. switch statement</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
+          <details>
+              <summary>Answer</summary>
+              
+              <!-- Even or Odd -->
+              <p>1. Even or Odd</p>
+              <pre><code>
+  int a = 20;
+  
+  if (a % 2 == 0) {
+      System.out.println("This is an even number.");
+  } else {
+      System.out.println("This is an odd number.");
+  }
+              </code></pre>
+              
+              <!-- Positive or Negative -->
+              <p>2. Positive or Negative</p>
+              <pre><code>
+  int num = -20;
+  
+  if (num > 0) {
+      System.out.println("This is a positive number.");
+  } else {
+      System.out.println("This is a negative number.");
+  }
+              </code></pre>
+              
+              <!-- Pass or Fail -->
+              <p>3. Pass or Fail</p>
+              <pre><code>
+  int percentage = 35;
+  
+  if (percentage >= 35) {
+      System.out.println("You passed.");
+  } else {
+      System.out.println("You failed.");
+  }
+              </code></pre>
+              
+              <!-- Interview Eligibility -->
+              <p>4. Interview Eligibility</p>
+              <pre><code>
+  int percentage = 75;
+  
+  if (percentage >= 65) {
+      System.out.println("You can attend the interview.");
+  } else {
+      System.out.println("You cannot attend the interview.");
+  }
+              </code></pre>
+              
+              <!-- Largest of Two -->
+              <p>5. Largest of Two</p>
+              <pre><code>
+  int num1 = 90;
+  int num2 = 99;
+  
+  if (num1 > num2) {
+      System.out.println("The 1st number is greater: " + num1);
+  } else {
+      System.out.println("The 2nd number is greater: " + num2);
+  }
+              </code></pre>
+              
+              <!-- Pin Verification -->
+              <p>6. Pin Verification</p>
+              <pre><code>
+  int pin = 7865;
+  
+  if (pin == 7878) {
+      System.out.println("You entered the correct pin.");
+  } else {
+      System.out.println("You entered the wrong pin.");
+  }
+              </code></pre>
+              
+              <!-- Rating -->
+              <p>7. Rating</p>
+              <pre><code>
+  char rating = '*';
+  
+  if (rating == '*') {
+      System.out.println("You can give the interview.");
+  } else {
+      System.out.println("Please go to the mock interview.");
+  }
+              </code></pre>
+              
+              <!-- Check Alphabet or Not -->
+              <p>8. Check if Alphabet or Not</p>
+              <pre><code>
+  char alphabet = 'g';
+  
+  if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
+      System.out.println("This is an alphabet.");
+  } else {
+      System.out.println("This is not an alphabet, it is a special character or number.");
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">6. What is the syntax of the if statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition) {
+      statement;
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">7. What is the syntax of the if-else statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition) {
+      statement1;
+  } else { 
+      statement2;
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">8. What is the condition for calculating a leap year?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">9. Solve the leap year problem using if-else?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  Scanner sc = new Scanner(System.in);
+  int year = sc.nextInt();
+  
+  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      System.out.println("This is a leap year");
+  } else { 
+      System.out.println("This is not a leap year");
+  }
+              </code></pre>
+          </details>
+      </li>
 
-        <li>
-            <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
-            <details>
-                <summary>Answer</summary>
-        
-                <!-- Even or Odd -->
-                <p>1. Even or Odd</p>
-                <pre><code>
-        int a = 20;
-        
-        if (a % 2 == 0) {
-            System.out.println("This is an even number.");
-        } else {
-            System.out.println("This is an odd number.");
-        }
-                </code></pre>
-        
-                <!-- Positive or Negative -->
-                <p>2. Positive or Negative</p>
-                <pre><code>
-        int num = -20;
-        
-        if (num > 0) {
-            System.out.println("This is a positive number.");
-        } else {
-            System.out.println("This is a negative number.");
-        }
-                </code></pre>
-        
-                <!-- Pass or Fail -->
-                <p>3. Pass or Fail</p>
-                <pre><code>
-        int percentage = 35;
-        
-        if (percentage >= 35) {
-            System.out.println("You passed.");
-        } else {
-            System.out.println("You failed.");
-        }
-                </code></pre>
-        
-                <!-- Interview Eligibility -->
-                <p>4. Interview Eligibility</p>
-                <pre><code>
-        int percentage = 75;
-        
-        if (percentage >= 65) {
-            System.out.println("You can attend the interview.");
-        } else {
-            System.out.println("You cannot attend the interview.");
-        }
-                </code></pre>
-        
-                <!-- Largest of Two -->
-                <p>5. Largest of Two</p>
-                <pre><code>
-        int num1 = 90;
-        int num2 = 99;
-        
-        if (num1 > num2) {
-            System.out.println("The 1st number is greater: " + num1);
-        } else {
-            System.out.println("The 2nd number is greater: " + num2);
-        }
-                </code></pre>
-        
-                <!-- Pin Verification -->
-                <p>6. Pin Verification</p>
-                <pre><code>
-        int pin = 7865;
-        
-        if (pin == 7878) {
-            System.out.println("You entered the correct pin.");
-        } else {
-            System.out.println("You entered the wrong pin.");
-        }
-                </code></pre>
-        
-                <!-- Rating -->
-                <p>7. Rating</p>
-                <pre><code>
-        char rating = '*';
-        
-        if (rating == '*') {
-            System.out.println("You can give the interview.");
-        } else {
-            System.out.println("Please go to the mock interview.");
-        }
-                </code></pre>
-        
-                <!-- Check Alphabet or Not -->
-                <p>8. Check if Alphabet or Not</p>
-                <pre><code>
-        char alphabet = 'g';
-        
-        if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
-            System.out.println("This is an alphabet.");
-        } else {
-            System.out.println("This is not an alphabet, it is a special character or number.");
-        }
-                </code></pre>
-            </details>
-        </li>
+      <li>
+        <span class="section-title">#. When we use if else if ladder?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>When we check multyple multyple condition then we use if else if ladder.</p>
+        </details>
+    </li>
 
-        <li>
-            <span class="section-title">6. What is a syntax of if statement?</span>
-            <details>
-                <summary>Answer</summary>
+      <li>
+          <span class="section-title">10. What is the syntax of the if-else-if ladder statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition1) {
+      statement1;
+  } else if (condition2) {
+      statement2;
+  } else if (condition3) {
+      statement3;
+  } else if (condition4) {
+      statement4;
+  } else {
+      statement5;
+  }
+              </code></pre>
+          </details>
+      </li>
 
-                <pre><code>
-                    
-                               if ( condition )
-                               {
-                                 (statement);
+      <li>
+        <span class="section-title">11. What is a switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a decision making statement.</p>
+        </details>
+    </li>
 
-                               } 
+    <li>
+        <span class="section-title">12. Which type of data type is allowed in switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>1. byte 2. short 3. int 4. char 5. String </b></p>
+        </details>
+    </li> 
 
-                            </code></pre>
+    <li>
+        <span class="section-title">13. Which type of data type is not allowed in switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>1. long 2. float 3. double 4. boolean  </b></p>
+        </details>
+    </li>
 
-            </details>
-        </li>
+    <span class="section-title">14. What is the syntax of switch statement?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+         switch(value/expression/variable){
+       
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             default: {
+                (statement )
+             }
+            
+ 
 
-        <li>
-            <span class="section-title">7. What is a syntax of if else statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <pre><code>
-                    
-                    if ( condition )
-                    {
-                      (statement 1);
 
-                    } 
-                    else{ 
+         } 
+           </code></pre>
+    </details>
+</li>
 
-                        (statement 1);
-                       
-                    }
 
-                 </code></pre>
-           
-            </details>
-        </li>
-
-        <li>
-            <span class="section-title">8. What is a syntax of if else if ladder statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <pre><code>
-                    
-                    if ( condition )
-                    {
-                      (statement 1);
-
-                    } 
-                    else if { 
-
-                        (statement 2);
-                       
-                    }
-                    else if { 
-
-                        (statement 3);
-                       
-                    }
-                    else if { 
-
-                        (statement 4);
-                       
-                    } 
-                    else {
-
-                        (statement 5);
-
-                    }
-                 </code></pre>
-                            </details>
-        </li>
-
+  </ul>
+  
 
 
 
@@ -910,6 +967,25 @@ pre code {
             <p><b>nextFloat();</b></p>
         </details>
     </li>
+
+    <li>
+        <span class="section-title">13. What type of error occurs when an int data type is assigned to a byte data type using Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Type Mismatch Error:</b> This error occurs because an `int` value may exceed the range of a `byte`, which can hold values from -128 to 127.</p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">13. What type of error occurs when a `short` data type is assigned to an `int` data type using Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Type Mismatch Error:</b> This error occurs because a `short` value cannot be directly assigned to an `int` without explicit casting, even though `int` has a larger range than `short`.</p>
+        </details>
+    </li>
+    
+    
+
 </ul>
 
 
@@ -990,75 +1066,75 @@ pre code {
    // Array to store the questions and answers
 const questions = [
 {
-    question: "1. What is a Computer?",
+    question: "What is a Computer?",
     answer: "It is an electronic device made up of hardware and software. It performs tasks such as storing data, handling data, processing data, and retrieving data."
 },
 {
-    question: "2. What is Hardware?",
+    question: "What is Hardware?",
     answer: "It is a combination of electronic components that run the software. Examples include RAM, ROM, Graphics Card, Processor, etc."
 },
 {
-    question: "3. What is Software?",
+    question: "What is Software?",
     answer: "Software is a set of instructions that tells the hardware what to do. It includes operating systems, applications, and programs."
 },
 {
-    question: "4. What is a Low-Level Language?",
+    question: " What is a Low-Level Language?",
     answer: "A low-level language is directly understood by the computer or processor. It is also called machine-level language. Example: Binary language."
 },
 {
-    question: "5. What is Assembly Language?",
+    question: "What is Assembly Language?",
     answer: "Assembly language consists of a predefined set of code words that can be understood by a computer using an intermediate software known as an Assembler."
 },
 {
-    question: "6. What is an Assembler?",
+    question: "What is an Assembler?",
     answer: "An Assembler is intermediate software that acts as a translator, converting assembly-level language into machine-level language."
 },
 {
-    question: "7. What is a High-Level Language?",
+    question: " What is a High-Level Language?",
     answer: "A high-level language is very close to human understanding and is used by programmers to instruct the computer. It is known as a High-Level language."
 },
 {
-    question: "8. Types of Intermediate Software",
+    question: "Types of Intermediate Software",
     answer: "1. Interpreters 2. Compilers 3. Assemblers"
 },
 {
-    question: "9. Who Invented Java and What is His Wife's Name?",
+    question: " Who Invented Java and What is His Wife's Name?",
     answer: "Java was invented by James Gosling. His wife's name is Barbara."
 },
 {
-    question: "10. When was Java Invented?",
+    question: " When was Java Invented?",
     answer: "Java was invented in 1995."
 },
 {
-    question: "11. What is a Platform?",
+    question: " What is a Platform?",
     answer: "A platform is a combination of hardware and software on which an application can run."
 },
 {
-    question: "12. Why are C and C++ Platform Dependent?",
+    question: " Why are C and C++ Platform Dependent?",
     answer: "When a programmer writes a program using C or C++ and saves it with a `.c` extension, it is given to a C compiler. The compiler converts the `.c` file into a `.exe` file containing native machine code. This native machine-level code can only run on the native compiler, not on another compiler, making software written in C or C++ platform dependent."
 },
 {
-    question: "13. What is the Difference Between C++ and Java?",
+    question: " What is the Difference Between C++ and Java?",
     answer: "1. C++ compiles directly to machine code, while Java compiles to bytecode for the JVM (Java Virtual Machine). 2. C++ requires manual memory management, whereas Java has automatic garbage collection. 3. Java is platform-independent due to the JVM, while C++ needs recompilation for different platforms. 4. C++ supports pointers, while Java does not."
 },
 {
-    question: "14. Why is Java Platform Independent?",
+    question: " Why is Java Platform Independent?",
     answer: "Java is platform-independent because its code is compiled into platform-agnostic bytecode, which can run on any system with the help of the JVM (Java Virtual Machine). The JVM acts as an interpreter that converts bytecode into machine code for different platforms, allowing the code to execute on various systems without modification."
 },
 {
-    question: "15. What is Bytecode?",
+    question: " What is Bytecode?",
     answer: "Bytecode is an intermediate code that is not directly understandable by humans or computers."
 },
 {
-    question: "16. What is JVM?",
+    question: " What is JVM?",
     answer: "JVM stands for Java Virtual Machine. It is an interpreter that reads bytecode line by line and converts it into machine code. This allows the code to be executed on various platforms without modification, making Java platform-independent."
 },
 {
-    question: "17. What is the Difference Between an IDE and an Editor?",
+    question: " What is the Difference Between an IDE and an Editor?",
     answer: "An editor is a basic tool where you can write and edit code. It typically offers simple text editing features. An IDE (Integrated Development Environment), on the other hand, is a more comprehensive tool that provides additional features like debugging, compiling, and project management. An IDE allows you to build complete applications and software, making it more powerful for development tasks."
 },
 {
-    question: "18. JDK Architecture",
+    question: " JDK Architecture",
     answer: ""
 },
 
