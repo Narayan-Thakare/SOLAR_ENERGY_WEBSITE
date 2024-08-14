@@ -48,7 +48,7 @@
     border-radius: 5px;
     position: fixed;
     top: 20px;
-    right: 90px;
+    right: 75px;
     z-index: 1000;
     transition: background-color 0.3s, color 0.3s; /* Add color transitions */
 }
@@ -58,81 +58,105 @@
     color: var(--text-color); /* Adjust hover text color if needed */
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////// */
 
-        .dropdown {
-            position: fixed;
-            top: 20px;
-            right: 25px;
-            z-index: 1000;
-        }
 
-        .dropdown-button {
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            opacity: 0.7;
-            transition: opacity 0.3s, background-color 0.3s;
-        }
+/* Main Dropdown Container */
+.dropdown {
+    position: fixed;
+    top: 20px;
+    right: 11px;
+    z-index: 1000;
+}
 
-        .dropdown-button:hover {
-            opacity: 1;
-            background-color: var(--button-hover-bg);
-        }
+/* Main Dropdown Button */
+.dropdown-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s, background-color 0.3s;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--dropdown-bg);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
-            z-index: 1;
-            border-radius: 5px;
-            top: 100%;
-            right: 0;
-        }
+.dropdown-button:hover {
+    opacity: 1;
+    background-color: var(--button-hover-bg);
+}
 
-        .dropdown-content a {
-            color: var(--text-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+/* Main Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dropdown-bg);
+    min-width: 160px;
+    max-height: 200px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+}
 
-        .dropdown-content a:hover {
-            background-color: var(--dropdown-hover-bg);
-        }
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-        .nested-dropdown {
-            position: relative;
-        }
+.dropdown-content a:hover {
+    background-color: var(--dropdown-hover-bg);
+}
 
-        .nested-dropdown-content {
-            display: none;
-            position: absolute;
-            right: 100%;
-            top: 0;
-            background-color: var(--dropdown-bg);
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
-            border-radius: 5px;
-            min-width: 160px;
-            z-index: 2;
-        }
+/* Nested Dropdown Container */
+.nested-dropdown {
+    position: relative;
+}
 
-        .nested-dropdown-content a {
-            padding: 12px 16px;
-        }
+/* Nested Dropdown Content */
+.nested-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Place the nested dropdown to the right of the parent */
+    top: 0;
+    background-color: var(--dropdown-bg);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    border-radius: 5px;
+    min-width: 160px;
+    max-height: 200px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 2;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.nested-dropdown-content a {
+    padding: 12px 16px;
+}
 
-        .dropdown-content .nested-dropdown:hover .nested-dropdown-content {
-            display: block;
-        }
+/* Display Main Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Display Nested Dropdown on Hover */
+.dropdown-content .nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+}
+
+/* Ensure nested dropdown stays within view */
+.nested-dropdown-content {
+    /* Optional: add a slight offset if necessary */
+    left: calc(100% + 10px); /* Add a small gap between parent and nested dropdown */
+}
+
+
+
+
+        /* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
 
         h1 {
             text-align: center;
@@ -158,7 +182,7 @@
 
         details summary {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.0em;
             margin-bottom: 5px;
             display: flex;
             align-items: center;
@@ -189,8 +213,12 @@
         .search-container {
     position: fixed;
     top: 20px;
-    right: 180px; /* Adjusted to fit within viewport, from 220px to 20px */
+    right: 135px; /* Adjust as needed for desired right edge spacing */
     z-index: 1000;
+    padding-right: 10px; /* Space inside the container on the right side */
+    width: 200px; /* Adjust this to control the container width */
+    display: flex; /* Use flexbox to center the input */
+    justify-content: center; /* Center the input horizontally */
 }
 
 .search-input {
@@ -199,7 +227,7 @@
     border-radius: 5px;
     border: 1px solid var(--input-border);
     font-size: 16px;
-    width: 140px;
+    width: 100%; /* Adjust to full width of container */
     background-color: var(--button-bg);
     color: var(--text-color);
     position: relative; /* Ensure clear button is positioned relative to this */
@@ -215,7 +243,7 @@
 
 .clear-btn {
     position: absolute;
-    right: 10px; /* Adjusted to ensure proper spacing */
+    right: 15px; /* Adjusted to ensure proper spacing */
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -235,6 +263,7 @@
 .clear-btn:hover {
     color: #555; /* Change color on hover */
 }
+
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
@@ -290,17 +319,128 @@ pre code {
     }
 }
 
+/* ////////////////////////////////////////////////////////////// */
+/* Mock Button Styling */
+.mock-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.85;
+    transition: opacity 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin: 20px auto; /* Center horizontally and add top margin */
+    display: block; /* Ensure the button is treated as a block element */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mock-button:hover {
+    opacity: 1;
+    background-color: var(--button-hover-bg);
+    transform: scale(1.08);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mock Questions Container */
+#mockQuestions {
+    margin-top: -50px;
+    
+    position: relative;
+    padding: 20px;
+    background-color: var(--button-bg);
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: transparent; /* Transparent background */
+    color: var(--text-color);
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Visible border */
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background color on hover */
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.3); /* Darker border on hover */
+}
+
+.close-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.4); /* Darker border on press */
+}
+
+
+
+
+/* Answer Button Styling */
+.answer-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.answer-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.07);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Answer Text Styling */
+.answer {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: var(--button-bg);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    line-height: 1.6;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 
     </style>
 </head>
 <body>
 
+    <br>
+    <br>
+
     <!-- Theme Toggle Button -->
     <button class="theme-toggle-button" onclick="toggleTheme()">
         <i class="fas fa-sun"></i> 
     </button>
     
+    <button class="mock-button" onclick="generateMockQuestions()">Generate Mock Questions</button>
+
     <!-- Search bar -->
     <div class="search-container">
         <input type="text" id="searchInput" class="search-input" onkeyup="searchContent()" placeholder="Search...">
@@ -312,7 +452,7 @@ pre code {
         <button class="dropdown-button" onclick="toggleDropdown()">
             <i class="fas fa-ellipsis-h"></i> 
         </button>
-                <div class="dropdown-content" id="dropdownContent">
+        <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
                 <a href="#Operator">Operators</a>
@@ -324,39 +464,143 @@ pre code {
                 </div>
             </div>
             <a href="#section3">Control Flow Statements</a>
+            <a href="#section4">Dynamic Reading</a>
+            <!-- Additional links as required -->
         </div>
     </div>
+    
+    
     
     <br>
     <br>
     <br>
    
+    <div id="mockQuestions"></div>
 
     
 
-    <h1 id="section1">* Basic Concepts *</h1>
+    <h1 id="section1"> Basic Concepts</h1>
     <ul>
-        <li><span class="section-title">1. What is a Computer?</span></li>
-        <li><span class="section-title">2. What is Hardware?</span></li>
-        <li><span class="section-title">3. What is Software?</span></li>
-        <li><span class="section-title">4. What is a Low-Level Language?</span></li>
-        <li><span class="section-title">5. What is Assembly Language?</span></li>
-        <li><span class="section-title">6. What is an Assembler?</span></li>
-        <li><span class="section-title">7. What is a High-Level Language?</span></li>
-        <li><span class="section-title">8. Types of Intermediate Software</span></li>
-        <li><span class="section-title">9. Who Invented Java and What is His Wife's Name?</span></li>
-        <li><span class="section-title">10. When was Java Invented?</span></li>
-        <li><span class="section-title">11. What is a Platform?</span></li>
-        <li><span class="section-title">12. Why are C and C++ Platform Dependent?</span></li>
-        <li><span class="section-title">13. What is the Difference Between C++ and Java?</span></li>
-        <li><span class="section-title">14. Why is Java Platform Independent?</span></li>
-        <li><span class="section-title">15. Difference Between IDE and Editor</span></li>
-        <li><span class="section-title">16. JDK Architecture</span></li>
+        <li><span class="section-title">1. What is a Computer?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>it is an <b>electronic device</b> it is made up of <b>hardware and software.</b> using performe such a task storing data, handaling data, processing data, retriving data.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">2. What is Hardware?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>It is a <b>combination of electronic components</b> to run the software. example :- Ram, Rom, Graphics Card, Processor etc  </p>
+            </details>
+        </li>
+        <li><span class="section-title">3. What is Software?</span>
+            <details>
+                <summary>Answer</summary>
+        
+                <p>
+         "Software is a  <b>set of instructions</b> that tells the hardware what to do. It includes operating systems, applications, and programs."
+                    
+                </p>
+            </details></li>
+        <li><span class="section-title">4. What is a Low-Level Language?</span><details>
+            <summary>Answer</summary>
+            <p> The language <b>direct understand by computer or processor</b> that a called also a machine level language. Example:- Binary language  </p>
+        </details></li>
+        <li><span class="section-title">5. What is Assembly Language?</span><details>
+            <summary>Answer</summary>
+            <p> The language which <b>consist of predefine set of code</b> word which can understand by computer using an intermediate software known as Assembler.</p>
+        </details></li>
+        <li><span class="section-title">6. What is an Assembler?</span><details>
+            <summary>Answer</summary>
+            <p> Assembler it is an <b>intermediate software which acts like a translator to converts</b> assembly level language into machine-level language.</p>
+        </details></li>
+        <li><span class="section-title">7. What is a High-Level Language?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> The language which are <b>very closed to human understandable, instructable, by programer to computer</b> it is known as High-Level language. </p>
+            </details></li>
+        <li><span class="section-title">8. Types of Intermediate Software</span><details>
+            <summary>Answer</summary>
+            <p>1.Interpreters 2. Compilers 3. Assemblers  </p>
+        </details></li>
+        <li><span class="section-title">9. Who Invented Java and What is His Wife's Name?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Java was invented by James Gosling. His wife's name is Barbara. </p>
+            </details>
+        </li>
+        <li><span class="section-title">10. When was Java Invented?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> Java was invented in 1995.</p>
+            </details>
+        </li>
+        <li><span class="section-title">11. What is a Platform?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> It is a <b>combination of hardware and software</b> on which application can run. </p>
+            </details>
+        </li>
+        <li><span class="section-title">12. Why are C and C++ Platform Dependent?</span>
+            <details>
+                <summary>Answer</summary>
+                <p> when a programmer write a program using C and C++ language and save it with a `.c` extension it gives to c compiler . it converts `.c` file into `.exc` file which contain netive machine code. netive machine level code generate by c compiler which can run only on netive compiler not an other compiler , hence software using c, c++ language are platform Dependent </p>
+            </details>
+        </li>
+        <li><span class="section-title">13. What is the Difference Between C++ and Java?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    <ol>
+                        <li>C++ compiles directly to machine code, while Java compiles to bytecode for the JVM (Java Virtual Machine).</li>
+                        <li>C++ requires manual memory management, whereas Java has automatic garbage collection.</li>
+                        <li>Java is platform-independent due to the JVM, while C++ needs recompilation for different platforms.</li>
+                        <li>C++ supports pointers, while Java does not.</li>
+                    </ol>
+                </p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">14. Why is Java Platform Independent?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Java is platform-independent because its code is compiled into platform-agnostic bytecode, which can run on any system with the help of the JVM (Java Virtual Machine). The JVM acts as an interpreter that converts bytecode into machine code for different platforms, allowing the code to execute on various systems without modification.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">15. What is Bytecode?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Bytecode is an intermediate code that is not directly understandable by humans or computers.</p>
+            </details>
+        </li>
+        <li><span class="section-title">16. What is JVM?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>JVM stands for Java Virtual Machine. It is an interpreter that reads bytecode line by line and converts it into machine code. This allows the code to be executed on various platforms without modification, making Java platform-independent.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">17. What is the Difference Between an IDE and an Editor?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>An editor is a basic tool where you can write and edit code. It typically offers simple text editing features. An IDE (Integrated Development Environment), on the other hand, is a more comprehensive tool that provides additional features like debugging, compiling, and project management. An IDE allows you to build complete applications and software, making it more powerful for development tasks.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">18. JDK Architecture</span>
+            <details>
+                <summary>Answer</summary>
+                <p> </p>
+            </details>
+        </li>
     </ul>
+    
 
-    <h1 id="Operator"> * Operator *</h1>
+    <h1 id="Operator" style="color: rgb(164, 118, 233); font-size: 40px;">OPERATOR</h1>
 
-    <h1 id="increment-operator">* Increment and Decrement Operator *</h1>
+    <h1 id="increment-operator">Increment and Decrement Operator</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -376,156 +620,558 @@ pre code {
         <li><span class="section-title">11. Write a program using increment and decrement operators.</span></li>
     </ul>
 
-    <h1 id="Logical_Operator">* Logical Operator *</h1>
-    <ul>
-        <li><span class="section-title">1. What is an operator?</span></li>
-        <li><span class="section-title">2. What are Logical operators?</span></li>
-        <li><span class="section-title">3. How many Logical operators are present in Java?</span></li>
-        <li><span class="section-title">4. Explain all logical operators with examples?</span></li>
-        <li><span class="section-title">5. Write a program using logical operators?</span></li>
-        <li><span class="section-title">6. How many logical operators are present in Java?</span></li>
-        <li><span class="section-title">7. Explain all logical operators with examples?</span></li>
-        <li><span class="section-title">8. Write a program using logical operators?</span></li>
-    </ul>
+    <h1 id="Logical_Operator">Logical Operator</h1>
+<ul>
+    <li><span class="section-title">1. What is a Logical Operator?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A Logical Operator is used for <b>logical decision-making</b>. The operand type of a logical operator must be boolean.</p>
+        </details>
+    </li>
 
-    <h1 id="section3">Control Flow Statements</h1>
-    <ul>
-        <li>
-            <span class="section-title">1. What is a control flow statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <p>It is a statement used to  <b> control the flow of execution in a program </b>. It is known as a control flow statement.</p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">2. Types of control flow statements?</span>
-            <details>
-                <summary>Answer</summary>
-                <p> 1. Decision Statements  </p>
-                 <p>   2. Loop Statements  </p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">3. What is a decision statement?</span>
-            <details>
-                <summary>Answer</summary>
-                <p>The statement which help a programer <b> decide whether to exucute the set of instruction do or skip them </b>its known as decision statement.  </p>
-            </details>
-        </li>
-        <li>
-            <span class="section-title">4. Types of decision statements?</span>
-            <details>
-                <summary>Answer</summary>
-                <p> 1. if statement </p>
-                <p>2. if else statement </p>
-                <p>3. if else if ladder</p>
-                <p>4. switch statement</p>
-            </details>
-        </li>
 
-        <li>
-            <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
-            <details>
-                <summary>Answer</summary>
-        
-                <!-- Even or Odd -->
-                <p>1. Even or Odd</p>
-                <pre><code>
-        int a = 20;
-        
-        if (a % 2 == 0) {
-            System.out.println("This is an even number.");
-        } else {
-            System.out.println("This is an odd number.");
-        }
-                </code></pre>
-        
-                <!-- Positive or Negative -->
-                <p>2. Positive or Negative</p>
-                <pre><code>
-        int num = -20;
-        
-        if (num > 0) {
-            System.out.println("This is a positive number.");
-        } else {
-            System.out.println("This is a negative number.");
-        }
-                </code></pre>
-        
-                <!-- Pass or Fail -->
-                <p>3. Pass or Fail</p>
-                <pre><code>
-        int percentage = 35;
-        
-        if (percentage >= 35) {
-            System.out.println("You passed.");
-        } else {
-            System.out.println("You failed.");
-        }
-                </code></pre>
-        
-                <!-- Interview Eligibility -->
-                <p>4. Interview Eligibility</p>
-                <pre><code>
-        int percentage = 75;
-        
-        if (percentage >= 65) {
-            System.out.println("You can attend the interview.");
-        } else {
-            System.out.println("You cannot attend the interview.");
-        }
-                </code></pre>
-        
-                <!-- Largest of Two -->
-                <p>5. Largest of Two</p>
-                <pre><code>
-        int num1 = 90;
-        int num2 = 99;
-        
-        if (num1 > num2) {
-            System.out.println("The 1st number is greater: " + num1);
-        } else {
-            System.out.println("The 2nd number is greater: " + num2);
-        }
-                </code></pre>
-        
-                <!-- Pin Verification -->
-                <p>6. Pin Verification</p>
-                <pre><code>
-        int pin = 7865;
-        
-        if (pin == 7878) {
-            System.out.println("You entered the correct pin.");
-        } else {
-            System.out.println("You entered the wrong pin.");
-        }
-                </code></pre>
-        
-                <!-- Rating -->
-                <p>7. Rating</p>
-                <pre><code>
-        char rating = '*';
-        
-        if (rating == '*') {
-            System.out.println("You can give the interview.");
-        } else {
-            System.out.println("Please go to the mock interview.");
-        }
-                </code></pre>
-        
-                <!-- Check Alphabet or Not -->
-                <p>8. Check if Alphabet or Not</p>
-                <pre><code>
-        char alphabet = 'g';
-        
-        if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
-            System.out.println("This is an alphabet.");
-        } else {
-            System.out.println("This is not an alphabet, it is a special character or number.");
-        }
-                </code></pre>
-            </details>
-        </li>
+    
+
+    <li><span class="section-title">2. What are the Logical Operators?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>There are three types: 1. AND 2. OR 3. NOT</p>
+        </details>
+    </li>
+
+    <li><span class="section-title">3. How many Logical Operators are present in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>There are three types.</p>
+        </details>
+    </li>
+
+    <li><span class="section-title">4. What is the AND Operator?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a binary operator . AND operator written to if the both the operands are true then it is true. if one one will be false then it is false.</p>
+        </details></li>
+
+
+
+    <li><span class="section-title">5. What is the OR Operator?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a binary operator. If OR operator is any operand is true then it is true.</p>
+        </details></li>
+    <li><span class="section-title">6. What is the NOT Operator?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a Unary operator. If one is true then it is false If it is false then it is true.</p>
+        </details></li>
+
+    <li><span class="section-title">7. In the AND operator, if operand1 is true and operand2 is false, what is the output?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The output will be false.</p>
+        </details>
+    </li>
+    <li><span class="section-title">8. In the AND operator, if operand1 is true and operand2 is true, what is the output?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The output will be True.</p>
+        </details>
+    </li>
+</ul>
+
+  <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <h1 id="section3">Control Flow Statements</h1>
+  <ul>
+      <li>
+          <span class="section-title">1. What is a control flow statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>It is a statement used to <b>control the flow of execution in a program</b>. It is known as a control flow statement.</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">2. Types of control flow statements?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>1. Decision Statements</p>
+              <p>2. Loop Statements</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">3. What is a decision statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>The statement which helps a programmer <b>decide whether to execute a set of instructions or skip them</b> is known as a decision statement.</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">4. Types of decision statements?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>1. if statement</p>
+              <p>2. if else statement</p>
+              <p>3. if else if ladder</p>
+              <p>4. switch statement</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">5. Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.</span>
+          <details>
+              <summary>Answer</summary>
+              
+              <!-- Even or Odd -->
+              <p>1. Even or Odd</p>
+              <pre><code>
+  int a = 20;
+  
+  if (a % 2 == 0) {
+      System.out.println("This is an even number.");
+  } else {
+      System.out.println("This is an odd number.");
+  }
+              </code></pre>
+              
+              <!-- Positive or Negative -->
+              <p>2. Positive or Negative</p>
+              <pre><code>
+  int num = -20;
+  
+  if (num > 0) {
+      System.out.println("This is a positive number.");
+  } else {
+      System.out.println("This is a negative number.");
+  }
+              </code></pre>
+              
+              <!-- Pass or Fail -->
+              <p>3. Pass or Fail</p>
+              <pre><code>
+  int percentage = 35;
+  
+  if (percentage >= 35) {
+      System.out.println("You passed.");
+  } else {
+      System.out.println("You failed.");
+  }
+              </code></pre>
+              
+              <!-- Interview Eligibility -->
+              <p>4. Interview Eligibility</p>
+              <pre><code>
+  int percentage = 75;
+  
+  if (percentage >= 65) {
+      System.out.println("You can attend the interview.");
+  } else {
+      System.out.println("You cannot attend the interview.");
+  }
+              </code></pre>
+              
+              <!-- Largest of Two -->
+              <p>5. Largest of Two</p>
+              <pre><code>
+  int num1 = 90;
+  int num2 = 99;
+  
+  if (num1 > num2) {
+      System.out.println("The 1st number is greater: " + num1);
+  } else {
+      System.out.println("The 2nd number is greater: " + num2);
+  }
+              </code></pre>
+              
+              <!-- Pin Verification -->
+              <p>6. Pin Verification</p>
+              <pre><code>
+  int pin = 7865;
+  
+  if (pin == 7878) {
+      System.out.println("You entered the correct pin.");
+  } else {
+      System.out.println("You entered the wrong pin.");
+  }
+              </code></pre>
+              
+              <!-- Rating -->
+              <p>7. Rating</p>
+              <pre><code>
+  char rating = '*';
+  
+  if (rating == '*') {
+      System.out.println("You can give the interview.");
+  } else {
+      System.out.println("Please go to the mock interview.");
+  }
+              </code></pre>
+              
+              <!-- Check Alphabet or Not -->
+              <p>8. Check if Alphabet or Not</p>
+              <pre><code>
+  char alphabet = 'g';
+  
+  if ((alphabet >= 'A' && alphabet <= 'Z') || (alphabet >= 'a' && alphabet <= 'z')) {
+      System.out.println("This is an alphabet.");
+  } else {
+      System.out.println("This is not an alphabet, it is a special character or number.");
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">6. What is the syntax of the if statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition) {
+      statement;
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">7. What is the syntax of the if-else statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition) {
+      statement1;
+  } else { 
+      statement2;
+  }
+              </code></pre>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">8. What is the condition for calculating a leap year?</span>
+          <details>
+              <summary>Answer</summary>
+              <p>if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)</p>
+          </details>
+      </li>
+      <li>
+          <span class="section-title">9. Solve the leap year problem using if-else?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  Scanner sc = new Scanner(System.in);
+  int year = sc.nextInt();
+  
+  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      System.out.println("This is a leap year");
+  } else { 
+      System.out.println("This is not a leap year");
+  }
+              </code></pre>
+          </details>
+      </li>
+
+      <li>
+        <span class="section-title">#. When we use if else if ladder?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>When we check multyple multyple condition then we use if else if ladder.</p>
+        </details>
+    </li>
+
+      <li>
+          <span class="section-title">10. What is the syntax of the if-else-if ladder statement?</span>
+          <details>
+              <summary>Answer</summary>
+              <pre><code>
+  if (condition1) {
+      statement1;
+  } else if (condition2) {
+      statement2;
+  } else if (condition3) {
+      statement3;
+  } else if (condition4) {
+      statement4;
+  } else {
+      statement5;
+  }
+              </code></pre>
+          </details>
+      </li>
+
+      <li>
+        <span class="section-title">11. What is a switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a decision making statement.</p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">12. Which type of data type is allowed in switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>1. byte 2. short 3. int 4. char 5. String </b></p>
+        </details>
+    </li> 
+
+    <li>
+        <span class="section-title">13. Which type of data type is not allowed in switch statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>1. long 2. float 3. double 4. boolean  </b></p>
+        </details>
+    </li>
+
+   
+</li>
+
+<li>
+    <span class="section-title">14. What is the syntax of switch statement?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+         switch(value/expression/variable){
+       
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             default: {
+                (statement )
+             }
+            
+ 
+
+
+         } 
+           </code></pre>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">#. Types of Loop Statement?</span>
+    <details>
+        <summary>Answer</summary>
+        <p><b>1. While loop 2. Do While Loop 3. For Loop 4. For Each Loop  </b></p>
+    </details>
+</li>
+<li>
+    <span class="section-title">#. What is the syntax of while loop?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+         switch(value/expression/variable){
+       
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             default: {
+                (statement )
+             }
+            
+ 
+
+
+         } 
+           </code></pre>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">#. What is the syntax of do while loop?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+         switch(value/expression/variable){
+       
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             default: {
+                (statement )
+             }
+            
+ 
+
+
+         } 
+           </code></pre>
+    </details>
+</li>
+
+
+<li>
+    <span class="section-title">#. What is the syntax of for loop?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+
+         switch(value/expression/variable){
+       
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             case value/expression {
+                (statement)
+                break;
+             }
+             default: {
+                (statement )
+             }
+            
+ 
+
+
+         } 
+           </code></pre>
+    </details>
+</li>
+
+
+  </ul>
+  
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////// -->
+<h1 id="section4">Dynamic Reading</h1>
+<ul>
+    <li><span class="section-title">1. What is dynamic reading?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Dynamic reading</b> refers to reading data from the user during the execution of a program dynamically with the help of a built-in class known as <b>Scanner</b>.</p>
+        </details>
+    </li>
+
+    <li><span class="section-title">2. Which package do we import for dynamic reading?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>We import <b>java.util.Scanner</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">3. How do we create an object in the Scanner class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Using the <b>new</b> keyword, like <b>Scanner sc = new Scanner(System.in);</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">4. Which method syntax do we use for byte in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextByte();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">5. Which method syntax do we use for short in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextShort();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">6. Which method syntax do we use for int in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextInt();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">7. Which method syntax do we use for long in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextLong();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">8. Which method syntax do we use for char in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>next().charAt(0);</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">9. Which method syntax do we use for double in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextDouble();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">10. Which method syntax do we use for boolean in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextBoolean();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">11. Which method syntax do we use for String in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>next();</b> and <b>nextLine();</b></p>
+        </details>
+    </li>
+
+    <li><span class="section-title">12. Which method syntax do we use for float in Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>nextFloat();</b></p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">13. What type of error occurs when an int data type is assigned to a byte data type using Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Type Mismatch Error:</b> This error occurs because an `int` value may exceed the range of a `byte`, which can hold values from -128 to 127.</p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">13. What type of error occurs when a `short` data type is assigned to an `int` data type using Scanner?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Type Mismatch Error:</b> This error occurs because a `short` value cannot be directly assigned to an `int` without explicit casting, even though `int` has a larger range than `short`.</p>
+        </details>
+    </li>
+    
+    
+
+</ul>
+
+
+
+
+
         
 <br>
 <br>
@@ -583,16 +1229,269 @@ pre code {
 
     // Close dropdown if clicked outside
     window.onclick = function(event) {
-        if (!event.target.matches('.dropdown-button')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.style.display === 'block') {
-                    openDropdown.style.display = 'none';
-                }
+    if (!event.target.matches('.dropdown-button')) {
+        document.querySelectorAll('.dropdown-content').forEach(function(dropdown) {
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
             }
-        }
+        });
     }
+};
+
 </script>
+
+
+<script>
+    
+   // Array to store the questions and answers
+const questions = [
+{
+    question: "What is a Computer?",
+    answer: "It is an electronic device made up of hardware and software. It performs tasks such as storing data, handling data, processing data, and retrieving data."
+},
+{
+    question: "What is Hardware?",
+    answer: "It is a combination of electronic components that run the software. Examples include RAM, ROM, Graphics Card, Processor, etc."
+},
+{
+    question: "What is Software?",
+    answer: "Software is a set of instructions that tells the hardware what to do. It includes operating systems, applications, and programs."
+},
+{
+    question: " What is a Low-Level Language?",
+    answer: "A low-level language is directly understood by the computer or processor. It is also called machine-level language. Example: Binary language."
+},
+{
+    question: "What is Assembly Language?",
+    answer: "Assembly language consists of a predefined set of code words that can be understood by a computer using an intermediate software known as an Assembler."
+},
+{
+    question: "What is an Assembler?",
+    answer: "An Assembler is intermediate software that acts as a translator, converting assembly-level language into machine-level language."
+},
+{
+    question: " What is a High-Level Language?",
+    answer: "A high-level language is very close to human understanding and is used by programmers to instruct the computer. It is known as a High-Level language."
+},
+{
+    question: "Types of Intermediate Software",
+    answer: "1. Interpreters 2. Compilers 3. Assemblers"
+},
+{
+    question: " Who Invented Java and What is His Wife's Name?",
+    answer: "Java was invented by James Gosling. His wife's name is Barbara."
+},
+{
+    question: " When was Java Invented?",
+    answer: "Java was invented in 1995."
+},
+{
+    question: " What is a Platform?",
+    answer: "A platform is a combination of hardware and software on which an application can run."
+},
+{
+    question: " Why are C and C++ Platform Dependent?",
+    answer: "When a programmer writes a program using C or C++ and saves it with a `.c` extension, it is given to a C compiler. The compiler converts the `.c` file into a `.exe` file containing native machine code. This native machine-level code can only run on the native compiler, not on another compiler, making software written in C or C++ platform dependent."
+},
+{
+    question: " What is the Difference Between C++ and Java?",
+    answer: "1. C++ compiles directly to machine code, while Java compiles to bytecode for the JVM (Java Virtual Machine). 2. C++ requires manual memory management, whereas Java has automatic garbage collection. 3. Java is platform-independent due to the JVM, while C++ needs recompilation for different platforms. 4. C++ supports pointers, while Java does not."
+},
+{
+    question: " Why is Java Platform Independent?",
+    answer: "Java is platform-independent because its code is compiled into platform-agnostic bytecode, which can run on any system with the help of the JVM (Java Virtual Machine). The JVM acts as an interpreter that converts bytecode into machine code for different platforms, allowing the code to execute on various systems without modification."
+},
+{
+    question: " What is Bytecode?",
+    answer: "Bytecode is an intermediate code that is not directly understandable by humans or computers."
+},
+{
+    question: " What is JVM?",
+    answer: "JVM stands for Java Virtual Machine. It is an interpreter that reads bytecode line by line and converts it into machine code. This allows the code to be executed on various platforms without modification, making Java platform-independent."
+},
+{
+    question: " What is the Difference Between an IDE and an Editor?",
+    answer: "An editor is a basic tool where you can write and edit code. It typically offers simple text editing features. An IDE (Integrated Development Environment), on the other hand, is a more comprehensive tool that provides additional features like debugging, compiling, and project management. An IDE allows you to build complete applications and software, making it more powerful for development tasks."
+},
+{
+    question: " JDK Architecture",
+    answer: ""
+},
+
+    // Continue adding your questions and answers here
+    // control flow statement
+{
+    question: "What is a control flow statement?",
+
+    answer: "It is a statement used to control the flow of execution in a program . It is known as a control flow statement."
+
+},
+{
+    question: "Types of control flow statements?",
+
+    answer: "1. Decison Statements , 2. Loop Statements  "
+
+},
+{
+    question: " What is a decision statement?",
+
+    answer: "The statement which help a programer decide whether to exucute the set of instruction do or skip them its known as decision statement. "
+
+},
+{
+    question: "Types of decision statements?",
+
+    answer: "1. if statement 2. if else statement 3. if else if ladder 4. switch statement "
+
+},
+{
+    question: " Solve the following using if-else statements: Even or Odd, Positive or Negative, Pass or Fail, Interview Eligibility, Largest of Two, Pin Verification, Rating, and Check Alphabet or Not.",
+
+    answer: " try it  "
+
+},
+{
+    question: "What is the syntax of an if statement?",
+    answer: `if (condition) {
+    (statement);
+}`
+},
+{
+    question: "What is the syntax of an if-else statement?",
+    answer: `if (condition) {
+    (statement 1);
+} else {
+    (statement 2);
+}`
+},
+{
+    question: "What is the syntax of an if-else-if ladder statement?",
+    answer: `if (condition) {
+    (statement 1);
+} else if (condition) {
+    (statement 2);
+} else if (condition) {
+    (statement 3);
+} else if (condition) {
+    (statement 4);
+} else {
+    (statement 5);
+}`
+},
+
+///////////////////////////////////////
+///////////////////////// Dynamic reading
+
+{
+    question: "What is dynamic reading?",
+    answer: "Dynamic reading refers to reading data from the user during the execution of a program dynamically with the help of a built-in class known as Scanner."
+},
+{
+    question: "Which package do we import for dynamic reading?",
+    answer: "We import java.util.Scanner."
+},
+{
+    question: "How do we create an object in the Scanner class?",
+    answer: "Using the new keyword, like Scanner sc = new Scanner(System.in);"
+},
+{
+    question: "Which method syntax do we use for byte in Scanner?",
+    answer: "nextByte();"
+},
+{
+    question: "Which method syntax do we use for short in Scanner?",
+    answer: "nextShort();"
+},
+{
+    question: "Which method syntax do we use for int in Scanner?",
+    answer: "nextInt();"
+},
+{
+    question: "Which method syntax do we use for long in Scanner?",
+    answer: "nextLong();"
+},
+{
+    question: "Which method syntax do we use for char in Scanner?",
+    answer: "next().charAt(0);"
+},
+{
+    question: "Which method syntax do we use for double in Scanner?",
+    answer: "nextDouble();"
+},
+{
+    question: "Which method syntax do we use for boolean in Scanner?",
+    answer: "nextBoolean();"
+},
+{
+    question: "Which method syntax do we use for String in Scanner?",
+    answer: "next(); and nextLine();"
+},
+{
+    question: "Which method syntax do we use for float in Scanner?",
+    answer: "nextFloat();"
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+
+];
+
+function generateMockQuestions() {
+    const mockQuestionsContainer = document.getElementById('mockQuestions');
+    mockQuestionsContainer.innerHTML = ''; // Clear previous content
+
+    // Add a close button
+    const closeButton = document.createElement('button');
+    closeButton.className = 'close-btn';
+    closeButton.innerText = '×';
+    closeButton.onclick = function() {
+        mockQuestionsContainer.innerHTML = ''; // Clear the mock questions when close button is clicked
+    };
+    mockQuestionsContainer.appendChild(closeButton);
+
+    // Fisher-Yates shuffle algorithm for better shuffling
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    const shuffledQuestions = shuffle([...questions]).reverse(); // Shuffle and reverse the array
+    const selectedQuestions = shuffledQuestions.slice(0, 10); // Get 10 random questions starting from the last
+
+    selectedQuestions.forEach((qa, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.innerHTML = `<strong>Q${index + 1}: ${qa.question}</strong>`;
+
+        const answerWrapper = document.createElement('div'); // Wrapper for answer button and answer
+        answerWrapper.className = 'answer-wrapper'; // Optional: Add a class for styling
+
+        const answerButton = document.createElement('button');
+        answerButton.className = 'answer-button';
+        answerButton.innerText = 'Answer';
+        answerButton.onclick = function() {
+            const answerElement = this.nextElementSibling;
+            answerElement.style.display = answerElement.style.display === 'block' ? 'none' : 'block';
+        };
+
+        const answerElement = document.createElement('div');
+        answerElement.className = 'answer';
+        answerElement.style.display = 'none'; // Hide answers by default
+        answerElement.innerText = qa.answer;
+
+        answerWrapper.appendChild(answerButton); // Append button to wrapper
+        answerWrapper.appendChild(answerElement); // Append answer to wrapper
+
+        questionElement.appendChild(answerWrapper); // Append wrapper to the question element
+
+        mockQuestionsContainer.appendChild(questionElement);
+    });
+}
+
+
+</script>
+
 </body>
 </html>
