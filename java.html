@@ -58,81 +58,92 @@
     color: var(--text-color); /* Adjust hover text color if needed */
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+.dropdown {
+    position: fixed;
+    top: 20px;
+    right: 11px;
+    z-index: 1000;
+}
 
-        .dropdown {
-            position: fixed;
-            top: 20px;
-            right: 11px;
-            z-index: 1000;
-        }
+.dropdown-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s, background-color 0.3s;
+}
 
-        .dropdown-button {
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            opacity: 0.7;
-            transition: opacity 0.3s, background-color 0.3s;
-        }
+.dropdown-button:hover {
+    opacity: 1;
+    background-color: var(--button-hover-bg);
+}
 
-        .dropdown-button:hover {
-            opacity: 1;
-            background-color: var(--button-hover-bg);
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dropdown-bg);
+    min-width: 210px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+    max-height: 400px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--dropdown-bg);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
-            z-index: 1;
-            border-radius: 5px;
-            top: 100%;
-            right: 0;
-        }
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-        .dropdown-content a {
-            color: var(--text-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+.dropdown-content a:hover {
+    background-color: var(--dropdown-hover-bg);
+}
 
-        .dropdown-content a:hover {
-            background-color: var(--dropdown-hover-bg);
-        }
+.nested-dropdown {
+    position: relative;
+}
 
-        .nested-dropdown {
-            position: relative;
-        }
+.operator-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 8px;
+}
 
-        .nested-dropdown-content {
-            display: none;
-            position: absolute;
-            right: 100%;
-            top: 0;
-            background-color: var(--dropdown-bg);
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
-            border-radius: 5px;
-            min-width: 160px;
-            z-index: 2;
-        }
+.dropdown-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
 
-        .nested-dropdown-content a {
-            padding: 12px 16px;
-        }
+.nested-dropdown-content {
+    display: none;
+    background-color: var(--dropdown-bg);
+    padding-left: 20px; /* Indent nested items */
+    border-top: 1px solid var(--dropdown-hover-bg); /* Optional: Add a border for separation */
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.nested-dropdown-content a {
+    padding: 8px 16px;
+}
 
-        .dropdown-content .nested-dropdown:hover .nested-dropdown-content {
-            display: block;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
 
 
         /* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -429,13 +440,25 @@ pre code {
 
     <div class="dropdown">
         <button class="dropdown-button" onclick="toggleDropdown()">
-            <i class="fas fa-ellipsis-h"></i> 
+            <i class="fas fa-ellipsis-h"></i>
         </button>
-                <div class="dropdown-content" id="dropdownContent">
+        <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
             <div class="nested-dropdown">
-                <a href="#Operator">Operators</a>
-                <div class="nested-dropdown-content">
+                <a href="#Operator" class="operator-link" onclick="toggleNestedDropdown()">
+                    Operators
+                    <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+                    </svg>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </a>
+                <div class="nested-dropdown-content" id="nestedDropdownContent">
                     <a href="#Logical_Operator">Logical Operator</a>
                     <a href="#increment-operator">Increment Operator</a>
                     <a href="#decrement-operator">Decrement Operator</a>
@@ -443,60 +466,14 @@ pre code {
                 </div>
             </div>
             <a href="#section3">Control Flow Statements</a>
-           
             <a href="#section4">Dynamic Reading</a>
-
-            <!-- ////////////////////////////////////////////// -->
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-            <a href="#section3">Control Flow Statements</a>
-           
-            <a href="#section4">Dynamic Reading</a>
-
-
+            <!-- Add more items as needed -->
         </div>
     </div>
+    
+    
+    
+    
     
     <br>
     <br>
@@ -1516,6 +1493,38 @@ function generateMockQuestions() {
         mockQuestionsContainer.appendChild(questionElement);
     });
 }
+
+////////////////////////////////////////////////////
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+}
+
+function toggleNestedDropdown() {
+    var nestedDropdownContent = document.getElementById("nestedDropdownContent");
+    nestedDropdownContent.style.display = nestedDropdownContent.style.display === "block" ? "none" : "block";
+}
+
+// Optional: Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+        var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
+        for (var j = 0; j < nestedDropdowns.length; j++) {
+            var openNestedDropdown = nestedDropdowns[j];
+            if (openNestedDropdown.style.display === "block") {
+                openNestedDropdown.style.display = "none";
+            }
+        }
+    }
+}
+
 
 
 </script>
