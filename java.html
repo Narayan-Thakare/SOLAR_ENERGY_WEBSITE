@@ -59,6 +59,8 @@
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
 .dropdown {
     position: fixed;
     top: 20px;
@@ -88,13 +90,13 @@
     position: absolute;
     background-color: var(--dropdown-bg);
     min-width: 210px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
     z-index: 1;
     border-radius: 5px;
     top: 100%;
     right: 0;
-    max-height: 400px; /* Set a max height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .dropdown-content a {
@@ -112,7 +114,8 @@
     position: relative;
 }
 
-.operator-link {
+.operator-link,
+.token-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -129,8 +132,8 @@
 .nested-dropdown-content {
     display: none;
     background-color: var(--dropdown-bg);
-    padding-left: 20px; /* Indent nested items */
-    border-top: 1px solid var(--dropdown-hover-bg); /* Optional: Add a border for separation */
+    padding-left: 20px;
+    border-top: 1px solid var(--dropdown-hover-bg);
 }
 
 .nested-dropdown-content a {
@@ -140,7 +143,6 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 
 
@@ -438,38 +440,61 @@ pre code {
     </div>
 
 
+
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+                  <!-- ////////////////////////////////    When you do on nested loop changes on js and css  /////////////////////////////////////////////////// -->
     <div class="dropdown">
         <button class="dropdown-button" onclick="toggleDropdown()">
             <i class="fas fa-ellipsis-h"></i>
         </button>
         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
+    
+            <!-- Token Nested Dropdown -->
             <div class="nested-dropdown">
-                <a href="#Operator" class="operator-link" onclick="toggleNestedDropdown()">
+                <a href="#token" class="token-link" onclick="toggleNestedDropdown('tokenDropdownContent')">
+                    Token
+                    <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+                    </svg>
+                </a>
+                <div class="nested-dropdown-content" id="tokenDropdownContent">
+                    <a href="#keyword">Keyword</a>
+                    <a href="#identifiers">Identifiers</a>
+                </div>
+            </div>
+    
+            <!-- Operators Nested Dropdown -->
+            <div class="nested-dropdown">
+                <a href="#Operator" class="operator-link" onclick="toggleNestedDropdown('operatorDropdownContent')">
                     Operators
                     <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
                     </svg>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 </a>
-                <div class="nested-dropdown-content" id="nestedDropdownContent">
-                    <a href="#Logical_Operator">Logical Operator</a>
-                    <a href="#increment-operator">Increment Operator</a>
-                    <a href="#decrement-operator">Decrement Operator</a>
+                <div class="nested-dropdown-content" id="operatorDropdownContent">
+                    <a href="#arithmetic-operator">Arithmetic Operator</a>
+                    <a href="#assignment-operator">Assignment Operator</a>
+                    <a href="#relational-operator">Relational Operator</a>
                     <a href="#conditional-operator">Conditional Operator</a>
+                    <a href="#bitwise-operator">Bitwise Operator</a>
+                    <a href="#logical-operator">Logical Operator</a>
+                    <a href="#increment-decrement-operator">Increment & Decrement Operator</a>
+                    <a href="#compound-assignment-operator">Compound Assignment Operator</a>
+                    <a href="#miscellaneous-operator">Miscellaneous Operator</a>
                 </div>
             </div>
+    
             <a href="#section3">Control Flow Statements</a>
             <a href="#section4">Dynamic Reading</a>
             <!-- Add more items as needed -->
         </div>
     </div>
+    
+    
     
     
     
@@ -483,7 +508,7 @@ pre code {
 
     
 
-    <h1 id="section1"> Basic Concepts</h1>
+    <h1 id="section1">Basic Concepts</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span>
             <details>
@@ -604,7 +629,7 @@ pre code {
 
     <h1 id="Operator" style="color: rgb(164, 118, 233); font-size: 40px;">OPERATOR</h1>
 
-    <h1 id="increment-operator">Increment and Decrement Operator</h1>
+    <h1 id="increment-decrement-operator">Increment and Decrement Operator</h1>
     <ul>
         <li><span class="section-title">1. Which type of operator is this: unary, binary, ternary?</span>
             <details>
@@ -624,7 +649,7 @@ pre code {
         <li><span class="section-title">11. Write a program using increment and decrement operators.</span></li>
     </ul>
 
-    <h1 id="Logical_Operator">Logical Operator</h1>
+    <h1 id="logical-operator">Logical Operator</h1>
 <ul>
     <li><span class="section-title">1. What is a Logical Operator?</span>
         <details>
@@ -1189,29 +1214,41 @@ pre code {
 <script>
     // Search Functionality
     function searchContent() {
-        var input, filter, sections, li, i, txtValue, clearBtn;
-        input = document.getElementById('searchInput');
-        filter = input.value.toUpperCase();
-        sections = document.getElementsByTagName('h1');
-        li = document.querySelectorAll('li');
-        clearBtn = document.getElementById('clearBtn');
+    var input, filter, sections, li, i, txtValue, clearBtn;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    sections = document.querySelectorAll('h1');
+    li = document.querySelectorAll('li');
+    clearBtn = document.getElementById('clearBtn');
 
-        if (filter) {
-            clearBtn.style.display = 'block';
+    // Show or hide the clear button based on the search input
+    if (filter) {
+        clearBtn.style.display = 'block';
+    } else {
+        clearBtn.style.display = 'none';
+    }
+
+    // Loop through all headings, and hide those who don't match the search query
+    for (i = 0; i < sections.length; i++) {
+        txtValue = sections[i].textContent || sections[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            sections[i].style.display = ''; // Show matching headings
         } else {
-            clearBtn.style.display = 'none';
-        }
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            txtValue = li[i].textContent || li[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = '';
-            } else {
-                li[i].style.display = 'none';
-            }
+            sections[i].style.display = 'none'; // Hide non-matching headings
         }
     }
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = ''; // Show matching list items
+        } else {
+            li[i].style.display = 'none'; // Hide non-matching list items
+        }
+    }
+}
+
 
     // Clear Search Input
     function clearSearch() {
@@ -1500,31 +1537,28 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
 }
 
-function toggleNestedDropdown() {
-    var nestedDropdownContent = document.getElementById("nestedDropdownContent");
+function toggleNestedDropdown(id) {
+    var nestedDropdownContent = document.getElementById(id);
     nestedDropdownContent.style.display = nestedDropdownContent.style.display === "block" ? "none" : "block";
 }
 
-// Optional: Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.style.display === "block") {
-                openDropdown.style.display = "none";
-            }
-        }
-        var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
-        for (var j = 0; j < nestedDropdowns.length; j++) {
-            var openNestedDropdown = nestedDropdowns[j];
-            if (openNestedDropdown.style.display === "block") {
-                openNestedDropdown.style.display = "none";
-            }
-        }
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *')) {
+        closeAllDropdowns();
+    }
+};
+
+function closeAllDropdowns() {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].style.display = "none";
+    }
+
+    var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
+    for (var j = 0; j < nestedDropdowns.length; j++) {
+        nestedDropdowns[j].style.display = "none";
     }
 }
-
 
 
 </script>
