@@ -419,6 +419,15 @@ pre code {
 
 
 
+/* /////////////////////////// for searching the data when no data found */
+#noResultsMessage {
+    font-size: 16px;
+    color: #999;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
     </style>
 </head>
 <body>
@@ -506,7 +515,9 @@ pre code {
    
     <div id="mockQuestions"></div>
 
-    
+    <!-- ////// for searching the data when no data found -->
+    <p id="noResultsMessage" style="display:none;">No results found.</p> 
+
 
     <h1 id="section1">Basic Concepts</h1>
     <ul>
@@ -1214,12 +1225,13 @@ pre code {
 <script>
     // Search Functionality
     function searchContent() {
-    var input, filter, sections, li, i, txtValue, clearBtn;
+    var input, filter, sections, li, clearBtn, noResultsMessage;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
     sections = document.querySelectorAll('h1');
     li = document.querySelectorAll('li');
     clearBtn = document.getElementById('clearBtn');
+    noResultsMessage = document.getElementById('noResultsMessage');
 
     // Show or hide the clear button based on the search input
     if (filter) {
@@ -1228,26 +1240,40 @@ pre code {
         clearBtn.style.display = 'none';
     }
 
+    var hasVisibleItems = false;
+
     // Loop through all headings, and hide those who don't match the search query
-    for (i = 0; i < sections.length; i++) {
-        txtValue = sections[i].textContent || sections[i].innerText;
+    for (var i = 0; i < sections.length; i++) {
+        var txtValue = sections[i].textContent || sections[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             sections[i].style.display = ''; // Show matching headings
+            hasVisibleItems = true;
         } else {
             sections[i].style.display = 'none'; // Hide non-matching headings
         }
     }
 
     // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        txtValue = li[i].textContent || li[i].innerText;
+    for (var j = 0; j < li.length; j++) {
+        var txtValue = li[j].textContent || li[j].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = ''; // Show matching list items
+            li[j].style.display = ''; // Show matching list items
+            hasVisibleItems = true;
         } else {
-            li[i].style.display = 'none'; // Hide non-matching list items
+            li[j].style.display = 'none'; // Hide non-matching list items
+        }
+    }
+
+    // Show a 'No results found' message if no items are visible
+    if (noResultsMessage) {
+        if (filter && !hasVisibleItems) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
         }
     }
 }
+
 
 
     // Clear Search Input
