@@ -113,7 +113,8 @@
 .nested-dropdown {
     position: relative;
 }
-
+/* ////////////////////////////////////////////////////////////////////////////// */
+.variableInitilizationStatement-link,
 .operator-link,
 .token-link {
     display: flex;
@@ -121,7 +122,7 @@
     justify-content: space-between;
     padding-right: 8px;
 }
-
+/* ///////////////////////////////////////////////////////////////////////// */
 .dropdown-icon {
     width: 16px;
     height: 16px;
@@ -455,6 +456,22 @@ pre code {
 
 
                   <!-- ////////////////////////////////    When you do on nested loop changes on js and css  /////////////////////////////////////////////////// -->
+
+                  <!--   <div class="nested-dropdown">
+                    <a href="#------------------" class="-------------------  -link" onclick="toggleNestedDropdown('-----------------------DropdownContent')">
+                        ---------------------------
+                        <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+                        </svg>
+                    </a>
+                    <div class="nested-dropdown-content" id="------------------------DropdownContent">
+                        <a href="#keyword">Local Variable</a>
+                        <a href="#identifiers">Global Variable</a>
+                    </div>
+                </div>     -->
+
+
+
     <div class="dropdown">
         <button class="dropdown-button" onclick="toggleDropdown()">
             <i class="fas fa-ellipsis-h"></i>
@@ -475,7 +492,31 @@ pre code {
                     <a href="#identifiers">Identifiers</a>
                 </div>
             </div>
-    
+            <a href="#section3">Conventions</a>
+            <a href="#section3">Literals</a>
+            <a href="#section3">ASCII</a>
+            <a href="#section3">Data Types</a>
+            <a href="#section3">Variable Initilization Statement</a>
+
+ <!-- Variable Initilization Statement Nested Dropdown -->
+ <div class="nested-dropdown">
+    <a href="#variableInitilizationStatement" class="variableInitilizationStatement-link" onclick="toggleNestedDropdown('variableInitilizationStatementDropdownContent')">
+        Variable Initilization Statement
+        <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+        </svg>
+    </a>
+    <div class="nested-dropdown-content" id="variableInitilizationStatementDropdownContent">
+        <a href="#section3">Local Variable</a>
+        <a href="#section4">Global Variable</a>
+    </div>
+</div>
+
+
+
+
+
+
             <!-- Operators Nested Dropdown -->
             <div class="nested-dropdown">
                 <a href="#Operator" class="operator-link" onclick="toggleNestedDropdown('operatorDropdownContent')">
@@ -1569,7 +1610,7 @@ function toggleNestedDropdown(id) {
 }
 
 window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *')) {
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *, .variableInitilizationStatement-link , .variableInitilizationStatement-link *')) {
         closeAllDropdowns();
     }
 };
