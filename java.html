@@ -471,11 +471,11 @@ pre code {
 
 
 
-    <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">
+     <div class="dropdown">
+         <button class="dropdown-button" onclick="toggleDropdown()">
             <i class="fas fa-ellipsis-h"></i>
-        </button>
-        <div class="dropdown-content" id="dropdownContent">
+         </button>
+         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
     
             <!-- Token Nested Dropdown -->
@@ -497,19 +497,21 @@ pre code {
             <a href="#section3">Data Types</a>
             <a href="#section3">Variable Initilization Statement</a>
 
- <!-- Variable Initilization Statement Nested Dropdown -->
- <div class="nested-dropdown">
-    <a href="#variableInitilizationStatement" class="variableInitilizationStatement-link" onclick="toggleNestedDropdown('variableInitilizationStatementDropdownContent')">
+            
+
+     <!-- Variable Initilization Statement Nested Dropdown -->
+     <div class="nested-dropdown">
+     <a href="#variableInitilizationStatement" class="variableInitilizationStatement-link" onclick="toggleNestedDropdown('variableInitilizationStatementDropdownContent')">
         Variable Initilization Statement
         <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
         </svg>
-    </a>
-    <div class="nested-dropdown-content" id="variableInitilizationStatementDropdownContent">
+     </a>
+     <div class="nested-dropdown-content" id="variableInitilizationStatementDropdownContent">
         <a href="#section3">Local Variable</a>
         <a href="#section4">Global Variable</a>
-    </div>
-</div>
+     </div>
+     </div>
 
 
 
@@ -539,6 +541,8 @@ pre code {
     
             <a href="#section3">Control Flow Statements</a>
             <a href="#section4">Dynamic Reading</a>
+            <a href="#methods">Methods</a>
+
             <!-- Add more items as needed -->
         </div>
     </div>
@@ -1264,6 +1268,116 @@ pre code {
     
 
 </ul>
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ -->
+ <h1 id="methods">Methods</h1>
+ <ul>
+     <li><span class="section-title">1. What is method?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>Dynamic reading</b> refers to reading data from the user during the execution of a program dynamically with the help of a built-in class known as <b>Scanner</b>.</p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">2. Which package do we import for dynamic reading?</span>
+         <details>
+             <summary>Answer</summary>
+             <p>We import <b>java.util.Scanner</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">3. How do we create an object in the Scanner class?</span>
+         <details>
+             <summary>Answer</summary>
+             <p>Using the <b>new</b> keyword, like <b>Scanner sc = new Scanner(System.in);</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">4. Which method syntax do we use for byte in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextByte();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">5. Which method syntax do we use for short in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextShort();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">6. Which method syntax do we use for int in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextInt();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">7. Which method syntax do we use for long in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextLong();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">8. Which method syntax do we use for char in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>next().charAt(0);</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">9. Which method syntax do we use for double in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextDouble();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">10. Which method syntax do we use for boolean in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextBoolean();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">11. Which method syntax do we use for String in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>next();</b> and <b>nextLine();</b></p>
+         </details>
+     </li>
+ 
+     <li><span class="section-title">12. Which method syntax do we use for float in Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>nextFloat();</b></p>
+         </details>
+     </li>
+ 
+     <li>
+         <span class="section-title">13. What type of error occurs when an int data type is assigned to a byte data type using Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>Type Mismatch Error:</b> This error occurs because an `int` value may exceed the range of a `byte`, which can hold values from -128 to 127.</p>
+         </details>
+     </li>
+ 
+     <li>
+         <span class="section-title">13. What type of error occurs when a `short` data type is assigned to an `int` data type using Scanner?</span>
+         <details>
+             <summary>Answer</summary>
+             <p><b>Type Mismatch Error:</b> This error occurs because a `short` value cannot be directly assigned to an `int` without explicit casting, even though `int` has a larger range than `short`.</p>
+         </details>
+     </li>
+     
+     
+ 
+ </ul>
+ 
 
 
 
