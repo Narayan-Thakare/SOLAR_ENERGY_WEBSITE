@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Data</title>
+    <title>The Java Data</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -113,15 +112,17 @@
 .nested-dropdown {
     position: relative;
 }
-
+/* ////////////////////////////////////////////////////////////////////////////// */
+.variableInitilizationStatement-link,
 .operator-link,
-.token-link {
+.token-link,
+.methods-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 8px;
 }
-
+/* ///////////////////////////////////////////////////////////////////////// */
 .dropdown-icon {
     width: 16px;
     height: 16px;
@@ -145,6 +146,15 @@
 }
 
 
+/* /////////////////////////////////////////////////////// */
+
+.dropdown-content, .nested-dropdown-content {
+    display: none;
+}
+
+.dropdown-content.show, .nested-dropdown-content.show {
+    display: block;
+}
 
 
 
@@ -419,6 +429,15 @@ pre code {
 
 
 
+/* /////////////////////////// for searching the data when no data found */
+#noResultsMessage {
+    font-size: 16px;
+    color: #999;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
     </style>
 </head>
 <body>
@@ -446,11 +465,27 @@ pre code {
 
 
                   <!-- ////////////////////////////////    When you do on nested loop changes on js and css  /////////////////////////////////////////////////// -->
-    <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">
+
+                  <!--   <div class="nested-dropdown">
+                    <a href="#------------------" class="-------------------  -link" onclick="toggleNestedDropdown('-----------------------DropdownContent')">
+                        ---------------------------
+                        <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+                        </svg>
+                    </a>
+                    <div class="nested-dropdown-content" id="------------------------DropdownContent">
+                        <a href="#keyword">Local Variable</a>
+                        <a href="#identifiers">Global Variable</a>
+                    </div>
+                </div>     -->
+
+
+
+     <div class="dropdown">
+         <button class="dropdown-button" onclick="toggleDropdown()">
             <i class="fas fa-ellipsis-h"></i>
-        </button>
-        <div class="dropdown-content" id="dropdownContent">
+         </button>
+         <div class="dropdown-content" id="dropdownContent">
             <a href="#section1">Basic Concepts</a>
     
             <!-- Token Nested Dropdown -->
@@ -466,7 +501,33 @@ pre code {
                     <a href="#identifiers">Identifiers</a>
                 </div>
             </div>
-    
+            <a href="#section3">Conventions</a>
+            <a href="#section3">Literals</a>
+            <a href="#section3">ASCII</a>
+            <a href="#section3">Data Types</a>
+            <a href="#section3">Variable Initilization Statement</a>
+
+            
+
+         <!-- Variable Initilization Statement Nested Dropdown -->
+          <div class="nested-dropdown">
+          <a href="#variableInitilizationStatement" class="variableInitilizationStatement-link" onclick="toggleNestedDropdown('variableInitilizationStatementDropdownContent')">
+         Variable Initilization Statement
+         <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+         </svg>
+         </a>
+          <div class="nested-dropdown-content" id="variableInitilizationStatementDropdownContent">
+          <a href="#section3">Local Variable</a>
+          <a href="#section4">Global Variable</a>
+           </div>
+         </div>
+
+
+
+
+
+
             <!-- Operators Nested Dropdown -->
             <div class="nested-dropdown">
                 <a href="#Operator" class="operator-link" onclick="toggleNestedDropdown('operatorDropdownContent')">
@@ -490,7 +551,42 @@ pre code {
     
             <a href="#section3">Control Flow Statements</a>
             <a href="#section4">Dynamic Reading</a>
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+                         <!-- this drop down for method -->
+                         <div class="nested-dropdown">
+                            <a href="#methods" class="methods-link" onclick="toggleNestedDropdown('methodsDropdownContent')">
+                                Methods
+                                <svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 16l-6-6h12l-6 6z" />
+                                </svg>
+                            </a>
+                            <div class="nested-dropdown-content" id="methodsDropdownContent">
+                                <a href="#abstract-method">Abstract Method</a>
+                                <a href="#instance-method">Instance Method</a>
+
+                                <a href="#static-method">Static Method</a>
+                                <a href="#method-binding">Binding Method</a>
+
+                                <a href="#method-recursion">Method Recursion</a>
+                                <a href="#parameterized-method">Parameterized Method</a>
+                                <a href="#overloaded-method">Overloaded Method</a>
+                                <a href="#overridden-method">Overridden Method</a>
+                                <a href="#final-method">Final Method</a>
+                                <a href="#synchronized-method">Synchronized Method</a>
+                                <a href="#native-method">Native Method</a>
+                                <a href="#default-method">Default Method</a>
+                                <a href="#constructor-methods">Constructor Methods</a>
+                            </div>
+                        </div>
+                        
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
             <!-- Add more items as needed -->
+
+
+            <a href="#methods">BBY-</a>
+
         </div>
     </div>
     
@@ -506,86 +602,104 @@ pre code {
    
     <div id="mockQuestions"></div>
 
-    
+    <!-- ////// for searching the data when no data found -->
+    <p id="noResultsMessage" style="display:none;">No results found.</p> 
 
-    <h1 id="section1"> Basic Concepts</h1>
+    <h1 id="section1">Basic Concepts</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span>
             <details>
                 <summary>Answer</summary>
-                <p>it is an <b>electronic device</b> it is made up of <b>hardware and software.</b> using performe such a task storing data, handaling data, processing data, retriving data.</p>
+                <p>It is an <b><u>electronic device</u></b> made up of <b><u>hardware and software</u></b>. It performs tasks such as <b><u>storing data</u></b>, <b><u>handling data</u></b>, <b><u>processing data</u></b>, and <b><u>retrieving data</u></b>.</p>
             </details>
         </li>
         
         <li><span class="section-title">2. What is Hardware?</span>
             <details>
                 <summary>Answer</summary>
-                <p>It is a <b>combination of electronic components</b> to run the software. example :- Ram, Rom, Graphics Card, Processor etc  </p>
+                <p>It is a <b><u>combination of electronic components</u></b> to run the software. Example: RAM, ROM, Graphics Card, Processor, etc.</p>
             </details>
         </li>
+        
         <li><span class="section-title">3. What is Software?</span>
             <details>
                 <summary>Answer</summary>
+                <p>Software is a <b><u>set of instructions</u></b> that tells the hardware what to do. It includes operating systems, applications, and programs.</p>
+            </details>
+        </li>
         
-                <p>
-         "Software is a  <b>set of instructions</b> that tells the hardware what to do. It includes operating systems, applications, and programs."
-                    
-                </p>
-            </details></li>
-        <li><span class="section-title">4. What is a Low-Level Language?</span><details>
-            <summary>Answer</summary>
-            <p> The language <b>direct understand by computer or processor</b> that a called also a machine level language. Example:- Binary language  </p>
-        </details></li>
-        <li><span class="section-title">5. What is Assembly Language?</span><details>
-            <summary>Answer</summary>
-            <p> The language which <b>consist of predefine set of code</b> word which can understand by computer using an intermediate software known as Assembler.</p>
-        </details></li>
-        <li><span class="section-title">6. What is an Assembler?</span><details>
-            <summary>Answer</summary>
-            <p> Assembler it is an <b>intermediate software which acts like a translator to converts</b> assembly level language into machine-level language.</p>
-        </details></li>
+        <li><span class="section-title">4. What is a Low-Level Language?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>The language <b><u>directly understood by the computer or processor</u></b> is also called a machine-level language. Example: Binary language.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">5. What is Assembly Language?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>The language which <b><u>consists of a predefined set of code</u></b> words that can be understood by the computer using intermediate software known as an Assembler.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">6. What is an Assembler?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>An Assembler is an <b><u>intermediate software that acts as a translator to convert</u></b> assembly-level language into machine-level language.</p>
+            </details>
+        </li>
+        
         <li><span class="section-title">7. What is a High-Level Language?</span>
             <details>
                 <summary>Answer</summary>
-                <p> The language which are <b>very closed to human understandable, instructable, by programer to computer</b> it is known as High-Level language. </p>
-            </details></li>
-        <li><span class="section-title">8. Types of Intermediate Software</span><details>
-            <summary>Answer</summary>
-            <p>1.Interpreters 2. Compilers 3. Assemblers  </p>
-        </details></li>
+                <p>The languages that are <b><u>very close to human understanding, instructable by the programmer to the computer</u></b> are known as High-Level languages.</p>
+            </details>
+        </li>
+        
+        <li><span class="section-title">8. Types of Intermediate Software</span>
+            <details>
+                <summary>Answer</summary>
+                <p><b><u>1. Interpreters</u></b><br><b><u>2. Compilers</u></b><br><b><u>3. Assemblers</u></b></p>
+            </details>
+        </li>
+        
         <li><span class="section-title">9. Who Invented Java and What is His Wife's Name?</span>
             <details>
                 <summary>Answer</summary>
-                <p>Java was invented by James Gosling. His wife's name is Barbara. </p>
+                <p>Java was invented by <b><u>James Gosling</u></b>. His wife's name is <b><u>Barbara</u></b>.</p>
             </details>
         </li>
+        
         <li><span class="section-title">10. When was Java Invented?</span>
             <details>
                 <summary>Answer</summary>
-                <p> Java was invented in 1995.</p>
+                <p>Java was invented in <b><u>1995</u></b>.</p>
             </details>
         </li>
+        
         <li><span class="section-title">11. What is a Platform?</span>
             <details>
                 <summary>Answer</summary>
-                <p> It is a <b>combination of hardware and software</b> on which application can run. </p>
+                <p>It is a <b><u>combination of hardware and software</u></b> on which applications can run.</p>
             </details>
         </li>
+        
         <li><span class="section-title">12. Why are C and C++ Platform Dependent?</span>
             <details>
                 <summary>Answer</summary>
-                <p> when a programmer write a program using C and C++ language and save it with a `.c` extension it gives to c compiler . it converts `.c` file into `.exc` file which contain netive machine code. netive machine level code generate by c compiler which can run only on netive compiler not an other compiler , hence software using c, c++ language are platform Dependent </p>
+                <p>When a programmer writes a program using C and C++ languages and saves it with a `.c` extension, it gives the file to the C compiler. The compiler converts the `.c` file into a `.exe` file, which contains <b><u>native machine code</u></b>. This native machine-level code is generated by the C compiler, which can only run on its respective native compiler, not on another compiler. Hence, software written using C, C++ languages are <b><u>platform dependent</u></b>.</p>
             </details>
         </li>
+        
         <li><span class="section-title">13. What is the Difference Between C++ and Java?</span>
             <details>
                 <summary>Answer</summary>
                 <p>
                     <ol>
-                        <li>C++ compiles directly to machine code, while Java compiles to bytecode for the JVM (Java Virtual Machine).</li>
-                        <li>C++ requires manual memory management, whereas Java has automatic garbage collection.</li>
-                        <li>Java is platform-independent due to the JVM, while C++ needs recompilation for different platforms.</li>
-                        <li>C++ supports pointers, while Java does not.</li>
+                        <li><b><u>C++ compiles directly to machine code</u></b>, while Java compiles to bytecode for the JVM (Java Virtual Machine).</li>
+                        <li><b><u>C++ requires manual memory management</u></b>, whereas Java has automatic garbage collection.</li>
+                        <li><b><u>Java is platform-independent due to the JVM</u></b>, while C++ needs recompilation for different platforms.</li>
+                        <li><b><u>C++ supports pointers</u></b>, while Java does not.</li>
                     </ol>
                 </p>
             </details>
@@ -594,36 +708,96 @@ pre code {
         <li><span class="section-title">14. Why is Java Platform Independent?</span>
             <details>
                 <summary>Answer</summary>
-                <p>Java is platform-independent because its code is compiled into platform-agnostic bytecode, which can run on any system with the help of the JVM (Java Virtual Machine). The JVM acts as an interpreter that converts bytecode into machine code for different platforms, allowing the code to execute on various systems without modification.</p>
+                <p>Java is platform-independent because its code is compiled into <b><u>platform-agnostic bytecode</u></b>, which can run on any system with the help of the JVM (Java Virtual Machine). The JVM acts as an interpreter that <b><u>converts bytecode into machine code</u></b> for different platforms, allowing the code to execute on various systems without modification.</p>
             </details>
         </li>
         
         <li><span class="section-title">15. What is Bytecode?</span>
             <details>
                 <summary>Answer</summary>
-                <p>Bytecode is an intermediate code that is not directly understandable by humans or computers.</p>
+                <p>Bytecode is an <b><u>intermediate code</u></b> that is not directly understandable by humans or computers.</p>
             </details>
         </li>
+        
         <li><span class="section-title">16. What is JVM?</span>
             <details>
                 <summary>Answer</summary>
-                <p>JVM stands for Java Virtual Machine. It is an interpreter that reads bytecode line by line and converts it into machine code. This allows the code to be executed on various platforms without modification, making Java platform-independent.</p>
+                <p>JVM stands for <b><u>Java Virtual Machine</u></b>. It is an <b><u>interpreter that reads bytecode line by line and converts it into machine code</u></b>. This allows the code to be executed on various platforms without modification, making Java platform-independent.</p>
             </details>
         </li>
         
         <li><span class="section-title">17. What is the Difference Between an IDE and an Editor?</span>
             <details>
                 <summary>Answer</summary>
-                <p>An editor is a basic tool where you can write and edit code. It typically offers simple text editing features. An IDE (Integrated Development Environment), on the other hand, is a more comprehensive tool that provides additional features like debugging, compiling, and project management. An IDE allows you to build complete applications and software, making it more powerful for development tasks.</p>
+                <p>An <b><u>editor</u></b> is a basic tool where you can write and edit code. It typically offers simple text editing features. An <b><u>IDE (Integrated Development Environment)</u></b>, on the other hand, is a more comprehensive tool that provides additional features like debugging, compiling, and project management. An IDE allows you to build complete applications and software, making it more powerful for development tasks.</p>
             </details>
         </li>
         
         <li><span class="section-title">18. JDK Architecture</span>
             <details>
                 <summary>Answer</summary>
-                <p> </p>
+                <p></p>
             </details>
         </li>
+        <li>
+            <span class="section-title">19. Difference between JDK and JVM</span>
+            <details>
+                <summary>Answer</summary>
+                <p><strong>JVM (Java Virtual Machine):</strong></p>
+                <ul>
+                    <li>Responsible for running Java bytecode.</li>
+                    <li>Essential for executing Java programs.</li>
+                    <li>Does not include tools for writing or compiling Java code.</li>
+                </ul>
+                <p><strong>JDK (Java Development Kit):</strong></p>
+                <ul>
+                    <li>A complete development kit for Java.</li>
+                    <li>Includes the JVM, Java compiler, and other development tools.</li>
+                    <li>Used for writing, compiling, and running Java programs.</li>
+                </ul>
+            </details>
+        </li>
+        
+        <li>
+            <span class="section-title">20. Difference between JDK and JRE</span>
+            <details>
+                <summary>Answer</summary> 
+                <p><strong>JRE (Java Runtime Environment):</strong></p>
+                <ul>
+                    <li>Used to run Java programs.</li>
+                    <li>Includes the JVM and necessary libraries.</li>
+                    <li>Does not include tools for writing or compiling Java programs.</li>
+                </ul>
+                <p><strong>JDK (Java Development Kit):</strong></p>
+                <ul>
+                    <li>A complete toolkit for Java development.</li>
+                    <li>Includes the JRE, JVM, Java compiler, and other tools.</li>
+                    <li>Used for writing, compiling, and running Java programs.</li>
+                </ul>
+            </details>
+        </li>
+        
+        <li>
+            <span class="section-title">21. Difference between JVM and JRE</span>
+            <details>
+                <summary>Answer</summary>
+                <p><strong>JVM (Java Virtual Machine):</strong></p>
+                <ul>
+                    <li>Runs Java bytecode on any machine.</li>
+                    <li>Provides the environment for Java programs to execute.</li>
+                    <li>Handles memory management and garbage collection.</li>
+                </ul>
+                <p><strong>JRE (Java Runtime Environment):</strong></p>
+                <ul>
+                    <li>Includes the JVM and other libraries needed to run Java programs.</li>
+                    <li>Provides everything necessary to execute Java applications.</li>
+                    <li>Does not include development tools like a compiler (which is part of the JDK).</li>
+                </ul>
+            </details>
+        </li>
+        
+        
+
     </ul>
     
 
@@ -1009,7 +1183,7 @@ pre code {
              }
              default: {
                 (statement )
-             }
+             }cf
             
  
 
@@ -1079,6 +1253,17 @@ pre code {
 
 
          } 
+           </code></pre>
+    </details>
+</li>
+
+
+<li>
+    <span class="section-title">#. Why we use nested  loop?</span>
+    <details>
+        <summary>Answer</summary>
+            <pre><code>
+
            </code></pre>
     </details>
 </li>
@@ -1198,6 +1383,576 @@ pre code {
 </ul>
 
 
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ -->
+
+ <h1 id="methods">Methods</h1>
+
+ <ul>
+
+    <li><span class="section-title">1. What is a method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A method is a <b><u>block of instructions</u></b> that is <b><u>used to perform a specific task</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">2. What are the different types of methods in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Java includes <b><u>instance methods, static methods, and abstract methods.</u></b></p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">3. What is a built-in method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Built-in methods are those that are <b><u>already designed by the creators of the language or framework</u></b>. These methods are ready to use without needing to define them yourself.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">4. What is a user-defined method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A programmer can <b><u>design their own methods</u></b> that can be used by themselves and shared with others. These are known as user-defined methods.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. Why do we use methods?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>We use methods to achieve code modularity:
+                <br>
+                <strong>Organize code:</strong> Break down tasks into smaller, manageable parts.
+                <br>
+                <strong>Reuse code:</strong> Use the same method in different places.
+                <br>
+                <strong>Encapsulate behavior:</strong> Hide details and simplify changes.
+                <br>
+                <strong>Improve maintenance:</strong> Update code easily by changing one method.
+                <br>
+                <strong>Test and debug:</strong> Test individual methods to find and fix bugs.
+                <br>
+                <strong>Enhance readability:</strong> Make code easier to read and understand.
+                <br>
+                <strong>Support OOP:</strong> Use inheritance and polymorphism in object-oriented programming.
+            </p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">6. What is code modularity?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Code modularity refers to the design of <b><u>breaking an entire task into smaller modules</u></b>, and sub-modules, and creating methods for each module. This helps in managing complexity and improving maintainability.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">7. Real-life scenarios for methods</span>
+        <details>
+            <summary>Answer</summary>
+            <p><strong>Smartphone App:</strong></p>
+            <p><strong>Scenario:</strong> A weather app.</p>
+            <p><strong>Method:</strong> Fetch weather data from the internet, process the data, and display the current weather and forecast.</p>
+            <p><strong>Purpose:</strong> To provide users with up-to-date weather information.</p>
+            
+            <p><strong>Online Shopping:</strong></p>
+            <p><strong>Scenario:</strong> An e-commerce website.</p>
+            <p><strong>Method:</strong> Add items to the cart, calculate the total price, process payment, and confirm the order.</p>
+            <p><strong>Purpose:</strong> To facilitate purchasing products online.</p>
+            
+            <p><strong>Fitness Tracker:</strong></p>
+            <p><strong>Scenario:</strong> A health app.</p>
+            <p><strong>Method:</strong> Track steps, monitor heart rate, log exercise, and provide progress reports.</p>
+            <p><strong>Purpose:</strong> To help users monitor and improve their fitness levels.</p>
+            
+            <p><strong>Banking App:</strong></p>
+            <p><strong>Scenario:</strong> Mobile banking.</p>
+            <p><strong>Method:</strong> Check account balance, transfer money between accounts, pay bills, and review transaction history.</p>
+            <p><strong>Purpose:</strong> To manage finances and perform banking tasks remotely.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">8. Can we create a method inside another method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>In Java, you can't create a method inside another method. However, you can use local classes to achieve similar functionality.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">9. Why can't we create a method inside another method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>In Java, you can't put one method inside another because Java requires methods to be defined at the class level.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">10. Can we create a class inside a method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><b>Yes</b>, you can create a local class within a method in Java.</p>
+        </details>
+    </li>
+    
+
+     <!-- //////////////// -->
+     <li><span class="section-title">11. What is a local class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>In Java, a local class is a <b><u>class defined inside a method, constructor, or block</u></b> and is only accessible within that scope.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">12. What are formal arguments?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Formal arguments are the <b><u>variables declared in the method declaration statement</u></b>. They specify the inputs that the method requires.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">13. When do we use formal arguments?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>In Java, <b><u>formal arguments are required if a method needs to accept input data</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">14. What are actual arguments?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Actual arguments are the <b><u>values or expressions passed to the method when it is called</u></b>. For example, in <code>methodName(10, "text")</code>, <code>10</code> and <code>"text"</code> are the actual arguments.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">15. What is a method name?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A method name is an <b>identifier</b> that is used to <b><u>identify and call the method</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">16. What is a return type?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The return type specifies <b><u>whether the method will return any value at the end of execution</u></b> or if it returns nothing.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">17. What types of data can a method return?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A method can return <b><u>both primitive data types and non-primitive data types</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">18. What is a void method in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A void method in Java is a method that <b><u>does not return any value</u></b>. It performs an action or operation but does not provide a result back to the caller.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">19. What is a modifier?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Modifiers are <b><u>keywords</u></b> that are used to <b><u>alter the behavior of Java members</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">20. What are the types of access modifiers?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>1. <b>public</b><br>2. <b>private</b><br>3. <b>protected</b><br>4. <b>default</b></p>
+        </details>
+    </li>
+    
+    <!-- /////////////////// -->
+    <li><span class="section-title">21. What is a void method in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A void method in Java is a method that <b><u>does not return any value</u></b>. It performs an action or operation but does not provide a result back to the caller.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">22. What is a modifier?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Modifiers are <b><u>keywords</u></b> used to <b><u>alter the behavior of Java members</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">23. What are the types of access modifiers?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>1. <b>public</b><br>2. <b>private</b><br>3. <b>protected</b><br>4. <b>default</b></p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">24. Why do we use access modifiers?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Access modifiers in Java control the visibility and accessibility of classes, methods, and variables to implement encapsulation, security, and modularity.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">25. What are the types of non-access modifiers?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>1. <b>static</b><br>2. <b>abstract</b><br>3. <b>final</b><br>4. <b>synchronized</b><br>5. <b>volatile</b></p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">26. What is a no-argument method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A no-argument method is a method that does not take any parameters. It performs its task without requiring any input from the caller.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">27. When do we use a no-argument method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A no-argument method is used when you need a method to perform an action that does not require any input data. It simplifies calling the method since no arguments need to be provided.</p>
+        </details>
+    </li>
+
+
+ </ul>
+
+ <h1 id="overloaded-method">Overloaded method</h1>
+<ul>
+    <li><span class="section-title">34. What is method overloading?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>If a class has <b><u>multiple methods with the same name but different formal arguments</u></b>, it is known as method overloading.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">35. Why do we use method overloading?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Method overloading allows multiple methods with the same name but different parameters to <b><u>handle different inputs</u></b>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">36. Can you give an example of method overloading?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The <code>println</code> method of the PrintStream class is an example of method overloading.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">37. Can we have more than one method with the same name and same formal arguments? Can we overload them?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, we can't do that because they have the same formal arguments.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">38. Can the main method be overloaded?</span>
+        <details>
+            <summary>Answer</summary>
+            <pre><code>
+        Yes, the main method can be overloaded.
+        
+        public class MainOverload {
+            public static void main(String[] args) {
+                System.out.println("Main method with String[] args");
+                main(10);  // Calls the overloaded main method with an integer argument
+                main(3.14);  // Calls the overloaded main method with a double argument
+            }
+        
+            public static void main(int num) {
+                System.out.println("Overloaded main method with int: " + num);
+            }
+        
+            public static void main(double num) {
+                System.out.println("Overloaded main method with double: " + num);
+            }
+        }
+                </code></pre>
+        </details>
+    </li>
+    
+    <li><span class="section-title">39. What is method overriding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Method overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. The method in the subclass should have the same name, return type, and parameters as the method in the superclass.</p>
+        </details>
+    </li>
+    
+
+</ul>
+
+<h1 id="method-binding">Method Binding</h1>
+<ul>
+    <li><span class="section-title">31. What is method binding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>For every method call, a method body has to be executed. This process is known as method binding.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">32. Why do we use method binding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Method binding links a method call to its definition, either at compile-time or runtime.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">33. What is compile-time binding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The binding that is <b><u>done by the compiler at compile time</u></b> is known as compile-time binding.</p>
+        </details>
+    </li>
+    
+
+</ul>
+
+<h1 id="method-recursion">Method Recursion</h1>
+<ul>
+
+    <li><span class="section-title">56 .what is a method recursion ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Method calling itself directly or indirectly</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">56. Why do we use method recursion?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>We use recursion to simplify problems by breaking them into smaller, similar problems.</p>
+        </details>
+    </li>
+    
+    
+    
+    <li><span class="section-title">57.What is a direct recursion ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>If calling mehod and called method are same it is direct recursion</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">58.How much stack frame will be created for call every method ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+    
+            </p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">59. N Number of thread is eual to  ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>n No. of statck</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">56. Can you increase the java stack size?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">58. when we get the stack overflow exception ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>When the number of frames created more than the capacity then will we get the stack overflow exception.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">56. Capacity is equal to in method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No. of frames.</p>
+        </details>
+    </li>
+    
+    
+    <li><span class="section-title">56. stack Overflow can be avoided ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Yes using base condition.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">56. how can we terminate the execution ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Sysytem.exit(0);</p>
+        </details>
+    </li>
+    
+</ul>
+
+<h1 id="return-method"> Return in method</h1>
+<ul>
+
+
+    <li><span class="section-title"> 40. What is a return in method</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Return is a keyword and control transfer statement</p>
+        </details>
+    </li>
+    <li><span class="section-title"> 41. Where we use return statement</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The return statement ends method execution and optionally returns a value to the caller.
+                </p>
+        </details>
+    </li>
+    <li><span class="section-title"> 42. Why we use return statement</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The return statement provides a value back to the caller and controls method execution flow.        </p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">43. Can a method return multiple values?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, a method in Java cannot directly return multiple values. However, you can return an array, a collection, or an object containing multiple values.</p>
+        </details>
+    </li>
+    <li><span class="section-title">44. What happens if a method does not have a return statement?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>If a method has no return statement, it must be void and will complete execution without returning a value.</p>
+        </details>
+    </li>
+    <li><span class="section-title">45. Is it mandatory for a method to return a value?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, it is not mandatory for a method to return a value. If a method is declared with a `void` return type, it does not return any value.</p>
+        </details>
+    </li>
+    <li><span class="section-title">46. Can a method return null?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Yes, a method can return `null` if the return type is a reference type (such as an object, array, or a class). Returning `null` indicates that the method does not have a value to return.</p>
+        </details>
+    </li>
+    <li><span class="section-title">47. What is the difference between return and break statements?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The `return` statement is used to exit a method and optionally return a value to the caller, while the `break` statement is used to exit a loop or a switch statement prematurely.</p>
+        </details>
+    </li>
+    <li><span class="section-title">48. Can we use a return statement in a constructor?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, constructors do not have a return type, and thus you cannot use a `return` statement to return a value from a constructor. However, you can use `return` to exit a constructor early.</p>
+        </details>
+    </li>
+    <li><span class="section-title">49. How do you handle exceptions in a method that returns a value?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>In a method that returns a value, exceptions can be handled using try-catch blocks. Inside the catch block, you can return a default value or handle the exception accordingly.</p>
+        </details>
+    </li>
+    <li><span class="section-title">50. What is a return type in a method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The return type of a method specifies the data type of the value that the method will return. If the method does not return any value, its return type is `void`.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">51. What happens if you return in a void method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>If you use the `return` statement in a `void` method, it simply exits the method early without returning any value. It's often used to exit the method based on a condition.</p>
+        </details>
+    </li>
+    <li><span class="section-title">52. Can a method have multiple return statements?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Yes, a method can have multiple return statements. However, only one of them will be executed based on the method's logic or condition.</p>
+            <pre><code>
+                public int findMax(int a, int b) 
+                {
+                    if (a > b) {
+                        return a;
+                    } else {
+                        return b;
+                    }
+                }
+                        </code></pre>
+        </details>
+    </li>
+    
+    <li><span class="section-title">54. How do you handle returning different types of data from a method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>To return different types of data, you can either use a common supertype, create a custom wrapper class that contains all possible return types, or use generics to allow for flexible return types.</p>
+    
+            <p><strong>1. Using a Common Supertype:</strong></p>
+            <pre><code>
+    public Object returnDifferentTypes(boolean flag) {
+        if (flag) {
+            return "This is a String";
+        } else {
+            return 100;  // This is an Integer
+        }
+    }
+            </code></pre>
+    
+        </details>
+    </li>
+    
+    
+    <li><span class="section-title">55. if we have any statement after return what we get?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>we get the unreachable compile time error</p>
+        </details>
+    </li>
+</ul>
+
+ <h1 id="overloaded-method"> method</h1>
+
+ <ul>
+   
+    <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+    <li><span class="section-title">28. What is the difference between a method and a constructor in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A method is a block of code that performs a specific task and can return a value. A constructor, on the other hand, is a special method used to initialize objects when they are created. Constructors do not return a value and have the same name as the class.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">29. What is the significance of the `static` keyword in a method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The `static` keyword means the method belongs to the class itself, not to any specific object. You can call a static method without creating an instance of the class.</p>
+        </details>
+    </li>
+    
+    <li><span class="section-title">30. What is a parameterized method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A parameterized method is a method that accepts one or more arguments (parameters) when called. These parameters allow the method to perform operations based on the input data provided by the caller.</p>
+        </details>
+    </li>
+    
+
+
+
+
+
+
+
+
+ </ul>
+ 
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
@@ -1214,29 +1969,56 @@ pre code {
 <script>
     // Search Functionality
     function searchContent() {
-        var input, filter, sections, li, i, txtValue, clearBtn;
-        input = document.getElementById('searchInput');
-        filter = input.value.toUpperCase();
-        sections = document.getElementsByTagName('h1');
-        li = document.querySelectorAll('li');
-        clearBtn = document.getElementById('clearBtn');
+    var input, filter, sections, li, clearBtn, noResultsMessage;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    sections = document.querySelectorAll('h1');
+    li = document.querySelectorAll('li');
+    clearBtn = document.getElementById('clearBtn');
+    noResultsMessage = document.getElementById('noResultsMessage');
 
-        if (filter) {
-            clearBtn.style.display = 'block';
+    // Show or hide the clear button based on the search input
+    if (filter) {
+        clearBtn.style.display = 'block';
+    } else {
+        clearBtn.style.display = 'none';
+    }
+
+    var hasVisibleItems = false;
+
+    // Loop through all headings, and hide those who don't match the search query
+    for (var i = 0; i < sections.length; i++) {
+        var txtValue = sections[i].textContent || sections[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            sections[i].style.display = ''; // Show matching headings
+            hasVisibleItems = true;
         } else {
-            clearBtn.style.display = 'none';
-        }
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            txtValue = li[i].textContent || li[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = '';
-            } else {
-                li[i].style.display = 'none';
-            }
+            sections[i].style.display = 'none'; // Hide non-matching headings
         }
     }
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (var j = 0; j < li.length; j++) {
+        var txtValue = li[j].textContent || li[j].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[j].style.display = ''; // Show matching list items
+            hasVisibleItems = true;
+        } else {
+            li[j].style.display = 'none'; // Hide non-matching list items
+        }
+    }
+
+    // Show a 'No results found' message if no items are visible
+    if (noResultsMessage) {
+        if (filter && !hasVisibleItems) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+    }
+}
+
+
 
     // Clear Search Input
     function clearSearch() {
@@ -1522,16 +2304,16 @@ function generateMockQuestions() {
 ////////////////////////////////////////////////////
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    dropdownContent.classList.toggle("show"); // Use class toggling instead of inline style
 }
 
 function toggleNestedDropdown(id) {
     var nestedDropdownContent = document.getElementById(id);
-    nestedDropdownContent.style.display = nestedDropdownContent.style.display === "block" ? "none" : "block";
+    nestedDropdownContent.classList.toggle("show"); // Use class toggling for nested dropdowns
 }
 
 window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *')) {
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *, .variableInitilizationStatement-link , .variableInitilizationStatement-link *,.methods-link,.methods-link*')) {
         closeAllDropdowns();
     }
 };
@@ -1539,14 +2321,24 @@ window.onclick = function(event) {
 function closeAllDropdowns() {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
-        dropdowns[i].style.display = "none";
+        dropdowns[i].classList.remove("show"); // Remove the 'show' class instead of using display
     }
 
     var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
     for (var j = 0; j < nestedDropdowns.length; j++) {
-        nestedDropdowns[j].style.display = "none";
+        nestedDropdowns[j].classList.remove("show"); // Remove the 'show' class for nested dropdowns as well
     }
 }
+
+// Event listener for main dropdown button (already handled by toggleDropdown function)
+// Use this if you prefer to trigger the toggle using the button event directly
+document.querySelector('.dropdown-button').addEventListener('click', (event) => {
+  event.stopPropagation();
+  toggleDropdown(); // Use toggleDropdown function
+});
+
+
+
 
 
 </script>
