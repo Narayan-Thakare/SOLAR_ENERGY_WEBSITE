@@ -146,6 +146,15 @@
 }
 
 
+/* /////////////////////////////////////////////////////// */
+
+.dropdown-content, .nested-dropdown-content {
+    display: none;
+}
+
+.dropdown-content.show, .nested-dropdown-content.show {
+    display: block;
+}
 
 
 
@@ -593,11 +602,9 @@ pre code {
    
     <div id="mockQuestions"></div>
 
-
-
     <!-- ////// for searching the data when no data found -->
     <p id="noResultsMessage" style="display:none;">No results found.</p> 
-    <a href="test2.html">New Data</a>
+
     <h1 id="section1">Basic Concepts</h1>
     <ul>
         <li><span class="section-title">1. What is a Computer?</span>
@@ -2297,12 +2304,12 @@ function generateMockQuestions() {
 ////////////////////////////////////////////////////
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    dropdownContent.classList.toggle("show"); // Use class toggling instead of inline style
 }
 
 function toggleNestedDropdown(id) {
     var nestedDropdownContent = document.getElementById(id);
-    nestedDropdownContent.style.display = nestedDropdownContent.style.display === "block" ? "none" : "block";
+    nestedDropdownContent.classList.toggle("show"); // Use class toggling for nested dropdowns
 }
 
 window.onclick = function(event) {
@@ -2314,14 +2321,24 @@ window.onclick = function(event) {
 function closeAllDropdowns() {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
-        dropdowns[i].style.display = "none";
+        dropdowns[i].classList.remove("show"); // Remove the 'show' class instead of using display
     }
 
     var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
     for (var j = 0; j < nestedDropdowns.length; j++) {
-        nestedDropdowns[j].style.display = "none";
+        nestedDropdowns[j].classList.remove("show"); // Remove the 'show' class for nested dropdowns as well
     }
 }
+
+// Event listener for main dropdown button (already handled by toggleDropdown function)
+// Use this if you prefer to trigger the toggle using the button event directly
+document.querySelector('.dropdown-button').addEventListener('click', (event) => {
+  event.stopPropagation();
+  toggleDropdown(); // Use toggleDropdown function
+});
+
+
+
 
 
 </script>

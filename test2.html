@@ -2302,31 +2302,39 @@ function generateMockQuestions() {
 }
 
 ////////////////////////////////////////////////////
-// Function to toggle dropdown visibility
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.classList.toggle("show");
+    dropdownContent.classList.toggle("show"); // Use class toggling instead of inline style
 }
 
-// Function to close all dropdowns
+function toggleNestedDropdown(id) {
+    var nestedDropdownContent = document.getElementById(id);
+    nestedDropdownContent.classList.toggle("show"); // Use class toggling for nested dropdowns
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *, .variableInitilizationStatement-link , .variableInitilizationStatement-link *,.methods-link,.methods-link*')) {
+        closeAllDropdowns();
+    }
+};
+
 function closeAllDropdowns() {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
-        dropdowns[i].classList.remove("show");
+        dropdowns[i].classList.remove("show"); // Remove the 'show' class instead of using display
+    }
+
+    var nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
+    for (var j = 0; j < nestedDropdowns.length; j++) {
+        nestedDropdowns[j].classList.remove("show"); // Remove the 'show' class for nested dropdowns as well
     }
 }
 
-// Event listener for dropdown button
-document.querySelector('.dropdown-button').addEventListener('click', function(event) {
-    event.stopPropagation(); // Prevents the click from closing the dropdown immediately
-    toggleDropdown();
-});
-
-// Event listener to close dropdown if clicked outside
-window.addEventListener('click', function(event) {
-    if (!event.target.matches('.dropdown-button') && !event.target.matches('.dropdown-content') && !event.target.closest('.dropdown-content')) {
-        closeAllDropdowns();
-    }
+// Event listener for main dropdown button (already handled by toggleDropdown function)
+// Use this if you prefer to trigger the toggle using the button event directly
+document.querySelector('.dropdown-button').addEventListener('click', (event) => {
+  event.stopPropagation();
+  toggleDropdown(); // Use toggleDropdown function
 });
 
 
