@@ -147,14 +147,13 @@
 
 
 /* /////////////////////////////////////////////////////// */
+
 .dropdown-content, .nested-dropdown-content {
     display: none;
-    /* Other styles for dropdowns */
 }
 
 .dropdown-content.show, .nested-dropdown-content.show {
     display: block;
-    /* Other styles to show dropdowns */
 }
 
 
@@ -2303,27 +2302,22 @@ function generateMockQuestions() {
 }
 
 ////////////////////////////////////////////////////
-// Toggle visibility of main dropdown
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
     dropdownContent.classList.toggle("show"); // Use class toggling instead of inline style
 }
 
-// Toggle visibility of nested dropdowns
 function toggleNestedDropdown(id) {
     var nestedDropdownContent = document.getElementById(id);
     nestedDropdownContent.classList.toggle("show"); // Use class toggling for nested dropdowns
 }
 
-// Handle clicks on the window to close dropdowns when clicking outside
 window.onclick = function(event) {
-    // Check if the clicked element is not one of the dropdowns or their children
-    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *, .variableInitilizationStatement-link, .variableInitilizationStatement-link *, .methods-link, .methods-link *, .hamburger-menu, .hamburger-menu *')) {
+    if (!event.target.matches('.dropdown-button, .dropdown-button *, .operator-link, .operator-link *, .token-link, .token-link *, .variableInitilizationStatement-link , .variableInitilizationStatement-link *,.methods-link,.methods-link*')) {
         closeAllDropdowns();
     }
 };
 
-// Close all dropdowns
 function closeAllDropdowns() {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
@@ -2334,20 +2328,17 @@ function closeAllDropdowns() {
     for (var j = 0; j < nestedDropdowns.length; j++) {
         nestedDropdowns[j].classList.remove("show"); // Remove the 'show' class for nested dropdowns as well
     }
+
+
+    
 }
 
-// Event listener for main dropdown button to toggle its visibility
+// Event listener for main dropdown button (already handled by toggleDropdown function)
+// Use this if you prefer to trigger the toggle using the button event directly
 document.querySelector('.dropdown-button').addEventListener('click', (event) => {
-    event.stopPropagation();
-    toggleDropdown(); // Use toggleDropdown function
+  event.stopPropagation();
+  toggleDropdown(); // Use toggleDropdown function
 });
-
-// Event listener for hamburger menu (or any other dropdown menu) to handle clicks
-document.querySelector('.hamburger-menu').addEventListener('click', (event) => {
-    event.stopPropagation();
-    // Add any specific logic for hamburger menu here, if needed
-});
-
 
 
 
