@@ -2113,7 +2113,7 @@ pre code {
     <li><span class="section-title">2. Where we store non primituve data type ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>Store the refrence to the object created</p>
         </details>
     </li>
 
@@ -2121,58 +2121,62 @@ pre code {
     <li><span class="section-title">2. how we creating an object using  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>Using new keyword</p>
         </details>
     </li>
 
     <li><span class="section-title">2. What is non static members  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>Non static members declared in the class block and not prefix with static member</p>
         </details>
     </li>
 
     <li><span class="section-title">2. Types of non static members ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>non static member are non static variable , non static methods non static initializer</p>
         </details>
     </li>
 
     <li><span class="section-title">2. What is non static variable ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>A variable declared in the class block and not prefix with static modifier</p>
         </details>
     </li>
 
     <li><span class="section-title">2. What is default value of non static variable ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>null</p>
         </details>
     </li>
 
     <li><span class="section-title">2. Where its create a non static variable in jvm ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>for a non static variable the memory allocated inside the object of a classs present in heap area</p>
         </details>
     </li>
 
-    <li><span class="section-title">2. What we creata a non static varaible ?</span>
+    <li>
+        <span class="section-title">2. What happens when we create a non-static variable?</span>
         <details>
-            <summary>Answer</summary>
-            <p></p>
+          <summary>Answer</summary>
+          <p>A non-static variable will be created inside every object instantiated from the class.</p>
         </details>
-    </li>
+      </li>
+      
 
-    <li><span class="section-title">2. What is a differenece between static variable and non static variable ?</span>
+      <li>
+        <span class="section-title">2. What is the difference between a static variable and a non-static variable?</span>
         <details>
-            <summary>Answer</summary>
-            <p></p>
+          <summary>Answer</summary>
+          <p>A static variable belongs to the class and does not require an object to be created,  while a non-static variable is created for each object.</p>
         </details>
-    </li>
+      </li>
+      
 
     <li><span class="section-title">2. what is a dot operator ?</span>
         <details>
@@ -2184,7 +2188,7 @@ pre code {
     <li><span class="section-title">2.What is non static methods  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>It is a methid declared in the class block and not prefix with static modifier</p>
         </details>
     </li>
     <li><span class="section-title">2.where we stored non static method in memory   ?</span>
@@ -2211,50 +2215,58 @@ pre code {
     <li><span class="section-title">2.What is this in java  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>this is keyword used  refers the current instance of that class </p>
         </details>
     </li>
     
-    <li><span class="section-title">2.what is non static initializer?  ?</span>
+    <li><span class="section-title">2.what is non static initializer ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>a non static initilizer exucute during the loding porcess of the class </p>
         </details>
     </li>
 
+    <li>
+        <span class="section-title">2. Why do we use non-static initialization?</span>
+        <details>
+          <summary>Answer</summary>
+          <p>We use it to give each object its own values.</p>
+        </details>
+      </li>
+      
 
     <li><span class="section-title">2. Types of non static initilizer ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>1. Non static declared and initilization statement , 2. Non static block</p>
         </details>
     </li>
 
     <li><span class="section-title">2.What is non static block   ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>a block declared in the class block and not prefix with the static modifier</p>
         </details>
     </li>
 
     <li><span class="section-title">2.Which nane have a non static block   ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>we can not put any name in non static block </p>
         </details>
     </li>
 
     <li><span class="section-title">2.non static block have nay return Type  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>No </p>
         </details>
     </li>
 
     <li><span class="section-title">2.Can we call non static block explicitly  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>no</p>
         </details>
     </li>
 
@@ -2269,7 +2281,7 @@ pre code {
     <li><span class="section-title">2.Which type of argument we can pass in non static block?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>No</p>
         </details>
     </li>
     
@@ -2316,21 +2328,21 @@ pre code {
     <li><span class="section-title">2.Can we do class name and constuctor name differnt?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>No we can not do </p>
         </details>
     </li>
 
     <li><span class="section-title">2.Can every class have a constructor ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>Yes there is a defualt constuctor is present in every class even has to be create </p>
         </details>
     </li>
 
     <li><span class="section-title">2.What is a purpose of constructor ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>Use to load non static member of class into the object </p>
         </details>
     </li>
 
@@ -2348,12 +2360,14 @@ pre code {
         </details>
     </li>
 
-    <li><span class="section-title">2. What is a default constructor ?</span>
+    <li>
+        <span class="section-title">2. What is a default constructor?</span>
         <details>
-            <summary>Answer</summary>
-            <p></p>
+          <summary>Answer</summary>
+          <p>It is automatically made by Java if you don’t create one.</p>
         </details>
-    </li>
+      </li>
+      
 
     <li><span class="section-title">2. Can we overlode the  constructor  ?</span>
         <details>
@@ -2372,30 +2386,48 @@ pre code {
     <li><span class="section-title">2. What is  no argument constructor ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>constructor without formal augument it is known as no argument constructor</p>
         </details>
     </li>
 
-    <li><span class="section-title">2.Syntax of no argument constructor   ?</span>
+    <li>
+        <span class="section-title">2. Syntax of a no-argument constructor?</span>
         <details>
-            <summary>Answer</summary>
-            <p></p>
+          <summary>Answer</summary>
+          <p>
+      <pre>
+      class ClassName {
+          accessModifier ClassName() {
+              // Statement
+          }
+      }
+      </pre>
+          </p>
         </details>
-    </li>
+      </li>
+      
 
 
 
     <li><span class="section-title">2.What is a parameterized constructor  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>constructor with formal augument it is known as parameterized constructor</p>
         </details>
     </li>
 
     <li><span class="section-title">2.What is a syntax parameterized Constructor  ?</span>
         <details>
             <summary>Answer</summary>
-            <p></p>
+            <p>
+                <pre>
+                    class ClassName {
+                        accessModifier ClassName(formal argument) {
+                            // Statement
+                        }
+                    }
+                    </pre>
+            </p>
         </details>
     </li>
 
