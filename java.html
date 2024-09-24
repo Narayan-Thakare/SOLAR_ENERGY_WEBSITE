@@ -2194,7 +2194,7 @@ pre code {
     <li><span class="section-title">2.where we stored non static method in memory   ?</span>
         <details>
             <summary>Answer</summary>
-            <p>in method area</p>
+            <p>in heap area</p>
         </details>
     </li>
 
@@ -2249,7 +2249,17 @@ pre code {
         </details>
     </li>
 
-    <li><span class="section-title">2.Which nane have a non static block   ?</span>
+    <li>
+        <span class="section-title">22. Which uses more memory: a non-static block or a non-static variable?</span>
+        <details>
+          <summary>Answer</summary>
+          <p>A non-static variable uses more memory because it's stored for each object. A non-static block doesn't take memory; it just runs when the object is created.</p>
+        </details>
+      </li>
+      
+      
+
+    <li><span class="section-title">2.Which name have a non static block   ?</span>
         <details>
             <summary>Answer</summary>
             <p>we can not put any name in non static block </p>
@@ -2430,6 +2440,104 @@ pre code {
             </p>
         </details>
     </li>
+
+
+    <!-- /////////////////////////////////// -->
+    <li><span class="section-title">2.What is a constructor overloding  ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A class having more than one constructor in blueprint of same name of contructor with differnet formal argument </p>
+        </details>
+    </li>
+
+    <li><span class="section-title">2. in constructor oveerloding can we pass same parameter in another constructor?</span>
+        <details>
+            <summary>Answer</summary>
+            <p> No</p>
+        </details>
+    </li>
+
+
+
+    <li><span class="section-title">2.Why we use cinstructor overloding ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>To constomized the loding of the value to object data member data member (variables) </p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">23. Can you give an example of constructor overloading?</span>
+        <details>
+          <summary>Answer</summary>
+          <p>Constructor overloading lets you create objects in different ways. For example, in a form, some details are required, and some are optional. You can have different constructors for each.</p>
+        </details>
+      </li>
+      
+      
+      
+
+
+
+    <li><span class="section-title">2. What is a constructor chaining?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a process of one constructor calling another constructor for exucution </p>
+        </details>
+    </li>
+
+
+    
+    <li><span class="section-title">2.using which we can call ine constructor to another constructor ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p> usnig this call statement  we can do that </p>
+        </details>
+    </li>
+
+
+    <li><span class="section-title">2.Types of way to achive constructor chaining?  ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p> there are two types using 1 .this call statement 2.super call statement </p>
+        </details>
+    </li>
+
+
+
+    <li><span class="section-title">2.What is this call statement ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p> This call statement is used to achived constructor chaining in same class  </p>
+        </details>
+    </li>
+
+
+    <li><span class="section-title">2.where we use this call statement ?</span>
+        <details>
+            <summary>Answer</summary>
+            <p> only use in constructor only </p>
+        </details>
+    </li>
+
+    
+    <li>
+        <span class="section-title">21. Can we do recursive calling in a constructor, and how can we do it?</span>
+        <details>
+          <summary>Answer</summary>
+          <p>No, we cannot do it. If attempted, it results in the error: "recursive constructor invocation."</p>
+        </details>
+      </li>
+      
+
+      <li>
+        <span class="section-title">24. Can we have multiple "this" call statements?</span>
+        <details>
+          <summary>Answer</summary>
+          <p>No, we cannot have multiple "this" call statements in a constructor. Only one "this" call is allowed, and it must be the first statement.</p>
+        </details>
+      </li>
+      
 
 
 
