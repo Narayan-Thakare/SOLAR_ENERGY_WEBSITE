@@ -2697,8 +2697,72 @@ class ClassName {
       
 
 </ul>
+<h1 id="encapsulation">ENCAPSULATION</h1> 
 
+<ul>
+    <li>
+        <span class="section-title">1. What is encapsulation?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a process of wrapping the attributes of an object with its behavior.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. Why do we perform encapsulation?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>To achieve data hiding.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. What is data hiding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>It is a process of restricting direct access to the attributes of a class (or object) and providing secure and indirect access to the properties of the class (or object).</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">4. What are the steps to achieve data hiding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. Make attributes private.<br>
+                2. Design getter and setter methods for reading and updating the attributes, respectively.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. What are the advantages of encapsulation?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. By providing indirect access to the attributes, it enhances security and allows for validation steps before reading or updating the attributes.<br>
+                2. Encapsulation helps achieve data hiding.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">6. How can programmers achieve flexibility in designing encapsulation?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. Make an attribute readable but not modifiable.<br>
+                2. Make an attribute not readable but modifiable.<br>
+                3. Make an attribute both readable and modifiable.<br>
+                4. Make an attribute neither readable nor modifiable.
+            </p>
+        </details>
+    </li>
+    
 
+     
+
+</ul>
 
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -2989,7 +3053,355 @@ const questions = [
 {
     question: "Which method syntax do we use for float in Scanner?",
     answer: "nextFloat();"
-}
+},
+
+///////////////////////////////////   OOPS   ///////////////////////////////////////
+{
+        question: "Why do we need OOP?",
+        answer: "OOP helps in organizing complex programs into simple, reusable, and secure components through concepts like encapsulation, inheritance, and polymorphism."
+    },
+    {
+        question: "What is an object?",
+        answer: "An object is an instance of a class, representing an entity that has a state (attributes) and behavior (methods)."
+    },
+    {
+        question: "What are the different ways to create an object?",
+        answer: "1. Using the new keyword\n2. Deserialization\n3. Factory method\n4. Reflection"
+    },
+    {
+        question: "What are attributes?",
+        answer: "Attributes are the characteristics or properties of an object that define its state, also known as instance variables."
+    },
+    {
+        question: "What is a class?",
+        answer: "A class is a group of objects that have common properties. It is a blueprint from which objects are created, but it cannot be physical."
+    },
+    {
+        question: "What is a constructor?",
+        answer: "A constructor in programming is a special member that is called when an object is created. It initializes the object's state or performs setup tasks. A constructor typically has the same name as the class it belongs to and helps in creating an instance of that class."
+    },
+    {
+        question: "What is new in Java?",
+        answer: "New is a keyword and operator that creates a block of memory in the heap area at runtime."
+    },
+    {
+        question: "What does the new operator give?",
+        answer: "The new operator gives a reference to the object created in the heap area."
+    },
+    {
+        question: "Why do we use classes?",
+        answer: "A class is used to create an object."
+    },
+    {
+        question: "What is a public class?",
+        answer: "A class prefixed with the public access modifier is known as a public class."
+    },
+    {
+        question: "What is the rule for a public class?",
+        answer: "When we have a public class, the Java file name must be the same as the class name otherwise, we will get a compile-time error."
+    },
+    {
+        question: "How many public classes can we create?",
+        answer: "A Java file cannot have more than one public class."
+    },
+    {
+        question: "What is a non-primitive data type?",
+        answer: "A non-primitive data type is any data type that is defined by classes, including objects, arrays, and strings."
+    },
+    {
+        question: "Where do we store non-primitive data types?",
+        answer: "We store the reference to the object created."
+    },
+    {
+        question: "How do we create an object?",
+        answer: "Using the new keyword."
+    },
+    {
+        question: "What are non-static members?",
+        answer: "Non-static members are declared in the class block and are not prefixed with the static modifier."
+    },
+    {
+        question: "What are the types of non-static members?",
+        answer: "Non-static members include non-static variables, non-static methods, and non-static initializers."
+    },
+    {
+        question: "What is a non-static variable?",
+        answer: "A non-static variable is a variable declared in the class block that is not prefixed with the static modifier."
+    },
+    {
+        question: "What is the default value of a non-static variable?",
+        answer: "The default value of a non-static variable is null for object references; it can also be 0 for numeric types, false for boolean, etc., depending on the data type."
+    },
+    {
+        question: "Where is a non-static variable created in the JVM?",
+        answer: "A non-static variable's memory is allocated inside the object of the class, which is present in the heap area."
+    },
+    {
+    question: "What happens when we create a non-static variable?",
+    answer: "A non-static variable will be created inside every object instantiated from the class, allowing each object to maintain its own state."
+},
+{
+    question: "What is the difference between a static variable and a non-static variable?",
+    answer: "A static variable belongs to the class itself and is shared among all instances, while a non-static variable is created for each object, allowing individual instances to have different values."
+},
+{
+    question: "What is a dot operator?",
+    answer: "The dot operator (.) is an access operator used to access members (variables and methods) of a class or an object."
+},
+{
+    question: "What is a non-static method?",
+    answer: "A non-static method is a method declared in the class block that is not prefixed with the static modifier, meaning it can only be called on instances of the class."
+},
+{
+    question: "Where do we store non-static methods in memory?",
+    answer: "Non-static methods are stored in the method area of the heap memory, associated with the objects created from the class."
+},
+{
+    question: "How to call a non-static method?",
+    answer: "A non-static method is called using an object reference of the class."
+},
+{
+    question: "How to call a non-static method from one class to another?",
+    answer: "A non-static method from one class can be called using an object reference of that class."
+},
+{
+    question: "What is 'this' in Java?",
+    answer: "The 'this' keyword refers to the current instance of the class, allowing access to instance variables and methods."
+},
+{
+    question: "What is a non-static initializer?",
+    answer: "A non-static initializer is a block of code that executes when an object is created, allowing for instance-specific initialization during the loading process of the class."
+},
+{
+    question: "Why do we use non-static initialization?",
+    answer: "We use non-static initialization to assign unique values to each object instance, ensuring that every object can have its own state."
+},
+{
+    question: "What are the types of non-static initializers?",
+    answer: "1. Non-static declaration and initialization statements, 2. Non-static blocks."
+},
+{
+    question: "What is a non-static block?",
+    answer: "A non-static block is a block of code declared within a class but not prefixed with the static modifier, executing whenever an object of the class is created."
+},
+{
+    question: "Which uses more memory: a non-static block or a non-static variable?",
+    answer: "A non-static variable uses more memory because it is stored for each object. A non-static block does not consume memory; it simply executes when the object is created."
+},
+{
+    question: "Does a non-static block have a name?",
+    answer: "No, a non-static block does not have a name."
+},
+{
+    question: "Does a non-static block have any return type?",
+    answer: "No, a non-static block does not have a return type."
+},
+{
+    question: "Can we call a non-static block explicitly?",
+    answer: "No, a non-static block cannot be called explicitly."
+},
+{
+    question: "When does a non-static block execute?",
+    answer: "A non-static block executes during object creation, just before the constructor is called."
+},
+{
+    question: "What type of arguments can we pass in a non-static block?",
+    answer: "No arguments can be passed to a non-static block."
+},
+{
+    question: "Do you know the syntax of a non-static block?",
+    answer: "Yes, it is written as a block of code inside a class without a method name or return type."
+},
+{
+    question: "What is method chaining?",
+    answer: "Method chaining is the process of calling methods continuously one after another. It allows multiple method calls to be made in a single statement."
+},
+{
+    question: "When can we use method chaining?",
+    answer: "Method chaining can be used if the method returns a reference to the object."
+},
+{
+    question: "Can we have a different class name and constructor name?",
+    answer: "No, we cannot have different names; the constructor name must match the class name."
+},
+{
+    question: "Can every class have a constructor?",
+    answer: "Yes, there is a default constructor present in every class, even if it is not explicitly defined."
+},
+{
+    question: "What is the purpose of a constructor?",
+    answer: "The purpose of a constructor is to initialize non-static members of the class when an object is created."
+},
+{
+    question: "Can we call a constructor explicitly?",
+    answer: "No, we can only invoke a constructor using the new operator."
+},
+{
+    question: "Does a constructor have any return type?",
+    answer: "No, a constructor does not have a return type."
+},
+{
+    question: "What is a default constructor?",
+    answer: "A default constructor is automatically created by Java if you do not define one."
+},
+{
+    question: "Can we overload the constructor?",
+    answer: "Yes, we can overload constructors."
+},
+{
+    question: "What are the types of constructors?",
+    answer: "There are two types of constructors: no-argument constructors and parameterized constructors."
+},
+{
+    question: "What is a no-argument constructor?",
+    answer: "A no-argument constructor is a constructor that does not take any parameters."
+},
+{
+    question: "What is the syntax of a no-argument constructor?",
+    answer: `class ClassName { accessModifier ClassName() { // Statement } }`
+},
+{
+    question: "What is a parameterized constructor?",
+    answer: "A parameterized constructor is a constructor that has formal parameters."
+},
+{
+    question: "What is the syntax of a parameterized constructor?",
+    answer: `class ClassName { accessModifier ClassName(formalArgumentType formalArgument) { // Statement } }`
+},
+{
+    question: "What is constructor overloading?",
+    answer: "Constructor overloading occurs when a class has more than one constructor with the same name but different formal parameters."
+},
+{
+    question: "In constructor overloading, can we pass the same parameter type in different constructors?",
+    answer: "No, we cannot have two constructors with the same parameter types in the same order."
+},
+{
+    question: "Why do we use constructor overloading?",
+    answer: "Constructor overloading is used to customize the initialization of an object's data members (variables)."
+},
+{
+    question: "Can you give an example of constructor overloading?",
+    answer: "Constructor overloading lets you create objects in different ways. For example, in a form, some details are required, and some are optional. You can have different constructors for each."
+},
+{
+    question: "Difference between 'this()' call statement and 'this' keyword?",
+    answer: "The 'this' keyword refers to the current object instance, while 'this()' is used to call another constructor in the same class."
+},
+{
+    question: "What is constructor chaining?",
+    answer: "Constructor chaining is the process of one constructor calling another constructor in the same or superclass to execute initialization code."
+},
+{
+    question: "Why do we use constructor chaining?",
+    answer: "We use constructor chaining to enhance code reusability and to avoid duplication by allowing constructors to share common initialization code."
+},
+{
+    question: "Using which can we call one constructor from another constructor?",
+    answer: "We can do that using the 'this()' call statement."
+},
+{
+    question: "What are the types of ways to achieve constructor chaining?",
+    answer: "There are two types: 1. Using 'this()' call statement 2. Using 'super()' call statement."
+},
+{
+    question: "What is the 'this()' call statement?",
+    answer: "The 'this()' call statement is used to achieve constructor chaining within the same class."
+},
+{
+    question: "Where do we use the 'this()' call statement?",
+    answer: "It can only be used in constructors."
+},
+{
+    question: "Can we do recursive calling in a constructor, and how can we do it?",
+    answer: "No, we cannot do it. If attempted, it results in the error: 'recursive constructor invocation.'"
+},
+{
+    question: "Can we have multiple 'this()' call statements?",
+    answer: "No, we cannot have multiple 'this()' call statements in a constructor. Only one 'this()' call is allowed, and it must be the first statement."
+},
+
+
+////////////////////////////////   PACKAGES       ////////////////////////////////////////
+
+{
+        "question": "What is a package in Java?",
+        "answer": "A package is a group of classes and interfaces grouped together, which work for a common functionality."
+    },
+    {
+        "question": "Why do we use packages?",
+        "answer": "Packages help organize similar Java files."
+    },
+    {
+        "question": "What are the types of packages?",
+        "answer": "There are two types of packages: 1. User-defined package 2. Built-in package"
+    },
+    {
+        "question": "What is a built-in package?",
+        "answer": "A built-in package is created by the developers of the Java language and is available to use directly."
+    },
+    {
+        "question": "What is a user-defined package?",
+        "answer": "A user-defined package is a package created by the programmer."
+    },
+    {
+        "question": "What is the first statement of a Java program?",
+        "answer": "The first statement in a Java program is typically the package declaration."
+    },
+    {
+        "question": "Which keyword do we use to create a package?",
+        "answer": "The package keyword is used to create a package."
+    },
+    {
+        "question": "What is the syntax of a package?",
+        "answer": "package packagename;"
+    },
+    {
+        "question": "What are the advantages of packages?",
+        "answer": "1. Software Modularity 2. Maintainability 3. Easy Bug Fixing 4. Security 5. Code Reusability"
+    },
+
+
+
+//////////////////////////////    Priciple of oops             /////////////////////////////////////////////////////////////
+
+{
+        "question": "What is the principle of OOP?",
+        "answer": "It helps programmers design efficient software easily."
+    },
+    {
+        "question": "What are the types of principles in OOP?",
+        "answer": "There are four main principles: 1. Encapsulation 2. Inheritance 3. Polymorphism 4. Abstraction"
+    },
+
+///////////////////////////Encapsulation///////////////////////////////////
+{
+        "question": "What is encapsulation?",
+        "answer": "It is a process of wrapping the attributes of an object with its behavior."
+    },
+    {
+        "question": "Why do we perform encapsulation?",
+        "answer": "To achieve data hiding."
+    },
+    {
+        "question": "What is data hiding?",
+        "answer": "It is a process of restricting direct access to the attributes of a class (or object) and providing secure and indirect access to the properties of the class (or object)."
+    },
+    {
+        "question": "What are the steps to achieve data hiding?",
+        "answer": "1. Make attributes private. 2. Design getter and setter methods for reading and updating the attributes, respectively."
+    },
+    {
+        "question": "What are the advantages of encapsulation?",
+        "answer": "1. By providing indirect access to the attributes, it enhances security and allows for validation steps before reading or updating the attributes. 2. Encapsulation helps achieve data hiding."
+    },
+    {
+        "question": "How can programmers achieve flexibility in designing encapsulation?",
+        "answer": "1. Make an attribute readable but not modifiable. 2. Make an attribute not readable but modifiable. 3. Make an attribute both readable and modifiable. 4. Make an attribute neither readable nor modifiable."
+    }
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////
