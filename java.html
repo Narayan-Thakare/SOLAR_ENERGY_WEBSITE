@@ -3284,6 +3284,232 @@ const questions = [
     question: "What are the types of access modifiers?",
     answer: "The types of access modifiers in Java are public, private, protected, and default."
 },
+{
+        "question": "What is a void method in Java?",
+        "answer": "A void method in Java is a method that does not return any value. It performs an action or operation but does not provide a result back to the caller."
+    },
+    {
+        "question": "What is a modifier?",
+        "answer": "Modifiers are keywords used to alter the behavior of Java members."
+    },
+    {
+        "question": "What are the types of access modifiers?",
+        "answer": "1. public\n2. private\n3. protected\n4. default"
+    },
+    {
+        "question": "Why do we use access modifiers?",
+        "answer": "Access modifiers in Java control the visibility and accessibility of classes, methods, and variables to implement encapsulation, security, and modularity."
+    },
+    {
+        "question": "What are the types of non-access modifiers?",
+        "answer": "1. static\n2. abstract\n3. final\n4. synchronized\n5. volatile"
+    },
+    {
+        "question": "What is a no-argument method?",
+        "answer": "A no-argument method is a method that does not take any parameters. It performs its task without requiring any input from the caller."
+    },
+    {
+        "question": "When do we use a no-argument method?",
+        "answer": "A no-argument method is used when you need a method to perform an action that does not require any input data. It simplifies calling the method since no arguments need to be provided."
+    },
+//////////////////////////////// Method Overloding/////////////////////////////////////////////////
+
+
+{
+        "question": "What is method overloading?",
+        "answer": "If a class has multiple methods with the same name but different formal arguments, it is known as method overloading."
+    },
+    {
+        "question": "Why do we use method overloading?",
+        "answer": "Method overloading allows multiple methods with the same name but different parameters to handle different inputs."
+    },
+    {
+        "question": "Can you give an example of method overloading?",
+        "answer": "The println method of the PrintStream class is an example of method overloading."
+    },
+    {
+        "question": "Can we have more than one method with the same name and same formal arguments? Can we overload them?",
+        "answer": "No, we can't do that because they have the same formal arguments."
+    },
+    {
+        "question": "Can the main method be overloaded?",
+        "answer": "Yes, the main method can be overloaded."
+    },
+    {
+        "question": "What is method overriding?",
+        "answer": "Method overriding occurs when a subclass provides a specific implementation of a method already defined in its superclass, with the same name, return type, and parameters."
+    },
+/////////////////////////////////// Method Binding////////////////////////////////////////////
+
+{
+        "question": "What is method binding?",
+        "answer": "For every method call, a method body has to be executed. This process is known as method binding."
+    },
+    {
+        "question": "Why do we use method binding?",
+        "answer": "Method binding links a method call to its definition, either at compile-time or runtime."
+    },
+    {
+        "question": "What is compile-time binding?",
+        "answer": "The binding that is done by the compiler at compile time is known as compile-time binding."
+    },
+//////////////////////////////////// Method recursion  ////////////////////////////////////////////////////////////////
+{
+        "question": "What is method recursion?",
+        "answer": "A method calling itself directly or indirectly."
+    },
+    {
+        "question": "Why do we use method recursion?",
+        "answer": "We use recursion to simplify complex problems by breaking them into smaller, similar problems."
+    },
+    {
+        "question": "What is direct recursion?",
+        "answer": "Direct recursion occurs when a method calls itself directly."
+    },
+    {
+        "question": "How many stack frames are created for each method call?",
+        "answer": "Each method call creates one stack frame. In recursion, each recursive call creates a new stack frame until the base case is reached."
+    },
+    {
+        "question": "N number of threads is equal to?",
+        "answer": "N number of threads means N separate call stacks, as each thread operates with its own stack."
+    },
+    {
+        "question": "Can you increase the Java stack size?",
+        "answer": "Yes, the Java stack size can be increased using the JVM option Xss followed by the size you want to allocate."
+    },
+    {
+        "question": "When do we get a stack overflow exception?",
+        "answer": "We get a stack overflow exception when the number of stack frames exceeds the capacity of the stack."
+    },
+    {
+        "question": "What is the capacity in terms of method calls?",
+        "answer": "The capacity refers to the maximum number of stack frames that can be created."
+    },
+    {
+        "question": "Can a stack overflow be avoided?",
+        "answer": "Yes, by using a proper base condition in recursive methods."
+    },
+    {
+        "question": "How can we terminate the execution of a program?",
+        "answer": "We can terminate the execution of a program using System.exit(0)."
+    },
+/////////////////////////////////////////  Method  Return ////////////////////////////////////////////////////////
+{
+        "question": "What is a return in method?",
+        "answer": "Return is a keyword and control transfer statement."
+    },
+    {
+        "question": "Where do we use the return statement?",
+        "answer": "The return statement ends method execution and optionally returns a value to the caller."
+    },
+    {
+        "question": "Why do we use the return statement?",
+        "answer": "The return statement provides a value back to the caller and controls method execution flow."
+    },
+    {
+        "question": "Can a method return multiple values?",
+        "answer": "No, a method in Java cannot directly return multiple values. However, you can return an array, a collection, or an object containing multiple values."
+    },
+    {
+        "question": "What happens if a method does not have a return statement?",
+        "answer": "If a method has no return statement, it must be void and will complete execution without returning a value."
+    },
+    {
+        "question": "Is it mandatory for a method to return a value?",
+        "answer": "No, it is not mandatory for a method to return a value. If a method is declared with a void return type, it does not return any value."
+    },
+    {
+        "question": "Can a method return null?",
+        "answer": "Yes, a method can return null if the return type is a reference type (such as an object, array, or class). Returning null indicates that the method does not have a value to return."
+    },
+    {
+        "question": "What is the difference between return and break statements?",
+        "answer": "The return statement is used to exit a method and optionally return a value to the caller, while the break statement is used to exit a loop or a switch statement prematurely."
+    },
+    {
+        "question": "Can we use a return statement in a constructor?",
+        "answer": "No, constructors do not have a return type, and thus you cannot use a return statement to return a value from a constructor. However, you can use return to exit a constructor early."
+    },
+    {
+        "question": "How do you handle exceptions in a method that returns a value?",
+        "answer": "In a method that returns a value, exceptions can be handled using try-catch blocks. Inside the catch block, you can return a default value or handle the exception accordingly."
+    },
+    {
+        "question": "What is a return type in a method?",
+        "answer": "The return type of a method specifies the data type of the value that the method will return. If the method does not return any value, its return type is void."
+    },
+    {
+        "question": "What happens if you return in a void method?",
+        "answer": "If you use the return statement in a void method, it simply exits the method early without returning any value. It's often used to exit the method based on a condition."
+    },
+    {
+        "question": "Can a method have multiple return statements?",
+        "answer": "Yes, a method can have multiple return statements. However, only one of them will be executed based on the method's logic or condition."
+    },
+    {
+        "question": "How do you handle returning different types of data from a method?",
+        "answer": "To return different types of data, you can either use a common supertype, create a custom wrapper class that contains all possible return types, or use generics to allow for flexible return types."
+    },
+    {
+        "question": "If we have any statement after return what do we get?",
+        "answer": "We get the unreachable compile time error."
+    },
+    ///////////////////////////////////    Stati initializer  ///////////////////////////////////////////////////////////////////////////
+
+    {
+        "question": "What is a static initializer?",
+        "answer": "A static initializer, also known as a static block, is a block of code enclosed in curly braces and prefixed with the static keyword. It is executed once when the class is loaded into memory, and it runs before the main method or any other methods."
+    },
+    {
+        "question": "Why do we use a static initializer?",
+        "answer": "We use a static initializer to initialize static variables or to perform actions that need to be executed once when the class is loaded, such as setting up initial configurations or resources."
+    },
+    {
+        "question": "Can you give an example of when we use a static initializer?",
+        "answer": "We can use a static initializer to initialize static resources like a database connection or to set the value of a static constant that requires complex logic before the class is used."
+    },
+    {
+        "question": "What is a static block?",
+        "answer": "A static block is a block of code enclosed in curly braces and prefixed with the static keyword. It is executed once when the class is loaded into memory, and it runs before the main method or any other methods."
+    },
+    {
+        "question": "In a static block, what kind of name can we set?",
+        "answer": "We cannot set any name in a static block. It is simply executed when the class is loaded, and no name is associated with it like a method or variable."
+    },
+    {
+        "question": "When is the static block executed?",
+        "answer": "It is executed only once when the class is loaded into memory."
+    },
+    {
+        "question": "Why do we use a static block?",
+        "answer": "We use a static block to initialize static variables or to perform actions that need to be executed when the class is loaded, such as logging or initializing complex static resources."
+    },
+    {
+        "question": "Can we print something without the main method?",
+        "answer": "Yes, by using a static block."
+    },
+    {
+        "question": "How many static blocks can we create?",
+        "answer": "We can create an unlimited number of static blocks. They will be executed in the order they appear in the class."
+    },
+    {
+        "question": "What gets priority, the static block or the static variable?",
+        "answer": "Static variables are initialized first, and then the static block is executed."
+    },
+    {
+        "question": "In a static block, can we set a modifier like private or public?",
+        "answer": "No, static blocks cannot have access modifiers like private or public."
+    },
+    {
+        "question": "Why can't we set a static block as private or public?",
+        "answer": "Because static blocks are not members of the class like methods or fields. They are designed to handle static initialization and are executed once when the class is loaded."
+    },
+    {
+        "question": "Does a static block have any return type?",
+        "answer": "No, static blocks do not have a return type."
+    },
+
 
 
 ///////////////////////////////////   OOPS   ///////////////////////////////////////
