@@ -2764,6 +2764,144 @@ class ClassName {
 
 </ul>
 
+<h1 id="relationship">RELATIONSHIP</h1>
+<ul>
+
+    <ul>
+        <li>
+            <span class="section-title">1. What is a relationship?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    A relationship is an association between two or more objects or entities.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">2. Types of relationships?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    There are two types of relationships: 
+                    <br>1. "Has-a" relationship 
+                    <br>2. "Is-a" relationship
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">3. What is a "has-a" relationship?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    It is an association between two or more objects where one object is dependent on another object.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">4. What are the types of "has-a" relationships?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    Composition and aggregation.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">5. What is composition?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    Composition is an association between two or more objects where one cannot exist without the other.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">6. Give an example of composition.</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    Examples of composition include: mobile and battery, body and heart, marker and board, lock and key.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">7. What is aggregation?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    Aggregation is an association between two or more objects where there is a dependency, but one can exist without the other.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">8. Give an example of aggregation.</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    Examples of aggregation include: mobile and SIM, computer and pen drive, laptop and engineer.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">9. How do we achieve a "has-a" relationship?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    We can achieve a "has-a" relationship by having one object hold a reference to another object.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">10. How can we achieve composition and aggregation?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    We can achieve composition and aggregation by creating a reference of one object inside another object.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">11. Which design can we use for a "has-a" relationship?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    1. Early instantiation (Early binding).<br>
+                    2. Lazy instantiation (Lazy binding).
+                </p>
+            </details>
+        </li>
+    </ul>
+    
+
+
+    <li>
+        <span class="section-title">12. Why do we use relationships?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                We use relationships to connect objects and organize them efficiently.
+            </p>
+        </details>
+    </li>
+    
+
+
+
+
+
+</ul> 
+
+
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -2864,6 +3002,15 @@ class ClassName {
 
 </script>
 
+<!-- 
+
+{
+    question: " ",
+    answer: " "
+},
+
+
+-->
 
 <script>
     
@@ -3482,10 +3629,59 @@ const questions = [
     {
         "question": "How can programmers achieve flexibility in designing encapsulation?",
         "answer": "1. Make an attribute readable but not modifiable. 2. Make an attribute not readable but modifiable. 3. Make an attribute both readable and modifiable. 4. Make an attribute neither readable nor modifiable."
-    }
+    },
+
+//////////////////////////////////////////////      Relationship         ///////////////////////////////////////////////////////////////////////////////////////
 
 
-
+{
+        "question": "What is a relationship?",
+        "answer": "A relationship is an association between two or more objects or entities."
+    },
+    {
+        "question": "Types of relationships?",
+        "answer": "There are two types of relationships: 'Has-a' relationship and 'Is-a' relationship."
+    },
+    {
+        "question": "What is a 'has-a' relationship?",
+        "answer": "It is an association between two or more objects where one object is dependent on another object."
+    },
+    {
+        "question": "What are the types of 'has-a' relationships?",
+        "answer": "Composition and aggregation."
+    },
+    {
+        "question": "What is composition?",
+        "answer": "Composition is an association between two or more objects where one cannot exist without the other."
+    },
+    {
+        "question": "Give an example of composition.",
+        "answer": "Examples of composition include: mobile and battery, body and heart, marker and board, lock and key."
+    },
+    {
+        "question": "What is aggregation?",
+        "answer": "Aggregation is an association between two or more objects where there is a dependency, but one can exist without the other."
+    },
+    {
+        "question": "Give an example of aggregation.",
+        "answer": "Examples of aggregation include: mobile and SIM, computer and pen drive, laptop and engineer."
+    },
+    {
+        "question": "How do we achieve a 'has-a' relationship?",
+        "answer": "We can achieve a 'has-a' relationship by having one object hold a reference to another object."
+    },
+    {
+        "question": "How can we achieve composition and aggregation?",
+        "answer": "We can achieve composition and aggregation by creating a reference of one object inside another object."
+    },
+    {
+        "question": "Which design can we use for a 'has-a' relationship?",
+        "answer": "1. Early instantiation (Early binding). 2. Lazy instantiation (Lazy binding)."
+    },
+    {
+    "question": "Why do we use relationships?",
+    "answer": "We use relationships to connect objects and organize them efficiently."
+}
 
 
 ////////////////////////////////////////////////////////////////////////////
