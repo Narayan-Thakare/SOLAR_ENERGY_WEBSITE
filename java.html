@@ -520,6 +520,9 @@ pre code {
           <div class="nested-dropdown-content" id="variableInitilizationStatementDropdownContent">
           <a href="#section3">Local Variable</a>
           <a href="#section4">Global Variable</a>
+
+
+
            </div>
          </div>
 
@@ -588,6 +591,8 @@ pre code {
 
             <a href="#encapsulation">Encapsulation</a>
             <a href="#relationship">Relationship</a>
+            <a href="#inheritance">Inheritance</a>
+
 
             
 
@@ -2902,13 +2907,154 @@ class ClassName {
     </li>
     
 
+    <!-- ////////////////////////// -->
+    <li>
+        <span class="section-title">13. How can you achieve early instantiation?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            You can achieve early instantiation using a non-static initializer or constructor.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">14. What is lazy instantiation or lazy binding?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            In lazy instantiation, the reference to the dependent object is not created using a non-static initializer. Instead, a method is created, and the reference is assigned within the main object. When the method is called, the object is instantiated. This method is known as a helper method. <br>
+            Or <br>
+            Lazy instantiation creates a dependent object only when a specific method is called, rather than during initialization.
 
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">15. What is a helper method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                A helper method assists with tasks in a program, like creating objects in lazy instantiation.
 
-
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">16. When do we get a null pointer exception?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            A null pointer exception occurs when you try to access an object's member or call a method using a null reference.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">17. What is a null pointer exception?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            A null pointer exception occurs when trying to use a null object reference.
+            </p>
+        </details>
+    </li>
+    
+    
+    <li>
+        <span class="section-title">18. What is an "is-a" relationship?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            An "is-a" relationship represents inheritance between two or more objects, where one object is a subtype of another (similar to a parent-child relationship).
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">19. How can you achieve an "is-a" relationship?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            You can achieve an "is-a" relationship through class inheritance, where a subclass inherits properties and behaviors from a parent class.
+            </p>
+        </details>
+    </li>
+    
 
 </ul> 
 
+<h1 id="inheritance">INHERITANCE</h1>
+<ul>
 
+    <li>
+        <span class="section-title">1. What is inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            Inheritance is the process by which one class acquires all the properties and behaviors of another class.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. How can we achieve inheritance? What are the keywords?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            1. <code>extends</code> keyword<br>
+            2. <code>implements</code> keyword
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. What does the extends keyword do?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            The extends keyword is used to achieve inheritance between two classes or two interfaces.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">4. What are the levels of inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            1. Single-level inheritance<br>
+            2. Multi-level inheritance<br>
+            3. Hierarchical inheritance<br>
+            4. Multiple inheritance<br>
+            5. Hybrid inheritance
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. What is another name for the parent class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            The parent class is also known as the base class or superclass.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">6. What is another name for the child class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            The child class is also known as the derived class or subclass.
+            </p>
+        </details>
+    </li>
+    
+</ul>
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -3914,7 +4060,63 @@ const questions = [
     {
     "question": "Why do we use relationships?",
     "answer": "We use relationships to connect objects and organize them efficiently."
-}
+},
+{
+        "question": "How can you achieve early instantiation?",
+        "answer": "You can achieve early instantiation using a non-static initializer or constructor."
+    },
+    {
+        "question": "What is lazy instantiation or lazy binding?",
+        "answer": "In lazy instantiation, the reference to the dependent object is not created using a non-static initializer. Instead, a method is created, and the reference is assigned within the main object. When the method is called, the object is instantiated. This method is known as a helper method. Or Lazy instantiation creates a dependent object only when a specific method is called, rather than during initialization."
+    },
+    {
+        "question": "What is a helper method?",
+        "answer": "A helper method assists with tasks in a program, like creating objects in lazy instantiation."
+    },
+    {
+        "question": "When do we get a null pointer exception?",
+        "answer": "A null pointer exception occurs when you try to access an object's member or call a method using a null reference."
+    },
+    {
+        "question": "What is a null pointer exception?",
+        "answer": "A null pointer exception occurs when trying to use a null object reference."
+    },
+    {
+        "question": "What is an 'is-a' relationship?",
+        "answer": "An 'is-a' relationship represents inheritance between two or more objects, where one object is a subtype of another (similar to a parent-child relationship)."
+    },
+    {
+        "question": "How can you achieve an 'is-a' relationship?",
+        "answer": "You can achieve an 'is-a' relationship through class inheritance, where a subclass inherits properties and behaviors from a parent class."
+    },
+///////////////////////////////   Inheritance     ///////////////////////////////////////////////////
+
+
+    {
+        "question": "What is inheritance?",
+        "answer": "Inheritance is the process by which one class acquires all the properties and behaviors of another class."
+    },
+    {
+        "question": "How can we achieve inheritance? What are the keywords?",
+        "answer": "1. extends keyword\n2. implements keyword"
+    },
+    {
+        "question": "What does the extends keyword do?",
+        "answer": "The extends keyword is used to achieve inheritance between two classes or two interfaces."
+    },
+    {
+        "question": "What are the levels of inheritance?",
+        "answer": "1. Single-level inheritance\n2. Multi-level inheritance\n3. Hierarchical inheritance\n4. Multiple inheritance\n5. Hybrid inheritance"
+    },
+    {
+        "question": "What is another name for the parent class?",
+        "answer": "The parent class is also known as the base class or superclass."
+    },
+    {
+        "question": "What is another name for the child class?",
+        "answer": "The child class is also known as the derived class or subclass."
+    }
+
 
 
 ////////////////////////////////////////////////////////////////////////////
