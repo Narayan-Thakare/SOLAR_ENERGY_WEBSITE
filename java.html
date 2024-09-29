@@ -3052,7 +3052,43 @@ class ClassName {
             The child class is also known as the derived class or subclass.
             </p>
         </details>
+
+
+
     </li>
+
+
+    <li>
+        <span class="section-title">7. Give me the example of single level inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            In single level inheritance, a class inherits from only one parent class. For example:
+            <pre><code>
+    class A {
+        void displayA() {
+            System.out.println("This is class A");
+        }
+    }
+    
+    class B extends A {
+        void displayB() {
+            System.out.println("This is class B");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            B b = new B();
+            b.displayA();  // Inherited from class A
+            b.displayB();  // Defined in class B
+        }
+    }
+</code> </pre>
+            </p>
+        </details>
+    </li>
+    
     
 </ul>
 
