@@ -3053,13 +3053,19 @@ class ClassName {
             </p>
         </details>
 
-
-
     </li>
 
 
+   
+
+  
+
+
+</ul>
+<h1 id="singlelevelInheritance">Single level Inheritance</h1>
+<ul>
     <li>
-        <span class="section-title">7. Give me the example of single level inheritance?</span>
+        <span class="section-title">q. Give me the example of single level inheritance?</span>
         <details>
             <summary>Answer</summary>
             <p>
@@ -3088,9 +3094,156 @@ class ClassName {
             </p>
         </details>
     </li>
-    
-    
+    <li>
+        <span class="section-title">2. What is single level inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+            inheritance <b><u>achieve in one level</u></b> is called as single level 
+            </p>
+        </details>
+
+    </li>
+
+    <li>
+        <span class="section-title">3. Real-life example of Singlelevel inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. Bank account → Saving Account <br>
+                2. Guns → Sniper 
+            </p>
+        </details>
+    </li>
+
 </ul>
+
+
+
+<h1 id="multilevelInheritance">Multi-level Inheritance</h1>
+<ul>
+    <li>
+        <span class="section-title">1. What is Multilevel Inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Inheritance <b><u>achieved in more than one level</u></b> is known as multilevel inheritance.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. Give me an example of Multilevel Inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                <pre><code>
+                    package module;
+    
+                    public class Guns {
+                        
+                        String type;   // Gun type (e.g., Rifle, Pistol)
+                        String barrel; // Length of the barrel
+                        String company; // Manufacturer of the gun
+                    
+                        Guns() {
+                            // Default constructor
+                        }
+                    
+                        Guns(String type, String barrel, String company) {
+                            this.type = type;
+                            this.barrel = barrel;
+                            this.company = company;
+                        }
+                    
+                        public void displayGuns() {
+                            System.out.println("Type: " + type);
+                            System.out.println("Barrel: " + barrel);
+                            System.out.println("Company: " + company);
+                        }
+                    }
+                    
+                    public class Sniper extends Guns {
+                    
+                        String range;     // Effective range of the sniper
+                        String ammoSize;  // Ammunition size (e.g., 7.62mm)
+                        String weight;    // Weight of the sniper
+                    
+                        Sniper() {
+                            // Default constructor
+                        }
+                    
+                        Sniper(String range, String ammoSize, String weight, String type, String barrel, String company) {
+                            super(type, barrel, company); // Inherit from Guns class
+                            this.range = range;
+                            this.ammoSize = ammoSize;
+                            this.weight = weight;
+                        }
+                    
+                        public void displaySniper() {
+                            displayGuns();
+                            System.out.println("Range: " + range + " meters");
+                            System.out.println("Ammo Size: " + ammoSize);
+                            System.out.println("Weight: " + weight + " kg");
+                        }
+                    }
+                    
+                    public class Mini14 extends Sniper {
+                    
+                        String colour;       // Colour of the gun
+                        String brand;        // Brand associated with Mini14
+                        String barrelSize;   // Size of the barrel specific to Mini14
+                        String fireRate;     // Firing rate (e.g., rounds per minute)
+                    
+                        Mini14() {
+                            // Default constructor
+                        }
+                    
+                        Mini14(String range, String ammoSize, String weight, String type, String barrel, String company, String colour, String brand, String barrelSize, String fireRate) {
+                            super(range, ammoSize, weight, type, barrel, company); // Inherit from Sniper class
+                            this.colour = colour;
+                            this.brand = brand;
+                            this.barrelSize = barrelSize;
+                            this.fireRate = fireRate;
+                        }
+                    
+                        public void displayMini14() {
+                            displaySniper();
+                            System.out.println("Colour: " + colour);
+                            System.out.println("Brand: " + brand);
+                            System.out.println("Barrel Size: " + barrelSize + " inches");
+                            System.out.println("Fire Rate: " + fireRate + " rounds per minute");
+                        }
+                    }
+                    
+                    public class GunsDriver {
+                    
+                        public static void main(String[] args) {
+                            // Create a Mini14 object with real-world-like data
+                            Mini14 m1 = new Mini14("900", "5.56mm", "3.1", "Rifle", "18.5 inches", "Ruger", "Black", "Ruger", "18.5", "750");
+                            m1.displayMini14();
+                        }
+                    }
+                </code></pre>
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. Real-life example of multilevel inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. Guns → Sniper → Mini14 <br>
+                2. SoftwareCompany → TCS → Employee
+            </p>
+        </details>
+    </li>
+    
+
+</ul>
+
+
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -4151,9 +4304,50 @@ const questions = [
     {
         "question": "What is another name for the child class?",
         "answer": "The child class is also known as the derived class or subclass."
+    },
+    {
+  "question": "7. Give me the example of single level inheritance?",
+  "answer": "In single level inheritance, a class inherits from only one parent class. For example:\n\nclass A {\n    void displayA() {\n        console.log(\"This is class A\");\n    }\n}\n\nclass B extends A {\n    void displayB() {\n        console.log(\"This is class B\");\n    }\n}\n\nconst b = new B();\nb.displayA();  // Inherited from class A\nb.displayB();  // Defined in class B"
+},
+
+{
+  "question": "3. Real-life example of Single-level inheritance?",
+  "answer": {
+    "examples": [
+      "Bank account → Saving Account",
+      "Guns → Sniper"
+    ]
+  }
+},
+
+
+/////////////////////////    Multi level inheritance/////////////////////////////////////////////
+
+
+{
+      "question": "9. What is Multilevel Inheritance?",
+      "answer": {
+        "explanation": "Inheritance achieved in more than one level is known as multilevel inheritance."
+      }
+    },
+    {
+      "question": "10. Give me an example of Multilevel Inheritance?",
+      "answer": {
+        "code": {
+          "language": "Java",
+          "content": "package module;\n\npublic class Guns {\n    \n    String type;   // Gun type (e.g., Rifle, Pistol)\n    String barrel; // Length of the barrel\n    String company; // Manufacturer of the gun\n\n    Guns() {\n        // Default constructor\n    }\n\n    Guns(String type, String barrel, String company) {\n        this.type = type;\n        this.barrel = barrel;\n        this.company = company;\n    }\n\n    public void displayGuns() {\n        System.out.println(\"Type: \" + type);\n        System.out.println(\"Barrel: \" + barrel);\n        System.out.println(\"Company: \" + company);\n    }\n}\n\npublic class Sniper extends Guns {\n\n    String range;     // Effective range of the sniper\n    String ammoSize;  // Ammunition size (e.g., 7.62mm)\n    String weight;    // Weight of the sniper\n\n    Sniper() {\n        // Default constructor\n    }\n\n    Sniper(String range, String ammoSize, String weight, String type, String barrel, String company) {\n        super(type, barrel, company); // Inherit from Guns class\n        this.range = range;\n        this.ammoSize = ammoSize;\n        this.weight = weight;\n    }\n\n    public void displaySniper() {\n        displayGuns();\n        System.out.println(\"Range: \" + range + \" meters\");\n        System.out.println(\"Ammo Size: \" + ammoSize);\n        System.out.println(\"Weight: \" + weight + \" kg\");\n    }\n}\n\npublic class Mini14 extends Sniper {\n\n    String colour;       // Colour of the gun\n    String brand;        // Brand associated with Mini14\n    String barrelSize;   // Size of the barrel specific to Mini14\n    String fireRate;     // Firing rate (e.g., rounds per minute)\n\n    Mini14() {\n        // Default constructor\n    }\n\n    Mini14(String range, String ammoSize, String weight, String type, String barrel, String company, String colour, String brand, String barrelSize, String fireRate) {\n        super(range, ammoSize, weight, type, barrel, company); // Inherit from Sniper class\n        this.colour = colour;\n        this.brand = brand;\n        this.barrelSize = barrelSize;\n        this.fireRate = fireRate;\n    }\n\n    public void displayMini14() {\n        displaySniper();\n        System.out.println(\"Colour: \" + colour);\n        System.out.println(\"Brand: \" + brand);\n        System.out.println(\"Barrel Size: \" + barrelSize + \" inches\");\n        System.out.println(\"Fire Rate: \" + fireRate + \" rounds per minute\");\n    }\n}\n\npublic class GunsDriver {\n\n    public static void main(String[] args) {\n        // Create a Mini14 object with real-world-like data\n        Mini14 m1 = new Mini14(\"900\", \"5.56mm\", \"3.1\", \"Rifle\", \"18.5 inches\", \"Ruger\", \"Black\", \"Ruger\", \"18.5\", \"750\");\n        m1.displayMini14();\n    }\n}\n"
+        }
+      }
+    },
+    {
+      "question": "11. Real-life example of multilevel inheritance?",
+      "answer": {
+        "examples": [
+          "Guns → Sniper → Mini14",
+          "SoftwareCompany → TCS → Employee"
+        ]
+      }
     }
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 
