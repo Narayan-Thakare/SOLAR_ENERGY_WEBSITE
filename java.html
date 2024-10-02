@@ -3243,105 +3243,199 @@ class ClassName {
 
 </ul>
 
+<!-- /////////////////////////////////////////////// -->
+<h1 id="Hierarchical inheritance.">Hierarchical inheritance</h1>
+
+<ul>
 
 
-<h1> Hierarchical inheritance.</h1>
+    <li>
+        <span class="section-title">1. What is hierarchical inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Hierarchical inheritance is when a superclass has more than one subclass at the same level.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. Give me a real-life example of hierarchical inheritance.</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                A company has different types of employees. For example, a general Employee class could have subclasses like Developer and Tester. Each subclass would inherit common properties and behaviors from the Employee superclass, but also have their own unique characteristics.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. Give me an example of hierarchical inheritance with simple classes.</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                <pre><code>
+    // Superclass
+    class Employee {
+        String name;
+        int id;
+    
+        Employee(String name, int id) {
+            this.name = name;
+            this.id = id;
+        }
+    
+        void getDetails() {
+            System.out.println("Name: " + name);
+            System.out.println("ID: " + id);
+        }
+    }
+    
+    // Subclass 1
+    class Developer extends Employee {
+        String programmingLanguages;
+    
+        Developer(String name, int id, String programmingLanguages) {
+            super(name, id);
+            this.programmingLanguages = programmingLanguages;
+        }
+    
+        void writeCode() {
+            System.out.println(name + " is writing code in: " + programmingLanguages);
+        }
+    }
+    
+    // Subclass 2
+    class Tester extends Employee {
+        String testingTools;
+    
+        Tester(String name, int id, String testingTools) {
+            super(name, id);
+            this.testingTools = testingTools;
+        }
+    
+        void testCode() {
+            System.out.println(name + " is testing using: " + testingTools);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Developer dev = new Developer("Alice", 101, "Java, Python");
+            Tester tester = new Tester("Bob", 102, "Selenium");
+    
+            dev.getDetails();
+            dev.writeCode();
+    
+            tester.getDetails();
+            tester.testCode();
+        }
+    }
+                </code></pre>
+            </p>
+        </details>
+    </li>
+    
+
+
+</ul>
+
+
+<h1 id="multipleinheritance">Multiple inheritance </h1>
+<ul>
+    <li>
+        <span class="section-title">1. What is multiple inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                A <b><u>subclass having more than one superclass at the same level</u></b> is known as multiple inheritance.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. Why can't we use multiple inheritance in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                In Java, a class can extend only one class at a time. Therefore, Java does not support multiple inheritance through classes. This avoids the <b>diamond problem</b>.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. What problem arises with multiple inheritance?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                The <b>diamond problem</b> occurs in multiple inheritance.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">4. What is the diamond problem?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                The <b>diamond problem</b> is an ambiguity (confusion) that arises when a subclass inherits from multiple superclasses that define the same method. It becomes unclear which method the subclass should inherit.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. How can we achieve multiple inheritance in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Multiple inheritance can be achieved in Java using <b>interfaces</b>.
+            </p>
+        </details>
+    </li>
+    
+
+</ul>
+
+<h1 id="hybridInheritance">Hybrid Inheritance</h1>
 <ul>
 
 
 
+
     <li>
-        <span class="section-title">1.What is the hierarchical inheritance? </span>
+        <span class="section-title">1. What is hybrid inheritance?</span>
         <details>
             <summary>Answer</summary>
             <p>
-Super class having more than subclass of same level. It is called hierarchical  inheritance.
-                
+                Hybrid inheritance is a combination of different types of inheritance, like single-level, multi-level, and hierarchical inheritance.
             </p>
         </details>
     </li>
-
+    
 
     <li>
-        <span class="section-title">2.Give me the real life example of hierarchical inheritance.?</span>
+        <span class="section-title">2. In which types of classes is hybrid inheritance possible?</span>
         <details>
             <summary>Answer</summary>
             <p>
-             
+                1. Single-level and multi-level inheritance can be combined.<br>
+                2. Single-level and hierarchical inheritance can be combined.<br>
+                3. Multi-level and hierarchical inheritance can be combined.<br>
+                4. Single-level, multi-level, and hierarchical inheritance can be combined.<br>
+                5. Multiple inheritance (through interfaces) and any other form of inheritance (single-level, multi-level, hierarchical) can be combined.
             </p>
         </details>
     </li>
+    
 
-    <li>
-        <span class="section-title">3.Give me the exmapal of hirarchical with class in simple?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-             <pre><code>
-                // Superclass
-class Employee {
-    String name;
-    int id;
+  
 
-    Employee(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }
 
-    void getDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("ID: " + id);
-    }
-}
 
-// Subclass 1
-class Developer extends Employee {
-    String programmingLanguages;
-
-    Developer(String name, int id, String programmingLanguages) {
-        super(name, id);
-        this.programmingLanguages = programmingLanguages;
-    }
-
-    void writeCode() {
-        System.out.println(name + " is writing code in: " + programmingLanguages);
-    }
-}
-
-// Subclass 2
-class Tester extends Employee {
-    String testingTools;
-
-    Tester(String name, int id, String testingTools) {
-        super(name, id);
-        this.testingTools = testingTools;
-    }
-
-    void testCode() {
-        System.out.println(name + " is testing using: " + testingTools);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Developer dev = new Developer("Alice", 101, "Java, Python");
-        Tester tester = new Tester("Bob", 102, "Selenium");
-
-        dev.getDetails();
-        dev.writeCode();
-
-        tester.getDetails();
-        tester.testCode();
-    }
-}
-
-             </code></pre> 
-            </p>
-        </details>
-    </li>
 
 
 </ul>
+
 
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -4446,10 +4540,58 @@ const questions = [
           "SoftwareCompany → TCS → Employee"
         ]
       }
-    }
+    },
 
-////////////////////////////////////////////////////////////////////////////
+//////////////////////////////  Hirarchical inheritance     //////////////////////////////////////////////
 
+{
+    "question": "What is hierarchical inheritance?",
+    "answer": "Hierarchical inheritance is when a superclass has more than one subclass at the same level."
+  },
+  {
+    "question": "Give me a real-life example of hierarchical inheritance.",
+    "answer": "A company has different types of employees. For example, a general Employee class could have subclasses like Developer and Tester. Each subclass would inherit common properties and behaviors from the Employee superclass, but also have their own unique characteristics."
+  },
+  {
+    "question": "Give me an example of hierarchical inheritance with simple classes.",
+    "answer": "```java\n// Superclass\nclass Employee {\n String name;\n int id;\n\n Employee(String name, int id) {\n this.name = name;\n this.id = id;\n }\n\n void getDetails() {\n System.out.println(\"Name: \" + name);\n System.out.println(\"ID: \" + id);\n }\n}\n\n// Subclass 1\nclass Developer extends Employee {\n String programmingLanguages;\n\n Developer(String name, int id, String programmingLanguages) {\n super(name, id);\n this.programmingLanguages = programmingLanguages;\n }\n\n void writeCode() {\n System.out.println(name + \" is writing code in: \" + programmingLanguages);\n }\n}\n\n// Subclass 2\nclass Tester extends Employee {\n String testingTools;\n\n Tester(String name, int id, String testingTools) {\n super(name, id);\n this.testingTools = testingTools;\n }\n\n void testCode() {\n System.out.println(name + \" is testing using: \" + testingTools);\n }\n}\n\npublic class Main {\n public static void main(String[] args) {\n Developer dev = new Developer(\"Alice\", 101, \"Java, Python\");\n Tester tester = new Tester(\"Bob\", 102, \"Selenium\");\n\n dev.getDetails();\n dev.writeCode();\n\n tester.getDetails();\n tester.testCode();\n }\n}\n```"
+  },
+
+
+  ////////////////////////////////////////          Multiple inheritance        ////////////////////////////////////////////
+
+  {
+    "question": "What is multiple inheritance?",
+    "answer": "A subclass having more than one superclass at the same level is known as multiple inheritance."
+  },
+  {
+    "question": "Why can't we use multiple inheritance in Java?",
+    "answer": "In Java, a class can extend only one class at a time. Therefore, Java does not support multiple inheritance through classes. This avoids the diamond problem."
+  },
+  {
+    "question": "What problem arises with multiple inheritance?",
+    "answer": "The diamond problem occurs in multiple inheritance."
+  },
+  {
+    "question": "What is the diamond problem?",
+    "answer": "The diamond problem is an ambiguity (confusion) that arises when a subclass inherits from multiple superclasses that define the same method. It becomes unclear which method the subclass should inherit."
+  },
+  {
+    "question": "How can we achieve multiple inheritance in Java?",
+    "answer": "Multiple inheritance can be achieved in Java using interfaces."
+  },
+
+  /////////////////////////////////////////////////////          Hybrid inheritance               /////////////////////////////////////////////////////
+  {
+    "question": "What is hybrid inheritance?",
+    "answer": "Hybrid inheritance is a combination of different types of inheritance, like single-level, multi-level, and hierarchical inheritance."
+  },
+  {
+    "question": "In which types of classes is hybrid inheritance possible?",
+    "answer": "1. Single-level and multi-level inheritance can be combined.\n2. Single-level and hierarchical inheritance can be combined.\n3. Multi-level and hierarchical inheritance can be combined.\n4. Single-level, multi-level, and hierarchical inheritance can be combined.\n5. Multiple inheritance (through interfaces) and any other form of inheritance (single-level, multi-level, hierarchical) can be combined."
+  }
+
+  
 ];
 
 function generateMockQuestions() {
