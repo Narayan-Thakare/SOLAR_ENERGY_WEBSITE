@@ -4011,6 +4011,35 @@ class ClassName {
 </ul>
 
 
+<h1 id="abstraction">Abstraction</h1>
+<ul>
+    <li>
+        <span class="section-title">1. What is Abstraction?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Abstraction is the process of designing a system that provides only the most essential features of a project while hiding its implementation details. This concept is known as abstraction.
+                <br><br>
+                Or
+                <br><br>
+                Abstraction in Java hides the complex implementation details and exposes only the essential features of an object to the outside world, simplifying the representation of real-world entities in the software.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. How to achieve abstraction?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                1. Abstract Classes <br>
+                2. Interfaces
+            </p>
+        </details>
+    </li>
+    
+
+
 
 
 
@@ -5289,32 +5318,91 @@ const questions = [
 
 
   {
-        question: "1. What is Polymorphism?",
-        answer: "\"Poly\" means many, and \"morph\" means form. Polymorphism in Java is the ability of a member (variable or method) to have one name but many forms. Or It is a concept where we can perform a single action in different ways."
-    },
-    {
-        question: "2. Types of Polymorphism",
-        answer: "The two types of polymorphism are compile-time polymorphism and run-time polymorphism."
-    },
-    {
-        question: "3. What is Compile-Time Polymorphism?",
-        answer: "Compile-time polymorphism occurs when a member (variable or method) has one name and many forms. The compiler decides which form to execute at compile time. This is known as compile-time polymorphism."
-    },
-    {
-        question: "4. How to Achieve Compile-Time Polymorphism",
-        answer: "Compile-time polymorphism can be achieved through method overloading, constructor overloading, method shadowing, variable shadowing, and operator overloading."
-    },
-    {
-        question: "5. What is Run-Time Polymorphism?",
-        answer: "Run-time polymorphism occurs when a method has one name and many forms, but the decision about which form to execute is made at run-time based on the object created, not by the compiler."
-    },
-    {
-        question: "6. How to Achieve Run-Time Polymorphism",
-        answer: "Run-time polymorphism can be achieved through the following methods: 1. Derived typecasting 2. Method overriding."
-    }
+    question: "What is Polymorphism?",
+    answer: "\"Poly\" means many, and \"morph\" means form. Polymorphism in Java is the ability of a member (variable or method) to have one name but many forms.\n\nOr\n\nIt is a concept where we can perform a single action in different ways."
+},
+{
+    question: "Types of Polymorphism",
+    answer: "The two types of polymorphism are compile-time polymorphism and run-time polymorphism."
+},
+{
+    question: "What is Compile-Time Polymorphism?",
+    answer: "Compile-time polymorphism occurs when a member (variable or method) has one name and many forms. The compiler decides which form to execute at compile time."
+},
+{
+    question: "How to Achieve Compile-Time Polymorphism?",
+    answer: "Compile-time polymorphism can be achieved through method overloading, constructor overloading, method shadowing, variable shadowing, and operator overloading."
+},
+{
+    question: "What is Run-Time Polymorphism?",
+    answer: "Run-time polymorphism occurs when a method has one name and many forms, but the decision about which form to execute is made at run-time based on the object created, not by the compiler."
+},
+{
+    question: "How to Achieve Run-Time Polymorphism?",
+    answer: "Run-time polymorphism can be achieved through the following methods:\n1. Derived typecasting\n2. Method overriding"
+},
+{
+    question: "What is method overriding?",
+    answer: "Method overriding occurs when a subclass defines a method with the same signature as the one declared in the parent class."
+},
+{
+    question: "Can method overriding be performed with static members?",
+    answer: "No, method overriding can only be performed with non-static members."
+},
+{
+    question: "How can we perform method overriding?",
+    answer: "Method overriding can be done using upcasting, where a parent reference is used to refer to a child object."
+},
+{
+    question: "In method overriding, what does the JVM prioritize?",
+    answer: "The JVM gives priority to the type of the object created at runtime, not the reference type."
+},
+{
+    question: "Can we perform method overriding with non-static members?",
+    answer: "Yes, method overriding is performed with non-static members."
+},
+{
+    question: "Can we override static methods? How?",
+    answer: "No, static methods cannot be overridden. They can only be hidden, which is referred to as method shadowing."
+},
+{
+    question: "What is method shadowing?",
+    answer: "Method shadowing occurs when both the superclass and the subclass have static methods with the same signature. This hides the parent’s method, rather than overriding it."
+},
+{
+    question: "Is method shadowing compile-time or runtime polymorphism?",
+    answer: "Method shadowing is a form of compile-time polymorphism."
+},
+{
+    question: "In method shadowing, what determines which method is invoked?",
+    answer: "In method shadowing, the method invoked depends on the type of reference used, not the type of the object created."
+},
+{
+    question: "What is variable shadowing?",
+    answer: "Variable shadowing occurs when a parent class and a child class have variables with the same name, either static or non-static. The child class's variable hides the parent class's variable."
+},
+{
+    question: "Is variable shadowing compile-time or runtime polymorphism?",
+    answer: "Variable shadowing is a form of compile-time polymorphism."
+},
+{
+    question: "What is operator overloading?",
+    answer: "Operator overloading allows different behaviors for an operator; Java supports it only for + in string concatenation."
+}
+,
 
-
+//////////////////////////////////    Abstraction ////////////////////////////////////////////////////////////////////
  
+
+{
+    question: "What is Abstraction?",
+    answer: "Abstraction is the process of designing a system that provides only the most essential features of a project while hiding its implementation details. \n\nOr\n\nIn Java, abstraction hides complex implementation details and exposes only the essential features of an object to the outside world, simplifying the representation of real-world entities in software."
+},
+{
+    question: "How to achieve abstraction?",
+    answer: "1. Abstract Classes\n2. Interfaces"
+},
+
 
 ];
 
