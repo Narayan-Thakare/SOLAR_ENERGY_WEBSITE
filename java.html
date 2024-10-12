@@ -595,6 +595,7 @@ pre code {
 
             <a href="#abstraction">Abstraction</a>
 
+            <a href="#objectClass">Object Class</a>
 
 
             
@@ -4226,6 +4227,167 @@ From class A
 
 </ul>
 
+<h1 id="objectClass">Object Class</h1>
+<ul>
+
+    <li>
+        <span class="section-title">1. What is the Object class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                The Object class is the superclass of all classes in Java. Any class directly or indirectly inherits the members of the Object class.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. Where is the Object class present?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                java.lang package
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. How many methods does the Object class have?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                11
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">4. What are the methods of the Object class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                The methods include: equals(), toString(), hashCode(), clone(), getClass(), notify(), notifyAll(), wait(), finalize(), and two overloaded versions of wait().
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. What is the supermost parent class in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Object class
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">6. Can we override the toString() method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Yes
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">7. What format does the toString() method return?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                String
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">8. Can you change the object reference? If yes, how?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Yes, by overriding the toString() method.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">9. When is the toString() method called?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                The toString() method is called automatically when an object reference is printed.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">10. What does the toString() method return? What type?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                It returns a String.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">11. Can you give an example of overriding the toString() method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Yes, when we override the toString() method of the Object class, we customize the object reference format. 
+            </p>
+        </details>
+    </li>
+
+    <li>
+        <span class="section-title">12. Tell me the syntax of an object reference.</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                &lt;FullyQualifiedClassName@HexadecimalNumber&gt;
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">13. Can the parent class extend any class, and which one?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                Yes, the Object class.
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">14. Which method is used for garbage collection?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                finalize().
+            </p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">15. Which method is deprecated?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>
+                finalize().
+            </p>
+        </details>
+    </li>
+    
+    
+
+
+</ul>
+
+
+
+
 
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -5699,6 +5861,68 @@ This is from class B
 From class A
 </code></pre>
 `
+},
+////////////////////////   Object Class      /////////////////////////////////////
+
+{
+    question: "What is the Object class?",
+    answer: "The Object class is the superclass of all classes in Java. Any class directly or indirectly inherits the members of the Object class."
+},
+{
+    question: "Where is the Object class present?",
+    answer: "java.lang package"
+},
+{
+    question: "How many methods does the Object class have?",
+    answer: "11"
+},
+{
+    question: "What are the methods of the Object class?",
+    answer: "The methods include: equals(), toString(), hashCode(), clone(), getClass(), notify(), notifyAll(), wait(), finalize(), and two overloaded versions of wait()."
+},
+{
+    question: "What is the supermost parent class in Java?",
+    answer: "Object class"
+},
+{
+    question: "Can we override the toString() method?",
+    answer: "Yes"
+},
+{
+    question: "What format does the toString() method return?",
+    answer: "String"
+},
+{
+    question: "Can you change the object reference? If yes, how?",
+    answer: "Yes, by overriding the toString() method."
+},
+{
+    question: "When is the toString() method called?",
+    answer: "The toString() method is called automatically when an object reference is printed."
+},
+{
+    question: "What does the toString() method return? What type?",
+    answer: "It returns a String."
+},
+{
+    question: "Can you give an example of overriding the toString() method?",
+    answer: "Yes, when we override the toString() method of the Object class, we customize the object reference format."
+},
+{
+    question: "Tell me the syntax of an object reference.",
+    answer: "<FullyQualifiedClassName@HexadecimalNumber>"
+},
+{
+    question: "Can the parent class extend any class, and which one?",
+    answer: "Yes, the Object class."
+},
+{
+    question: "Which method is used for garbage collection?",
+    answer: "finalize()."
+},
+{
+    question: "Which method is deprecated?",
+    answer: "finalize()."
 }
 
 
