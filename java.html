@@ -593,6 +593,9 @@ pre code {
             <a href="#relationship">Relationship</a>
             <a href="#inheritance">Inheritance</a>
 
+            <a href="#abstraction">Abstraction</a>
+
+
 
             
 
@@ -4037,9 +4040,191 @@ class ClassName {
             </p>
         </details>
     </li>
-    
+<!-- //////////////////////////////////////////////////// -->
+
+<li>
+    <span class="section-title">3. Types of methods?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            1. Abstract method <br>
+            2. Concrete method
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">4. What is an abstract method?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            A method without implementation details, prefixed with the abstract modifier and ending with a semicolon, is called an abstract method.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">5. What is the syntax of an abstract method?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            access modifier abstract return type method name (formal arguments);
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">6. Can we declare an abstract method like this: access modifier return type abstract method name (formal arguments)?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>No</p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">7. What is a concrete method?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            A method with implementation details is known as a concrete method.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">8. Can we put a body for an abstract method?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>No, we cannot.</p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">9. Why can't we provide a body for an abstract method?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            Abstract methods are meant to be implemented by subclasses, so they can't have a body.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">10. Types of classes?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            1. Abstract class <br>
+            2. Concrete class
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">11. What is an abstract class?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            A class prefixed with the abstract modifier that contains abstract methods is known as an abstract class.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">12. What is a concrete class?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            A class not prefixed with the abstract modifier or that doesn't contain abstract methods is known as a concrete class.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">13. Why do we use abstraction?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+            Abstraction is used to hide implementation details and show only essential features, making code easier to understand and maintain.
+        </p>
+    </details>
+</li>
+
+<li>
+    <span class="section-title">14. Simple program demonstrating abstraction?</span>
+    <details>
+        <summary>Answer</summary>
+        <p>
+<pre><code>
+package module;
+
+public abstract class A {
+    public abstract void add(int a, int b);
+    public abstract void sub(int a, int b);
+    public abstract void mult(int a, int b);
+
+    public void mess() {
+        System.out.println("This is from class A");
+    }
+
+    void mess2() {
+        System.out.println("From class A");
+    }
+}
+
+package module;
+
+public class B extends A {
+    public void add(int a, int b) {
+        System.out.println(a + b);
+    }
+
+    public void sub(int a, int b) {
+        System.out.println(a - b);
+    }
+
+    public void mult(int a, int b) {
+        System.out.println(a * b);
+    }
+
+    public void mess() {
+        System.out.println("This is from class B");
+    }
+
+    public void messsB() {
+        System.out.println("This is from B");
+    }
+}
+
+package module;
+
+public class Driver {
+    public static void main(String[] args) {
+        A a1 = new B();
+
+        a1.add(10, 20);
+        a1.sub(11, 22);
+        a1.mess();
+        a1.mess2();
+        // a1.messsB();  // CTE: Cannot access subclass-specific methods using parent reference
+    }
+}
+
+output
+
+30
+-11
+This is from class B
+From class A
+
+</code></pre>
+        </p>
+    </details>
+</li>
 
 
+
+</ul>
 
 
 
@@ -4144,7 +4329,7 @@ class ClassName {
 
 <!-- 
 
-{
+,{
     question: " ",
     answer: " "
 },
@@ -5402,6 +5587,120 @@ const questions = [
     question: "How to achieve abstraction?",
     answer: "1. Abstract Classes\n2. Interfaces"
 },
+
+
+{
+    question: "Types of methods?",
+    answer: "1. Abstract method\n2. Concrete method"
+},
+{
+    question: "What is an abstract method?",
+    answer: "A method without implementation details, prefixed with the abstract modifier and ending with a semicolon, is called an abstract method."
+},
+{
+    question: "What is the syntax of an abstract method?",
+    answer: "access modifier abstract return type method name (formal arguments);"
+},
+{
+    question: "Can we declare an abstract method like this: access modifier return type abstract method name (formal arguments)?",
+    answer: "No"
+},
+{
+    question: "What is a concrete method?",
+    answer: "A method with implementation details is known as a concrete method."
+},
+{
+    question: "Can we put a body for an abstract method?",
+    answer: "No, we cannot."
+},
+{
+    question: "Why can't we provide a body for an abstract method?",
+    answer: "Abstract methods are meant to be implemented by subclasses, so they can't have a body."
+},
+{
+    question: "Types of classes?",
+    answer: "1. Abstract class\n2. Concrete class"
+},
+{
+    question: "What is an abstract class?",
+    answer: "A class prefixed with the abstract modifier that contains abstract methods is known as an abstract class."
+},
+{
+    question: "What is a concrete class?",
+    answer: "A class not prefixed with the abstract modifier or that doesn't contain abstract methods is known as a concrete class."
+},
+{
+    question: "Why do we use abstraction?",
+    answer: "Abstraction is used to hide implementation details and show only essential features, making code easier to understand and maintain."
+},
+{
+    question: "Simple program demonstrating abstraction?",
+    answer: `
+<pre><code>
+package module;
+
+public abstract class A {
+    public abstract void add(int a, int b);
+    public abstract void sub(int a, int b);
+    public abstract void mult(int a, int b);
+
+    public void mess() {
+        System.out.println("This is from class A");
+    }
+
+    void mess2() {
+        System.out.println("From class A");
+    }
+}
+
+package module;
+
+public class B extends A {
+    public void add(int a, int b) {
+        System.out.println(a + b);
+    }
+
+    public void sub(int a, int b) {
+        System.out.println(a - b);
+    }
+
+    public void mult(int a, int b) {
+        System.out.println(a * b);
+    }
+
+    public void mess() {
+        System.out.println("This is from class B");
+    }
+
+    public void messsB() {
+        System.out.println("This is from B");
+    }
+}
+
+package module;
+
+public class Driver {
+    public static void main(String[] args) {
+        A a1 = new B();
+
+        a1.add(10, 20);
+        a1.sub(11, 22);
+        a1.mess();
+        a1.mess2();
+        // a1.messsB();  // CTE: Cannot access subclass-specific methods using parent reference
+    }
+}
+
+output
+
+30
+-11
+This is from class B
+From class A
+</code></pre>
+`
+}
+
 
 
 ];
