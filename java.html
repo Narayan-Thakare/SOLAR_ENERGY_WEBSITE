@@ -4420,190 +4420,176 @@ From class A
 <ul>
 
     <li>
-        <span class="section-title">1.What is a interface ?</span>
+        <span class="section-title">1. What is an interface?</span>
         <details>
             <summary>Answer</summary>
-            <p>
-
-
-            </p>
-        </details>
-    </li>
-
-
-    <li>
-        <span class="section-title">17.My we use interface. ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-
-            </p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">17. What we create inside the interface??</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-                Public non-static abstract methods
-                Public static final variables
-                Default methods
-                Static methods
-                Private methods (since Java 9)
-                Private static methods (since Java 9)
-                Nested types (interfaces, classes, enums)
-                Constant declarations
-                Public methods (by default)
-                Abstract methods (implicitly public)
-            </p>
-        </details>
-    </li>
-
-
-    <li>
-        <span class="section-title">17. List 10 things we cannot create inside the interface?</span> 
-        <details>
-            <summary>Answer</summary>
-            <p>
-                Constructor
-Instance fields (non-static fields)
-Non-public methods (e.g., private or protected methods)
-Non-final variables
-Static blocks
-Instance blocks
-Private constructors
-Non-abstract methods (without default or static keywords)
-Multiple inheritance (in terms of classes)
-Static initializers
-            </p>
+            <p>Interface is java member ,An interface in Java is used to achieve pure abstraction. Concrete non-static methods are not allowed in an interface.</p>
         </details>
     </li>
     
-
     <li>
-        <span class="section-title">17. Why can we not create a constructor inside an interface?</span>
+        <span class="section-title">2. Why do we use an interface?</span>
         <details>
             <summary>Answer</summary>
-            <p>
-                We cannot create a constructor in an interface because interfaces cannot be instantiated. Constructors are meant for initializing objects, which interfaces do not do. Instead, classes implement interfaces and provide their own constructors.
-            </p>
-        </details>
-    </li>
-
-    
-    <li>
-        <span class="section-title">17. Why can we not create a static block inside an interface?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-                We cannot create a static block in an interface because interfaces do not allow initialization code. They are meant to define method signatures, not implement logic.
-            </p>
+            <p>1. To achieve multiple inheritance.</p>
+            <p>2. To enforce a contract for implementing classes.</p>
         </details>
     </li>
     
-
     <li>
-        <span class="section-title">17. Any member insider interface can. be private. by deafault?</span>
+        <span class="section-title">3. What can we create inside an interface?</span>
         <details>
             <summary>Answer</summary>
             <p>
-no , it can be public
-            </p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">17. Why are concrete methods not allowed in an interface?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>Concrete methods are not allowed in interfaces to ensure that classes define their own method implementations.</p>
-        </details>
-    </li>
-    
-
-    <li>
-        <span class="section-title">17.Any non-static methods are by default public and abstract or final. or final in an interface. ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-                no , its a public and abstract its not a final
-
-            </p>
-        </details>
-    </li>
-    <li>
-        <span class="section-title">17. ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-
-            </p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">17. What is a marker interface?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-
-            </p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">24. What is the difference between abstract classes and interfaces?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-                1. Abstract classes can have both abstract and non-abstract methods <br>
-                2. Interfaces can only have abstract methods (until Java 8 allowed default and static methods)
+                - Public non-static abstract methods.<br>
+                - Public static final variables.<br>
+                - Default methods.<br>
+                - Static methods.<br>
+                - Private methods (since Java 9).<br>
+                - Private static methods (since Java 9).<br>
+                - Nested types (interfaces, classes, enums).<br>
+                - Constant declarations.<br>
+                - Public methods (by default).<br>
+                - Abstract methods (implicitly public).
             </p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">17. Which is a parent class of interface?</span>
+        <span class="section-title">4. List 10 things we cannot create inside an interface?</span> 
         <details>
             <summary>Answer</summary>
             <p>
-No 
-            </p>
-        </details>
-    </li>
-
-    
-    <li>
-        <span class="section-title">26. How can we use multiple interfaces in a class?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-                1. A class can implement multiple interfaces <br>
-                2. This allows a class to inherit behavior from multiple sources
+                - Constructors<br>
+                - Instance fields (non-static fields)<br>
+                - Non-public methods (e.g., protected methods)<br>
+                - Non-final variables<br>
+                - Static blocks<br>
+                - Instance blocks<br>
+                - Private constructors<br>
+                - Non-abstract methods (without default or static keywords)<br>
+                - Multiple inheritance (in terms of classes)<br>
+                - Static initializers
             </p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">17. Can interface inherit the class?</span>
+        <span class="section-title">5. Why can we not create a constructor inside an interface?</span>
         <details>
             <summary>Answer</summary>
-            <p>
-No 
-            </p>
+            <p>We cannot create a constructor inside an interface because interfaces cannot be instantiated. Constructors are meant for initializing objects, which interfaces do not do. Classes that implement interfaces provide their own constructors.</p>
         </details>
     </li>
 
-    <li>
-        <span class="section-title">17. Can wec create a object of interface?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>
-No 
-            </p>
-        </details>
-    </li>
+    
+
+    
+    <ul>
+        <li>
+            <span class="section-title">6. Why can we not create a static block inside an interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    We cannot create a static block in an interface because interfaces do not allow initialization code. 
+                    They are meant to define method signatures, not implement logic.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">7. Can any member inside an interface be private by default?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>No, it can only be public by default.</p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">8. Why are concrete methods not allowed in an interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>Concrete methods are not allowed in interfaces to ensure that classes define their own method implementations.</p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">9. Are non-static methods by default public and abstract or final in an interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>No, they are public and abstract by default, not final.</p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">10. We want to achieve inheritance between two classes, which keyword can we use?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    extends
+                </p>
+            </details>
+        </li>
+        
+    
+        <li>
+            <span class="section-title">11. What is a marker interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    A marker interface is an interface with no methods or fields. It is used to signal to the JVM or compiler that the class implementing it should be treated differently (e.g., `Serializable` or `Cloneable`).
+                </p>
+            </details>
+        </li>
+        
+    
+        <li>
+            <span class="section-title">12. What is the difference between abstract classes and interfaces?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    1. Abstract classes can have both abstract and non-abstract methods.<br>
+                    2. Interfaces could only have abstract methods until Java 8 allowed default and static methods.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">13. Is there a parent class of an interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>No.</p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">14. How can we use multiple interfaces in a class?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>
+                    1. A class can implement multiple interfaces.<br>
+                    2. This allows a class to inherit behavior from multiple sources.
+                </p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">15. Can an interface inherit a class?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>No.</p>
+            </details>
+        </li>
+    
+        <li>
+            <span class="section-title">16. Can we create an object of an interface?</span>
+            <details>
+                <summary>Answer</summary>
+                <p>No.</p>
+            </details>
+        </li>
+    </ul>
+    
     
     
     
@@ -6158,7 +6144,76 @@ From class A
 {
     question: "16. Which method is deprecated?",
     answer: "Thread.stop(), Thread.suspend(), Thread.resume(), System.runFinalizersOnExit(boolean value), Date.parse(String s), Date.getYear(), Date.getMonth(), Date.getDay(), Object.finalize()"
-}
+},
+
+
+
+///////////////////////////////  Interface ////////////////////////////////////////////////////
+
+{
+        "question": "What is an interface?",
+        "answer": "An interface in Java is used to achieve pure abstraction. Concrete non-static methods are not allowed in an interface."
+    },
+    {
+        "question": "Why do we use an interface?",
+        "answer": "1. To achieve multiple inheritance.\n2. To enforce a contract for implementing classes."
+    },
+    {
+        "question": "What can we create inside an interface?",
+        "answer": "- Public non-static abstract methods.\n- Public static final variables.\n- Default methods.\n- Static methods.\n- Private methods (since Java 9).\n- Private static methods (since Java 9).\n- Nested types (interfaces, classes, enums).\n- Constant declarations.\n- Public methods (by default).\n- Abstract methods (implicitly public)."
+    },
+    {
+        "question": "List 10 things we cannot create inside an interface.",
+        "answer": "- Constructors\n- Instance fields (non-static fields)\n- Non-public methods (e.g., protected methods)\n- Non-final variables\n- Static blocks\n- Instance blocks\n- Private constructors\n- Non-abstract methods (without default or static keywords)\n- Multiple inheritance (in terms of classes)\n- Static initializers"
+    },
+    {
+        "question": "Why can we not create a constructor inside an interface?",
+        "answer": "We cannot create a constructor inside an interface because interfaces cannot be instantiated. Constructors are meant for initializing objects, which interfaces do not do. Classes that implement interfaces provide their own constructors."
+    },
+    {
+        "question": "Why can we not create a static block inside an interface?",
+        "answer": "They are meant to define method signatures, not implement logic."
+    },
+    {
+        "question": "Can any member inside an interface be private by default?",
+        "answer": "No, it can only be public by default."
+    },
+    {
+        "question": "Why are concrete methods not allowed in an interface?",
+        "answer": "Concrete methods are not allowed in interfaces to ensure that classes define their own method implementations."
+    },
+    {
+        "question": "Are non-static methods by default public and abstract or final in an interface?",
+        "answer": "No, they are public and abstract by default, not final."
+    },
+    {
+        "question": "We want to achieve inheritance between two classes, which keyword can we use?",
+        "answer": "extends"
+    },
+    {
+        "question": "What is a marker interface?",
+        "answer": "A marker interface is an interface with no methods or fields. It is used to signal to the JVM or compiler that the class implementing it should be treated differently (e.g., Serializable or Cloneable)."
+    },
+    {
+        "question": "What is the difference between abstract classes and interfaces?",
+        "answer": "1. Abstract classes can have both abstract and non-abstract methods. 2. Interfaces could only have abstract methods until Java 8 allowed default and static methods."
+    },
+    {
+        "question": "Is there a parent class of an interface?",
+        "answer": "No."
+    },
+    {
+        "question": "How can we use multiple interfaces in a class?",
+        "answer": "1. A class can implement multiple interfaces. 2. This allows a class to inherit behavior from multiple sources."
+    },
+    {
+        "question": "Can an interface inherit a class?",
+        "answer": "No."
+    },
+    {
+        "question": "Can we create an object of an interface?",
+        "answer": "No."
+    }
 
 
 
