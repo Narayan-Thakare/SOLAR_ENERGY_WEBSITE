@@ -31,7 +31,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            resize: none; /* Prevent resizing */
+            resize: none;
         }
 
         button {
@@ -43,7 +43,7 @@
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s; /* Smooth transition */
+            transition: background-color 0.3s;
         }
 
         button:hover {
@@ -57,12 +57,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
-        #downloadLink {
-            display: none; /* Initially hidden */
-            margin-top: 10px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -71,24 +65,17 @@
         <textarea id="textInput" rows="5" placeholder="Type your text here..."></textarea>
         <button id="convertButton">Convert to Voice</button>
         <select id="voiceSelect"></select>
-        <div id="downloadLink">
-            <a id="audioDownload" href="#" download="speech.mp3">Download Audio</a>
-        </div>
     </div>
     <script>
-        // Get the necessary DOM elements
         const textInput = document.getElementById("textInput");
         const convertButton = document.getElementById("convertButton");
         const voiceSelect = document.getElementById("voiceSelect");
-        const audioDownload = document.getElementById("audioDownload");
-        const downloadLink = document.getElementById("downloadLink");
 
-        // Load available voices
         let voices = [];
 
         const loadVoices = () => {
             voices = speechSynthesis.getVoices();
-            voiceSelect.innerHTML = ''; // Clear existing options
+            voiceSelect.innerHTML = '';
 
             voices.forEach((voice) => {
                 const option = document.createElement("option");
@@ -98,7 +85,6 @@
             });
         };
 
-        // Speak the text
         const speak = () => {
             const text = textInput.value;
             const selectedVoice = voiceSelect.value;
@@ -106,37 +92,15 @@
             if (text) {
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.voice = voices.find((voice) => voice.name === selectedVoice);
-                
+
                 // Optional: Adjust pitch and rate for more natural speech
                 utterance.pitch = 1.2; // Range: 0 to 2
                 utterance.rate = 1;    // Range: 0.1 to 10
-
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const mediaStreamDest = audioContext.createMediaStreamDestination();
-                const source = audioContext.createMediaElementSource(new Audio());
-                source.connect(mediaStreamDest);
-                
-                utterance.onstart = () => {
-                    const audioElement = new Audio();
-                    audioElement.src = 'data:audio/wav;base64,' + btoa(utterance.text);
-                    audioElement.play();
-                };
-                
-                utterance.onend = () => {
-                    // Create a new audio blob and set it for download
-                    audioContext.close().then(() => {
-                        const blob = new Blob([utterance.text], { type: 'audio/wav' });
-                        const url = URL.createObjectURL(blob);
-                        audioDownload.href = url;
-                        downloadLink.style.display = 'block'; // Show download link
-                    });
-                };
 
                 speechSynthesis.speak(utterance);
             }
         };
 
-        // Event listeners
         convertButton.addEventListener("click", speak);
         speechSynthesis.onvoiceschanged = loadVoices;
     </script>
