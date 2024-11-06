@@ -5133,101 +5133,166 @@ From class A
 <h1 id="final">Final </h1>
 <ul>
     <li>
-        <span class="section-title">1.What is final??</span>
+        <span class="section-title">1. What is final?</span>
         <details>
             <summary>Answer</summary>
-            <p> Finally, the keyword and modified a member. which is prefixed with final modifier, is known as the final member. </p>
+            <p>Finally, the keyword and modified member, which is prefixed with the final modifier, is known as the final member.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">2. What is a final variable?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A variable prefixed with the final modifier is called a final variable.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">3. Can a local variable be made final?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Yes.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">4. What is a static final variable?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A static final variable is a constant variable that belongs to the class rather than instances of the class. It cannot be changed after initialization.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">5. What is a non-static final variable?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A non-static final variable is a constant variable that is associated with an instance of the class. It cannot be changed after initialization, but unlike static final variables, each instance can have a different value.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">6. What is a final method?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>If a method is prefixed with the final modifier, it is called a final method.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">7. Can a final method be overridden?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, a final method cannot be overridden.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">8. Can a final method be inherited?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>Yes, a final method can be inherited, but it cannot be overridden.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">9. What is a final class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A class prefixed with the final modifier is called a final class.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">10. If a class is made final, can we create a subclass of a final class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, you cannot create a subclass of a final class.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">11. Example of a final class?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>The Scanner class is an example of a final class.</p>
         </details>
     </li>
 
     <li>
-        <span class="section-title">1.What is final variable??</span>
+        <span class="section-title">12. Can a final variable be changed after initialization?</span>
         <details>
             <summary>Answer</summary>
-            <p>  A variable prefix with final modifier is called final variable.</p>
+            <p>No, a final variable cannot be changed after it has been initialized.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.Can local variable made final??</span>
+        <span class="section-title">13. What happens if we try to override a final method?</span>
         <details>
             <summary>Answer</summary>
-            <p> Yes. </p>
+            <p>If you try to override a final method, the compiler will throw an error because final methods cannot be overridden.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.What is static final variable?</span>
+        <span class="section-title">14. Can we assign a value to a final variable more than once?</span>
         <details>
             <summary>Answer</summary>
-            <p>  </p>
+            <p>No, a final variable can only be assigned a value once, either during declaration or in the constructor if it's an instance variable.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.What is non static final variable??</span>
+        <span class="section-title">15. What is the difference between a final method and a static method?</span>
         <details>
             <summary>Answer</summary>
-            <p>  </p>
+            <p>A final method cannot be overridden by subclasses, while a static method is tied to the class itself and not to any instance. Static methods can be called without creating an object of the class.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.What is final method??</span>
+        <span class="section-title">16. Can a constructor be final?</span>
         <details>
             <summary>Answer</summary>
-            <p>  If a method with prefix with fine. modifier is called as final method.</p>
+            <p>No, a constructor cannot be declared as final because constructors are not inherited, and the final keyword is used to prevent inheritance.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.can final method override.?</span>
+        <span class="section-title">17. Can a final class implement interfaces?</span>
         <details>
             <summary>Answer</summary>
-            <p>NO  </p>
+            <p>Yes, a final class can implement interfaces, but it cannot be subclassed.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.Can final method inherited??</span>
+        <span class="section-title">18. Can a final class have a constructor?</span>
         <details>
             <summary>Answer</summary>
-            <p> Yes </p>
+            <p>Yes, a final class can have a constructor, but it cannot be subclassed to call this constructor.</p>
         </details>
     </li>
-
-
+    
     <li>
-        <span class="section-title">1What is final class??</span>
+        <span class="section-title">19. Can a final variable be initialized at runtime?</span>
         <details>
             <summary>Answer</summary>
-            <p> A class prefix with final modifier. It's called as a final class. </p>
+            <p>Yes, a final variable can be initialized at runtime, but it can only be assigned once, either at the time of declaration or in the constructor.</p>
         </details>
     </li>
-
+    
     <li>
-        <span class="section-title">1.if classs is made final Can we create subclaas of final class??</span>
+        <span class="section-title">20. What is the impact of using the final keyword in performance?</span>
         <details>
             <summary>Answer</summary>
-            <p>  No</p>
+            <p>The final keyword can slightly improve performance because the JVM can optimize method calls or variable access knowing that they will not change.</p>
         </details>
     </li>
-
-    <li>
-        <span class="section-title">1.Example of final class.?</span>
-        <details>
-            <summary>Answer</summary>
-            <p> Scanner class  </p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">1.?</span>
-        <details>
-            <summary>Answer</summary>
-            <p>  </p>
-        </details>
-    </li>
+    
+   
 
 
 
