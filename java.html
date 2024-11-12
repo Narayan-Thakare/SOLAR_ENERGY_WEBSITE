@@ -7233,7 +7233,149 @@ From class A
         {
             "question": "What modifiers can a class have?",
             "answer": "A class can be public, final, or abstract."
-        }
+        },
+
+///////////////////////////////////////////////  final    ///////////////////////////////////////////////////////////////
+{
+    question: "What is final?",
+    answer: "Finally, the keyword and modified member, which is prefixed with the final modifier, is known as the final member."
+},
+{
+    question: "What is a final variable?",
+    answer: "A variable prefixed with the final modifier is called a final variable."
+},
+{
+    question: "Can a local variable be made final?",
+    answer: "Yes."
+},
+{
+    question: "What is a static final variable?",
+    answer: "A static final variable is a constant variable that belongs to the class rather than instances of the class. It cannot be changed after initialization."
+},
+{
+    question: "What is a non-static final variable?",
+    answer: "A non-static final variable is a constant variable that is associated with an instance of the class. It cannot be changed after initialization, but unlike static final variables, each instance can have a different value."
+},
+{
+    question: "What is a final method?",
+    answer: "If a method is prefixed with the final modifier, it is called a final method."
+},
+{
+    question: "Can a final method be overridden?",
+    answer: "No, a final method cannot be overridden."
+},
+{
+    question: "Can a final method be inherited?",
+    answer: "Yes, a final method can be inherited, but it cannot be overridden."
+},
+{
+    question: "What is a final class?",
+    answer: "A class prefixed with the final modifier is called a final class."
+},
+{
+    question: "If a class is made final, can we create a subclass of a final class?",
+    answer: "No, you cannot create a subclass of a final class."
+},
+{
+    question: "Example of a final class?",
+    answer: "The Scanner class is an example of a final class."
+},
+{
+    question: "Can a final variable be changed after initialization?",
+    answer: "No, a final variable cannot be changed after it has been initialized."
+},
+{
+    question: "What happens if we try to override a final method?",
+    answer: "If you try to override a final method, the compiler will throw an error because final methods cannot be overridden."
+},
+{
+    question: "Can we assign a value to a final variable more than once?",
+    answer: "No, a final variable can only be assigned a value once, either during declaration or in the constructor if it's an instance variable."
+},
+{
+    question: "What is the difference between a final method and a static method?",
+    answer: "A final method cannot be overridden by subclasses, while a static method is tied to the class itself and not to any instance. Static methods can be called without creating an object of the class."
+},
+{
+    question: "Can a constructor be final?",
+    answer: "No, a constructor cannot be declared as final because constructors are not inherited, and the final keyword is used to prevent inheritance."
+},
+{
+    question: "Can a final class implement interfaces?",
+    answer: "Yes, a final class can implement interfaces, but it cannot be subclassed."
+},
+{
+    question: "Can a final class have a constructor?",
+    answer: "Yes, a final class can have a constructor, but it cannot be subclassed to call this constructor."
+},
+{
+    question: "Can a final variable be initialized at runtime?",
+    answer: "Yes, a final variable can be initialized at runtime, but it can only be assigned once, either at the time of declaration or in the constructor."
+},
+{
+    question: "What is the impact of using the final keyword in performance?",
+    answer: "The final keyword can slightly improve performance because the JVM can optimize method calls or variable access knowing that they will not change."
+},
+
+/////////////////////////////////////////////////////////////////    Arrays        ////////////////////////////////////////////////////////////////////////////////
+
+{
+        "question": "What is an array?",
+        "answer": "An array is a contiguous block of memory used to store multiple values of the same type."
+    },
+    {
+        "question": "Where does an array index start?",
+        "answer": "Array indexing starts from zero and goes up to array size - 1."
+    },
+    {
+        "question": "Is an array a primitive or non-primitive data type?",
+        "answer": "It is a non-primitive data type."
+    },
+    {
+        "question": "Does an array store homogeneous or heterogeneous data?",
+        "answer": "An array stores homogeneous data."
+    },
+    {
+        "question": "Can an array size be predefined or fixed?",
+        "answer": "Yes, an array size is fixed at the time of creation."
+    },
+    {
+        "question": "How is an array represented?",
+        "answer": "It is represented by square brackets, []."
+    },
+    {
+        "question": "Where is an array object created in memory?",
+        "answer": "An array object is created in the heap memory area."
+    },
+    {
+        "question": "How can we print an array without a loop?",
+        "answer": "By using Arrays.toString() method."
+    },
+    {
+        "question": "How can we print a 2D array without a loop?",
+        "answer": "By using Arrays.deepToString() method."
+    },
+    {
+        "question": "What is the maximum size of an array?",
+        "answer": "The maximum size depends on the JVM and system memory."
+    },
+    {
+        "question": "When do we get an ArrayIndexOutOfBoundsException?",
+        "answer": "This exception occurs when accessing an array element with an index that is either greater than or less than the valid range (0 to array length - 1)."
+    },
+    {
+        "question": "Is ArrayIndexOutOfBoundsException a checked or unchecked exception?",
+        "answer": "It is an unchecked exception."
+    },
+    {
+        "question": "Are arrays created at runtime or compile time?",
+        "answer": "Arrays are created at runtime. ArrayIndexOutOfBoundsException can occur at runtime."
+    },
+    {
+        "question": "What is an array reference variable?",
+        "answer": "An array reference variable is a variable that stores the reference to an array."
+    }
+
 
 
 ];
