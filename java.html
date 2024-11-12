@@ -4826,104 +4826,109 @@ From class A
 
 </ul>
 
+
+<!-- //////////////////////////////////////////////////////////////////// -->
 <h1 id="wrapper class">Wrapper Class</h1>
 
 <ul>
 
 
     <li>
-        <span class="section-title">1.What is wrapper class? ?</span>
+        <span class="section-title">1. What is a wrapper class?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Wrapper classes in Java, found in the <code>java.lang</code> package, are used to convert primitive data types into their respective non-primitive types (objects).</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">2.What is boxing? ?</span>
+        <span class="section-title">2. Why do we use wrapper classes?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Wrapper classes allow us to use primitive data types as objects, enabling compatibility with Java’s collections framework and supporting features like autoboxing.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">3.What is unboxing?  ?</span>
+        <span class="section-title">3. What is boxing?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Boxing is the process of converting a primitive data type into its corresponding wrapper class type (object).</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.A wrapper class overrated by ?</span>
+        <span class="section-title">4. What is unboxing?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Unboxing is the process of converting a wrapper class object back to its corresponding primitive type.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.Which interface have wrapper class? ?</span>
+        <span class="section-title">5. Which methods are overridden by wrapper classes?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
-        </details>
-    </li>
-
-
-
-
-
-
-    <li>
-        <span class="section-title">21. What is autoboxing? ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p> .</p>
+            <p>The <code>toString</code>, <code>equals</code>, and <code>hashCode</code> methods of the Object class are overridden by wrapper classes.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.How we convert private data to string? ?</span>
+        <span class="section-title">6. Which interfaces do wrapper classes implement?</span>
         <details>
             <summary>Answer</summary>
-            <p> Using value of method .</p>
+            <p>Wrapper classes implement the <code>Serializable</code> and <code>Comparable</code> interfaces.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.What is parsing? ?</span>
+        <span class="section-title">7. What is autoboxing?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Introduced in JDK 1.5, autoboxing automatically converts primitives to their respective wrapper types without explicit boxing.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.How can we convert string back to primitive type? ?</span>
+        <span class="section-title">8. How do we convert primitive data to a string?</span>
         <details>
             <summary>Answer</summary>
-            <p> using parsing?.</p>
+            <p>We can use the <code>valueOf</code> method to convert primitive data to a string.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.Give a example of parsing in byte and char  ?</span>
+        <span class="section-title">9. What is parsing?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Parsing is the process of converting a string to its corresponding primitive type, such as using <code>Integer.parseInt()</code> to convert a string to an int.</p>
         </details>
     </li>
-
-
+    
     <li>
-        <span class="section-title">21. What is number formate exception??</span>
+        <span class="section-title">10. How can we convert a string back to a primitive type?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>We use parsing methods, such as <code>Integer.parseInt()</code> for int and <code>Double.parseDouble()</code> for double.</p>
         </details>
     </li>
+    
+    <li>
+        <span class="section-title">11. Give an example of parsing to byte and char.</span>
+        <details>
+            <summary>Answer</summary>
+            <p>For byte: <code>Byte.parseByte("10")</code>; for char: parsing to char is indirect, by getting the char at an index in a string, e.g., <code>"A".charAt(0)</code>.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">12. What is a NumberFormatException?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A <code>NumberFormatException</code> occurs when an attempt is made to convert a string that is not properly formatted as a number, such as trying to parse "abc" as an integer.</p>
+        </details>
+    </li>
+    
     
 
 </ul>
@@ -4934,163 +4939,160 @@ From class A
 <ul>
 
     <li>
-        <span class="section-title">1.What is modifiers? ?</span>
+        <span class="section-title">1. What is a modifier?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>A modifier is a keyword used to alter the behavior or accessibility of Java members, such as variables, methods, and classes.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">2.Types of modifiers ?</span>
+        <span class="section-title">2. Types of modifiers</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>1. Access Modifiers <br>
+               2. Non-Access Modifiers</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">3.What is access modifier? ?</span>
+        <span class="section-title">3. What is an access modifier?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>An access modifier is a keyword that controls the visibility of Java members based on their scope.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">4.Type of Access modifiers ?</span>
+        <span class="section-title">4. Types of access modifiers</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">21.What is the private member ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p> .</p>
+            <p>1. Public<br>
+               2. Private<br>
+               3. Protected<br>
+               4. Default</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21. What we can create private?</span>
+        <span class="section-title">5. What is a private member?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>A private member is a class member prefixed with the <code>private</code> access modifier, limiting its visibility to within the same class.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.can private mmeber use outside the class. ?</span>
+        <span class="section-title">6. What can be made private?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>Variables, methods, and constructors can be made private.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21. can privae member acces in differnt class or subclass of same package ?</span>
+        <span class="section-title">7. Can a private member be accessed outside the class?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">21.Can private member use outside the package. ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p> .</p>
+            <p>No, a private member cannot be accessed in a different class or subclass within the same package.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21. What is the default member ?</span>
+        <span class="section-title">8. Can a private member be accessed in a different class or subclass of the same package?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>No.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21. Tell me the visibility of default member ?</span>
+        <span class="section-title">9. Can a private member be used outside the package?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>No, it cannot be used outside the package.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.What is protected in java  ?</span>
+        <span class="section-title">10. What is a default member?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">21. How can we import  protected??</span>
-        <details>
-            <summary>Answer</summary>
-            <p> import packagename . classname .</p>
+            <p>A default member is one without an explicit access modifier, making it accessible within the same package only.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.accessibility of protected member ?</span>
+        <span class="section-title">11. What is the visibility of a default member?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p>It is accessible within the same package only.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.What is public in java? ?</span>
+        <span class="section-title">12. What is protected in Java?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
+            <p><code>Protected</code> is an access modifier that allows visibility within the same package and subclasses in other packages.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21.accessibility of public member ?</span>
+        <span class="section-title">13. How can we import protected members?</span>
         <details>
             <summary>Answer</summary>
-            <p> .</p>
-        </details>
-    </li>
-
-    <li>
-        <span class="section-title">21. can we make a class private  ?</span>
-        <details>
-            <summary>Answer</summary>
-            <p> no .</p>
+            <p>Use <code>import packageName.className</code>.</p>
         </details>
     </li>
     
     <li>
-        <span class="section-title">21. A class can be made, tell modifers  ?</span>
+        <span class="section-title">14. Accessibility of a protected member</span>
         <details>
             <summary>Answer</summary>
-            <p>  public final and abstract.</p>
+            <p>A protected member can be accessed within the same package directly, and in a different package only through inheritance in a subclass.</p>
         </details>
     </li>
     
-  
-
+    <li>
+        <span class="section-title">15. What is public in Java?</span>
+        <details>
+            <summary>Answer</summary>
+            <p><code>Public</code> is an access modifier that allows a member to be accessible from any other class in any package.</p>
+        </details>
+    </li>
     
-
-
+    <li>
+        <span class="section-title">16. Accessibility of a public member</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A public member can be accessed from anywhere in the program.</p>
+        </details>
+    </li>
     
-
-
-
-
-
-
+    <li>
+        <span class="section-title">17. Can we make a class private?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>No, a top-level class cannot be private.</p>
+        </details>
+    </li>
+    
+    <li>
+        <span class="section-title">18. What modifiers can a class have?</span>
+        <details>
+            <summary>Answer</summary>
+            <p>A class can be <code>public</code>, <code>final</code>, or <code>abstract</code>.</p>
+        </details>
+    </li>
+    
+    
 
 </ul>
+
+
+
+
 <h1 id="final">Final </h1>
 <ul>
     <li>
@@ -5263,103 +5265,117 @@ From class A
 <h1 id="arrays">Arrays</h1>
 <ul>
     <li>
-        <span class="section-title">1.What ia array </span>
+        <span class="section-title">1. What is an array?</span>
         <details>
             <summary>Answer</summary>
-            <p>An array is a contigious block of memory which is used to store multipla values of same types</p>
+            <p>An array is a contiguous block of memory used to store multiple values of the same type.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">2.where array index start from 0 or 1 tii too </span>
+        <span class="section-title">2. Where does an array index start?</span>
         <details>
             <summary>Answer</summary>
-            <p>array index start from zero to till araay size -1 </p>
+            <p>Array indexing starts from zero and goes up to array size - 1.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">3.Array is a primitive data or non primitive data </span>
+        <span class="section-title">3. Is an array a primitive or non-primitive data type?</span>
         <details>
             <summary>Answer</summary>
-            <p>it a primitive data </p>
+            <p>It is a non-primitive data type.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">4.array can store homogineous data or hetrogineous data </span>
+        <span class="section-title">4. Does an array store homogeneous or heterogeneous data?</span>
         <details>
             <summary>Answer</summary>
-            <p>it is a homogenious type of data </p>
+            <p>An array stores homogeneous data.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">5.array are predefine size of more </span>
+        <span class="section-title">5. Can an array size be predefined or fixed?</span>
         <details>
             <summary>Answer</summary>
-            <p>no is ia fixes</p>
+            <p>Yes, an array size is fixed at the time of creation.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">6.How array is represented by </span>
+        <span class="section-title">6. How is an array represented?</span>
         <details>
             <summary>Answer</summary>
-            <p>[]</p>
+            <p>It is represented by square brackets, <code>[]</code>.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">7.where araay object is created</span>
+        <span class="section-title">7. Where is an array object created in memory?</span>
         <details>
             <summary>Answer</summary>
-            <p>in heap area</p>
+            <p>An array object is created in the heap memory area.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">8.How can we print the aray without for loop </span>
+        <span class="section-title">8. How can we print an array without a loop?</span>
         <details>
             <summary>Answer</summary>
-            <p>usinh arrays.toString </p>
+            <p>By using <code>Arrays.toString()</code> method.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">9.How can we print the 2d aray without for loop</span>
+        <span class="section-title">9. How can we print a 2D array without a loop?</span>
         <details>
             <summary>Answer</summary>
-            <p>using array. deeptoString</p>
+            <p>By using <code>Arrays.deepToString()</code> method.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">10.what is a size of index in araay </span>
+        <span class="section-title">10. What is the maximum size of an array?</span>
         <details>
             <summary>Answer</summary>
-            <p>it ia version to version matter</p>
+            <p>The maximum size depends on the JVM and system memory.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">11.when we gwt the array index out of bond exception </span>
+        <span class="section-title">11. When do we get an ArrayIndexOutOfBoundsException?</span>
         <details>
             <summary>Answer</summary>
-            <p>when we try to access the array element with the help of array index which is eighter greater that the length or lesser than the zero  </p>
+            <p>This exception occurs when accessing an array element with an index that is either greater than or less than the valid range (0 to array length - 1).</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">12.array index out of bond exception it is unchecked exception or check exception</span>
+        <span class="section-title">12. Is ArrayIndexOutOfBoundsException a checked or unchecked exception?</span>
         <details>
             <summary>Answer</summary>
-            <p>it is unchecked exception</p>
+            <p>It is an unchecked exception.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">13.Arrsy are created a runtime or compile time </span>
+        <span class="section-title">13. Are arrays created at runtime or compile time?</span>
         <details>
             <summary>Answer</summary>
-            <p>array are created a runtime we get the exception of array index out of bond exception </p>
+            <p>Arrays are created at runtime. ArrayIndexOutOfBoundsException can occur at runtime.</p>
         </details>
     </li>
+    
     <li>
-        <span class="section-title">14.what is array refrence variable </span>
+        <span class="section-title">14. What is an array reference variable?</span>
         <details>
             <summary>Answer</summary>
-            <p>the variable which is used to store refrence is called as array refrence variable </p>
+            <p>An array reference variable is a variable that stores the reference to an array.</p>
         </details>
     </li>
+    
     
 
 
@@ -7060,13 +7076,164 @@ From class A
 {
     question: "Give a real-life example of using a try-catch block and finally.",
     answer: "Handling a database connection error and ensuring resources are closed in the finally block."
-}
+},
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+{
+            "question": "What is the order of declaring exceptions in multiple catch blocks?",
+            "answer": "The order should be from the most specific exception type to the most general. This ensures that specific exceptions are handled before broader ones, preventing unreachable code issues."
+        },
+        {
+            "question": "What is exception object propagation?",
+            "answer": "Exception object propagation is the process of moving an exception object from the called method to the calling method when the exception is not handled. This allows the exception to be caught at higher levels in the call stack."
+        },
+        {
+            "question": "Which exceptions are caught by Throwable?",
+            "answer": "Throwable is the superclass of all errors and exceptions in Java. It can catch both checked and unchecked exceptions, as well as errors, though it's typically used to catch exceptions."
+        },
+        {
+            "question": "What is the difference between Throwable and Exception classes?",
+            "answer": "Throwable is the superclass of all exceptions and errors, while Exception is a subclass of Throwable that represents recoverable issues. Errors, also under Throwable, typically represent unrecoverable issues."
+        },
+        {
+            "question": "What is a pattern class of exception?",
+            "answer": "The pattern class of an exception refers to specific design patterns used for handling exceptions, such as the Singleton pattern for creating custom exception instances."
+        },
+        {
+            "question": "What is 'throws'?",
+            "answer": "The 'throws' keyword is used in method declarations to specify that the method can throw particular checked exceptions, allowing them to be handled by the calling method or propagated up the call stack."
+        },
+        {
+            "question": "How can we declare an exception?",
+            "answer": "We declare an exception using the 'throws' keyword in a method signature to indicate that the method may throw specific exceptions that should be handled by the caller."
+        },
 
 
+///////////////////////////////////////////////  Wrraper class       ////////////////////////////////////////////////////////
+{
+            "question": "What is a wrapper class?",
+            "answer": "Wrapper classes in Java, found in the java.lang package, are used to convert primitive data types into their respective non-primitive types (objects)."
+        },
+        {
+            "question": "Why do we use wrapper classes?",
+            "answer": "Wrapper classes allow us to use primitive data types as objects, enabling compatibility with Java’s collections framework and supporting features like autoboxing."
+        },
+        {
+            "question": "What is boxing?",
+            "answer": "Boxing is the process of converting a primitive data type into its corresponding wrapper class type (object)."
+        },
+        {
+            "question": "What is unboxing?",
+            "answer": "Unboxing is the process of converting a wrapper class object back to its corresponding primitive type."
+        },
+        {
+            "question": "Which methods are overridden by wrapper classes?",
+            "answer": "The toString, equals, and hashCode methods of the Object class are overridden by wrapper classes."
+        },
+        {
+            "question": "Which interfaces do wrapper classes implement?",
+            "answer": "Wrapper classes implement the Serializable and Comparable interfaces."
+        },
+        {
+            "question": "What is autoboxing?",
+            "answer": "Introduced in JDK 1.5, autoboxing automatically converts primitives to their respective wrapper types without explicit boxing."
+        },
+        {
+            "question": "How do we convert primitive data to a string?",
+            "answer": "We can use the valueOf method to convert primitive data to a string."
+        },
+        {
+            "question": "What is parsing?",
+            "answer": "Parsing is the process of converting a string to its corresponding primitive type, such as using Integer.parseInt() to convert a string to an int."
+        },
+        {
+            "question": "How can we convert a string back to a primitive type?",
+            "answer": "We use parsing methods, such as Integer.parseInt() for int and Double.parseDouble() for double."
+        },
+        {
+            "question": "Give an example of parsing to byte and char.",
+            "answer": "For byte: Byte.parseByte(\"10\"); for char: parsing to char is indirect, by getting the char at an index in a string, e.g., \"A\".charAt(0)."
+        },
+        {
+            "question": "What is a NumberFormatException?",
+            "answer": "A NumberFormatException occurs when an attempt is made to convert a string that is not properly formatted as a number, such as trying to parse \"abc\" as an integer."
+        },
 
+        ////////////////////////////////////////// Modifiers    ////////////////////////////////////////////////
 
-
-
+        {
+            "question": "What is a modifier?",
+            "answer": "A modifier is a keyword used to alter the behavior or accessibility of Java members, such as variables, methods, and classes."
+        },
+        {
+            "question": "Types of modifiers",
+            "answer": "1. Access Modifiers 2. Non-Access Modifiers"
+        },
+        {
+            "question": "What is an access modifier?",
+            "answer": "An access modifier is a keyword that controls the visibility of Java members based on their scope."
+        },
+        {
+            "question": "Types of access modifiers",
+            "answer": "1. Public 2. Private 3. Protected 4. Default"
+        },
+        {
+            "question": "What is a private member?",
+            "answer": "A private member is a class member prefixed with the private access modifier, limiting its visibility to within the same class."
+        },
+        {
+            "question": "What can be made private?",
+            "answer": "Variables, methods, and constructors can be made private."
+        },
+        {
+            "question": "Can a private member be accessed outside the class?",
+            "answer": "No, a private member cannot be accessed in a different class or subclass within the same package."
+        },
+        {
+            "question": "Can a private member be accessed in a different class or subclass of the same package?",
+            "answer": "No."
+        },
+        {
+            "question": "Can a private member be used outside the package?",
+            "answer": "No, it cannot be used outside the package."
+        },
+        {
+            "question": "What is a default member?",
+            "answer": "A default member is one without an explicit access modifier, making it accessible within the same package only."
+        },
+        {
+            "question": "What is the visibility of a default member?",
+            "answer": "It is accessible within the same package only."
+        },
+        {
+            "question": "What is protected in Java?",
+            "answer": "Protected is an access modifier that allows visibility within the same package and subclasses in other packages."
+        },
+        {
+            "question": "How can we import protected members?",
+            "answer": "Use import packageName.className."
+        },
+        {
+            "question": "Accessibility of a protected member",
+            "answer": "A protected member can be accessed within the same package directly, and in a different package only through inheritance in a subclass."
+        },
+        {
+            "question": "What is public in Java?",
+            "answer": "Public is an access modifier that allows a member to be accessible from any other class in any package."
+        },
+        {
+            "question": "Accessibility of a public member",
+            "answer": "A public member can be accessed from anywhere in the program."
+        },
+        {
+            "question": "Can we make a class private?",
+            "answer": "No, a top-level class cannot be private."
+        },
+        {
+            "question": "What modifiers can a class have?",
+            "answer": "A class can be public, final, or abstract."
+        }
 
 
 ];
