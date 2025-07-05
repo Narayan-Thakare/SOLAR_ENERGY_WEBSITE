@@ -438,6 +438,69 @@ pre code {
 }
 
 
+
+/* ///////////////////////////////////////////////////////////// this is for image notes */
+
+ .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.zoom-target {
+  width: 30%;
+  min-width: 100px;
+  transition: width 0.3s ease;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.zoom-buttons {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Show zoom buttons only on laptops and wider */
+@media screen and (min-width: 1024px) {
+  .zoom-buttons {
+    display: block;
+  }
+}
+
+/* ✅ Make images normal and stacked on mobile */
+@media screen and (max-width: 600px) {
+  .image-container {
+    display: block;  /* Disable flex on mobile */
+  }
+
+  .zoom-target {
+    width: 100%;     /* Full width for each image */
+    height: 100%;
+    display: block;
+    margin-bottom: 10px;
+    padding: 3px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  details {
+    padding: 8px;
+    max-width: 100%;
+  }
+}
+
+/* Caption style */
+figcaption {
+  font-size: 0.9em;
+  color: gray;
+  margin-top: 5px;
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -633,6 +696,36 @@ pre code {
 
     <h1 id="section1">Basic Conceptsss</h1>
     <ul>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+<li>
+  <span class="section-title">Notes?</span>
+  <details>
+    <summary>Check Notes</summary>
+    <p>Here is the explanation image for better understanding:</p>
+
+    <div class="image-container" id="imageContainer">
+      <img class="zoom-target" src="Image_check.jpg" alt="Note Image">
+      <img class="zoom-target" src="Image_check.jpg" alt="Note Image">
+      <img class="zoom-target" src="Image_check.jpg" alt="Note Image">
+      <img class="zoom-target" src="Image_check.jpg" alt="Note Image">
+    </div>
+
+    <figcaption>Figure: Concept Illustration</figcaption>
+
+    <div class="zoom-buttons">
+      <button onclick="zoomOut()">Zoom Out</button>
+      <button onclick="zoomIn()">Zoom In</button>
+    </div>
+  </details>
+</li>
+
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+
         <li><span class="section-title">1. What is a Computer?</span>
             <details>
                 <summary>Answer</summary>
@@ -5413,6 +5506,38 @@ From class A
 
    
 <script>
+
+
+
+
+//////////////////////////////////////////// Zoom Image functionality
+
+  let widthPercent = 30; // starting width of each image
+
+  function zoomOut() {
+    if (widthPercent > 10) {
+      widthPercent -= 5;
+      applyZoom();
+    }
+  }
+
+  function zoomIn() {
+    if (widthPercent < 100) {
+      widthPercent += 5;
+      applyZoom();
+    }
+  }
+
+  function applyZoom() {
+    const images = document.querySelectorAll('.zoom-target');
+    images.forEach(img => {
+      img.style.width = widthPercent + '%';
+    });
+  }
+
+
+
+//////////////////////////////////////////////////////////////////////////////
 
 
     // Search Functionality
